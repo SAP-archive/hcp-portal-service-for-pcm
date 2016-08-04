@@ -14,7 +14,9 @@ The SAP HCP portal service for partner channel management configuration guide pr
 	 -  TENANT_ADMIN user for Portal Service.
      -  C4C admin user.
      - 	SCI admin user.
+
 ## 2. Configure Your Account
+
 ### 2.1 	Deploy PCM artifacts
  1. Navigate to	[ https://github.com/SAP/hcp-portal-service-for-pcm/releases](https://github.com/SAP/hcp-portal-service-for-pcm/releases)
  2. Prepare content for deployment. There are two options:
@@ -28,7 +30,8 @@ The SAP HCP portal service for partner channel management configuration guide pr
     * pcmcpapps.zip	(Invitation application)
     * pcmsitetemplate.zip	(Site template)
  4. (Optional):Preview your site template in WEB-IDE.
- ### 2.2	Import scilogin plugin
+
+### 2.2	Import scilogin plugin
    1.	Go to [https://github.com/SAP/sap-hcp-portal-service-samples.](https://github.com/SAP/sap-hcp-portal-service-samples)
    2.	Download the ZIP.
    3.	Extract the ZIP to your desktop.
@@ -48,7 +51,8 @@ The SAP HCP portal service for partner channel management configuration guide pr
    2.	Open a BCP ticket BC-NEO-IAM. Use the email templates you downloaded and adjust it according to your needs.
 
 ### 2.5	Set up trust between the customer account and SCI (for log-on scenario).
-   #####  2.5.1	Customer HCP Account Settings
+
+#####  2.5.1	Customer HCP Account Settings
    1.	Open the customer HCP account cockpit and navigate to the Trust screen.
    2.	Edit the Local Service Provider and change the Configuration Type to Custom.
    3.	Click the Generate Key Pair button to fill up the Signing Key and Signing Certificate.
@@ -107,6 +111,7 @@ The SAP HCP portal service for partner channel management configuration guide pr
       8. Choose a file name for the exported file and click Finish.
       9. Open the exported file with notepad, and copy the entire text (including the header and footer).
       10. Paste the text into the proper section of SCI as described above.
+
 #### 2.7	Set up trust between the customer account and SAP C4C backend (for C4C invitation flow)
    1. Log in to C4C backend with an Admin work center authorization.
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.
