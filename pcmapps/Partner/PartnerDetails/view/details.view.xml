@@ -1,0 +1,163 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="c4c.details-partnercollection.local.view.details" xmlns:f="sap.ui.layout.form" height="100%">
+	<Page id="idPage" title="{i18n>CHP.Partner.UI.HeaderInfo.TypeName.Name}" class="sapUiFioriObjectPage" showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<Toolbar class="detailsToolbar">
+				<core:Icon src="sap-icon://company-view" class="toolbarImage sapThemePageBG-asColor"></core:Icon>
+				<Label text="{ObjectPageModel>/Partner/Name}" tooltip="{ObjectPageModel>/Partner/Name}" class="detailsToolbarLabel"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+			<IconTabBar select="handleIconTabBarSelect">
+				<items>
+					<IconTabFilter text="{i18n>CHP.Partner.UI.Facets.UI.RefenceFacet.Partner.UI.Identification}" key="Partner">
+						<Toolbar design="Transparent" height="3rem">
+							<Text text="{i18n>CHP.Partner.UI.Facets.UI.RefenceFacet.Partner.UI.Identification}" class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="edit-overview" icon="sap-icon://edit" press="handleOverviewEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.view.Edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Partner"/>
+								</customData>
+							</Button>
+							<Button class="confirmBtn" press="handleConfirmEdit" text="{i18n_Static>starterDetailsPage.details.view.Save.btn}" visible="false"></Button>
+							<Button class="cancelBtn" press="handleCancelEdit" text="{i18n_Static>starterDetailsPage.details.view.Cancel.btn}" visible="false"></Button>
+						</Toolbar>
+						<layout:VerticalLayout class="marginVerticalContent Partner" width="100%">
+							<layout:content>
+								<core:Fragment fragmentName="c4c.details-partnercollection.local.view.detailsDisplay" type="XML"/>
+							</layout:content>
+						</layout:VerticalLayout>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Partner.UI.Facets.UI.RefenceFacet.PartnerAddress.UI.LineItem}" key="PartnerAddress">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Partner.UI.Facets.UI.RefenceFacet.PartnerAddress.UI.LineItem', 'tableCountModel>/PartnerAddressCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="PartnerAddress table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/PartnerAddress'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.PartnerAddress.UI.LineItem.UI.DataField.Website}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.PartnerAddress.UI.LineItem.UI.DataField.HouseNumber}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerAddress.UI.LineItem.UI.DataField.Street}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerAddress.UI.LineItem.UI.DataField.City}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerAddress.UI.LineItem.UI.DataField.PostalCode}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerAddress.UI.LineItem.UI.DataField.CountryText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerAddress.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerAddress.UI.LineItem.UI.DataField.Fax}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Website}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>HouseNumber}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Street}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>City}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>PostalCode}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>CountryText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Fax}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Partner.UI.Facets.UI.RefenceFacet.PartnerProgram.UI.LineItem}" key="PartnerProgram">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Partner.UI.Facets.UI.RefenceFacet.PartnerProgram.UI.LineItem', 'tableCountModel>/PartnerProgramCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="PartnerProgram table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/PartnerProgram'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.PartnerProgram.UI.LineItem.UI.DataField.PartnerProgramText}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.PartnerProgram.UI.LineItem.UI.DataField.MembershipID}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerProgram.UI.LineItem.UI.DataField.PartnerTypeText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerProgram.UI.LineItem.UI.DataField.StatusText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerProgram.UI.LineItem.UI.DataField.AgreementStartDate}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.PartnerProgram.UI.LineItem.UI.DataField.AgreementEndDate}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>PartnerProgramText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>MembershipID}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>PartnerTypeText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>StatusText}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'ObjectPageModel>AgreementStartDate', formatter:'.formatDate'}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'ObjectPageModel>AgreementEndDate', formatter:'.formatDate'}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<BusyIndicator visible="{ObjectPageState>/showBusyIndicator}" class="details-bi"></BusyIndicator>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</core:View>

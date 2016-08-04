@@ -1,0 +1,146 @@
+#tablediv {
+    height: 100%;
+}
+.container1 {
+    height: 100% !important;
+}
+.tableView {
+    height: 100%;
+}
+.container1 > div {
+    height: 100%;
+}
+.pageEl > header::before {
+    border: 0;
+}
+.sapUiTf {
+    width: 100% !important;
+    height: 45px !important;
+    border: 3px solid!important;
+    font-size: 16px !important;
+    font-style: italic !important;
+}
+.sapUiTf {
+    font-family: arial !important;
+}
+/*.sapMSLITitleOnly{
+    font-family: arial;
+}*/
+
+.table-pattern-page .tableTitle {
+    font-family: arial !important;
+    font-size: 17px !important;
+    text-align: center !important;
+    /*margin-left: 40% !important;*/
+    margin-bottom: 40px !important;
+    height: 23px !important;
+    width: 100% !important;
+    border-bottom: solid 2px;
+    padding-Top: 9px;
+    padding-bottom: 6px;
+}
+.table-pattern-page .tableComboBox input {
+    background: transparent !important;
+    font-family: arial !important;
+    font-size: 17px !important;
+    height: 25px !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    padding-right: 32px !important;
+}
+.table-pattern-page .sapMComboBoxBaseArrow {
+    font-size: 15px !important;
+    line-height: 25px;
+    width: 25px;
+    height: 23px;
+    top: 1px;
+    paddign: 0px;
+}
+.table-pattern-page .tableComboBox {
+    width: 265px !important;
+    margin-bottom: 0px;
+    height: 25px;
+    padding: 0px;
+    margin-bottom: 8px;
+}
+.table-pattern-page a {
+    font-family: arial !important;
+    font-size: 16px !important;
+}
+.table-pattern-page thead label {
+    font-weight: bold !important;
+    cursor: auto !important;
+}
+.table-pattern-page .sapMListTbl .sapMLabel {
+    font-size: 16px !important;
+    cursor: auto !important;
+    font-family: arial !important;
+}
+.table-pattern-page h1 {
+    font-weight: bold !important;
+    font-family: arial !important;
+    font-size: 18px !important;
+    /*cursor: auto !important;*/
+}
+.table-pattern-page tbody tr {
+    cursor: auto !important;
+}
+.table-pattern-page .sapMComboBoxBasePicker .sapMSLITitleOnly {
+    font-family: arial !important;
+    font-size: 18px !important;
+}
+.table-pattern-page .sapMBtnCustomIcon {
+    padding-top: 7px !important;
+    line-height: 20px;
+}
+.table-bi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.table-bi > svg,
+.table-bi > canvas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.table-trigger-bi > svg,
+.table-trigger-bi > canvas {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    margin-top: -15px;
+}
+.table-trigger {
+    height: 80px;
+    display: none !important;
+    cursor: pointer;
+}
+.table-trigger:hover {} .table-trigger.show {
+    display: block !important;
+}
+.table-trigger .sapMFlexItem {
+    text-align: center;
+}
+.table-trigger .trigger-text {
+    margin: 0.813rem 0;
+    padding-bottom: 0.375rem;
+    font-size: 18px;
+    font-weight: bold;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.table-trigger .trigger-description {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}

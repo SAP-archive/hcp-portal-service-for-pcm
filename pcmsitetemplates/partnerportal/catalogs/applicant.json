@@ -1,0 +1,17 @@
+{
+  "_version": "1.1",
+  "identification": {
+    "id": "hcp://pcmsitetemplates/partnerportal/catalogs/applicant.json",
+    "title": "Applicant",
+    "description": "Applicant Content Package",
+    "entityType": "catalog"
+  },
+  "payload": {
+    "appDescriptors": [
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/application_status.json"
+      }
+    ]
+  }
+}

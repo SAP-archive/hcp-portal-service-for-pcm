@@ -1,0 +1,26 @@
+{
+  "_version": "1.1",
+  "identification": {
+    "id": "hcp://pcmsitetemplates/partnerportal/catalogs/partner_management.json",
+    "title": "Partner Management",
+    "description": "Partner Management Content Package",
+    "entityType": "catalog"
+  },
+  "payload": {
+    "appDescriptors": [
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/invite_contacts.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/company_profile.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/invitePlugin.json"
+      }
+
+    ]
+  }
+}

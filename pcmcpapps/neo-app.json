@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/c4c__public",
+      "target": {
+        "type": "destination",
+        "name": "C4C__public",
+        "entryPath": ""
+      },
+      "description": "Basic Authentication destination to C4C backends"
+    }
+  ]
+}

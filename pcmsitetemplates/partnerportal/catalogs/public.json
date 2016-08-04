@@ -1,0 +1,17 @@
+{
+  "_version": "1.1",
+  "identification": {
+    "id": "hcp://pcmsitetemplates/partnerportal/catalogs/public.json",
+    "title": "Anonymous",
+    "description": "",
+    "entityType": "catalog"
+  },
+  "payload": {
+    "appDescriptors": [
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/pages/become_a_partner.json"
+      }
+    ]
+  }
+}

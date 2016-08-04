@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "path": "/c4c",
+      "target": {
+        "type": "destination",
+        "name": "C4C",
+        "entryPath": ""
+      },
+      "description": "Forward C4C back-end requests to HANA Cloud Platform account's destination ('name' value indicates the destination name)"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    }
+  ]
+}

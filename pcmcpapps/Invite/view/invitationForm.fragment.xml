@@ -1,0 +1,106 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:l="sap.ui.layout"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:core="sap.ui.core">
+    <l:Grid
+            defaultSpan="L12 M12 S12"
+            width="auto">
+        <l:content>
+            <f:SimpleForm id="inviteForm"
+
+
+                          maxContainerCols="2"
+                          editable="true"
+                          layout="ResponsiveGridLayout"
+                          title="{i18n>invitees.form.title}"
+                          labelSpanL="2"
+                          labelSpanM="2"
+                          emptySpanL="1"
+                          emptySpanM="1"
+                          columnsL="3"
+                          columnsM="2"
+                          class="editableForm">
+                <f:content>
+                    <Label text="{i18n>invitees.form.email}"/>
+                    <Input valueStateText="{i18n>invitees.form.invalid.email.message}" id="email" value="{
+                                path:'/email',
+                                 type : '.typeEMail'
+                            }"
+                           type="Email">
+                        <layoutData>
+                            <l:GridData span="L10 M10 S12"/>
+                        </layoutData>
+                    </Input>
+                    <Label text="{i18n>invitees.form.name}"/>
+                    <Input id="firstName" placeholder="{i18n>invitees.form.firstName}" value="{
+                    path:'/firstName'
+                    }">
+                        <layoutData>
+                            <l:GridData span="L5 M5 S12"/>
+                        </layoutData>
+                    </Input>
+                    <Input id="lastName" placeholder="{i18n>invitees.form.lastName}" value="{
+                    path:'/lastName'
+                    }">
+                        <layoutData>
+                            <l:GridData span="L5 M5 S12"/>
+                        </layoutData>
+                    </Input>
+                    <Label text="{i18n>invitees.form.message}"/>
+                    <TextArea id="message" width="100%" value="{
+                    path:'/message'
+                    }"
+                              rows="3">
+
+                        <layoutData>
+                            <l:GridData span="L10 M10 S12"/>
+                        </layoutData>
+                    </TextArea>
+                    <Label visible="{extendedInvitation}" binding="{/PartnerData/}" text="{i18n>invitees.form.fdlabel}"/>
+                    <ComboBox visible="{extendedInvitation}" id="department" binding="{/PartnerData/}" placeholder="{i18n>invitees.form.department}" items="{
+                                      path: '/departments',
+                                      sorter: { path: 'Description' }
+                                    }">
+                        <core:Item key="{Code}" text="{Description}"/>
+                        <layoutData>
+                            <l:GridData span="L5 M5 S12"/>
+                        </layoutData>
+                    </ComboBox>
+                    <ComboBox visible="{extendedInvitation}" id="function" binding="{/PartnerData/}" placeholder="{i18n>invitees.form.function}" items="{
+                                      path: '/functions',
+                                      sorter: { path: 'Description' }
+                                    }">
+                        <core:Item key="{Code}" text="{Description}"/>
+                        <layoutData>
+                            <l:GridData span="L5 M5 S12"/>
+                        </layoutData>
+                    </ComboBox>
+
+                    <HBox>
+                        <layoutData>
+                            <l:GridData indentL="2" indentM="2" span="L10 M10 S12"/>
+                        </layoutData>
+                        <Button id="inviteBtn" text="{i18n>invitees.form.submit}" press="sendInvitation" type="Emphasized">
+
+                        </Button>
+                        <HBox id="response-message">
+
+
+                            <ObjectStatus
+                                    id="response-message-icon"
+                                    class="invite-message-status-text"
+
+                                    />
+                            <Text  id="response-message-text" text=""></Text>
+                        </HBox>
+                    </HBox>
+
+
+                </f:content>
+
+            </f:SimpleForm>
+
+        </l:content>
+    </l:Grid>
+</core:FragmentDefinition>

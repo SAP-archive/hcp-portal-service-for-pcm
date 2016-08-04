@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:f="sap.ui.layout.form"
+        xmlns="sap.m">
+
+
+    <f:SimpleForm
+            minWidth="1024"
+            maxContainerCols="2"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanL="3"
+            labelSpanM="3"
+            emptySpanL="4"
+            emptySpanM="4"
+            columnsL="1"
+            columnsM="1"
+            class="editableForm RemoveFade">
+        <f:content>
+            <VBox id="partnerProgramInfo" class="box">
+                <layoutData>
+                    <l:GridData span="L12 M12 S12"/>
+                </layoutData>
+                <Text class="panelDesc" text="{i18n>Step0.Header1}"/>
+                <Text class="caption" text="{i18n>Step0.Question1}"/>
+            </VBox>
+
+            <VBox id="partnerTypeInfo" class="box">
+                <layoutData>
+                    <l:GridData span="L12 M12 S12"/>
+                </layoutData>
+                <Text class="panelDesc" text="{i18n>Step0.Question2.Header}"/>
+                <Text class="caption" text="{i18n>Step0.Question2}"/>
+            </VBox>
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

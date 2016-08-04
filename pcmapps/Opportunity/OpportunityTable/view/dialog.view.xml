@@ -1,0 +1,67 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.commons.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons"
+	controllerName="c4c.table-opportunitycollection.remote.view.dialog" xmlns:m="sap.m" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:ViewSettingsDialog title="{i18n_Static>starterTableTemplate.dialog.title}" id="c4cDialog" confirm="confirmDialog" cancel="onExit"
+		resetFilters="onResetFilters">
+		<m:sortItems>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.ID}" key="ID" selected="true"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.OpportunityName}" key="OpportunityName"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.AccountName}" key="AccountName"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.PrimaryContactName}" key="PrimaryContactName"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.ExpectedValue.ExpectedValueCurrencyCode}"
+				key="ExpectedValue@ExpectedValueCurrencyCode"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.StatusText}" key="StatusText"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.SalesCycleText}" key="SalesCycleText"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.SalesPhaseText}" key="SalesPhaseText"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.ProgressText}" key="ProgressText"/>
+		</m:sortItems>
+		<m:filterItems>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.ID}" key='ID'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="ID"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.OpportunityName}" key='OpportunityName'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="OpportunityName"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.AccountName}" key='AccountName'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="AccountName"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.PrimaryContactName}" key='PrimaryContactName'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="PrimaryContactName"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.ExpectedValue.ExpectedValueCurrencyCode}"
+				key='ExpectedValue@ExpectedValueCurrencyCode'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange"
+						name="ExpectedValue@ExpectedValueCurrencyCode"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.StatusText}" key='StatusText'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="StatusText"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.SalesCycleText}" key='SalesCycleText'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="SalesCycleText"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.SalesPhaseText}" key='SalesPhaseText'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="SalesPhaseText"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Opportunity.UI.LineItem.UI.DataField.ProgressText}" key='ProgressText'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="ProgressText"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+		</m:filterItems>
+	</m:ViewSettingsDialog>
+</mvc:View>

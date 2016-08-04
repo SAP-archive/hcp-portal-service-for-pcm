@@ -1,0 +1,31 @@
+{
+  "_version": "1.0",
+  "identification": {
+    "id": "PartnerManager",
+    "namespace": "",
+    "entityType": "role"
+  },
+  "payload": {
+    "catalogs": [{
+      "namespace": "",
+      "id": "hcp://pcmsitetemplates/partnerportal/catalogs/partner_applications.json"
+    },
+    {
+      "namespace": "",
+      "id": "hcp://pcmsitetemplates/partnerportal/catalogs/partner_management.json"
+    }],
+    "groups": [{
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/groups/overview.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/groups/applications.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/groups/new_transactions.json"
+      }
+    ]
+  }
+}

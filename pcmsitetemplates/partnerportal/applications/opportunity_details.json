@@ -1,0 +1,56 @@
+{
+  "_version": "1.3.0",
+  "sap.app": {
+    "_version": "1.3.0",
+    "id": "hcp://pcmsitetemplates/partnerportal/applications/opportunity_details.json",
+    "title": "Opportunity Details",
+    "description": "App for displaying opportunity details",
+    "tags": {
+      "keywords": [
+        "Details,Opportunity"
+      ]
+    },
+    "crossNavigation": {
+      "context": {},
+      "inbounds": {
+        "0":{
+          "semanticObject": "Opportunity",
+          "action": "Details",
+          "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+          },
+          "title": "Opportunity Details",
+          "subTitle": "Details",
+          "info": "Opportunity Details App",
+          "icon": "0sd",
+          "size": "1x1"
+        }
+      }
+
+    }
+  },
+  "sap.platform.hcp": {
+    "_version": "1.2.0",
+    "uri": "/Opportunity/OpportunityDetails",
+    "appName": "pcmapps"
+  },
+  "sap.cloud.portal": {
+    "_version": "1.1.0",
+    "availablePageTemplates": []
+  },
+  "sap.flp": {
+    "_version": "1.1.0",
+    "type": "",
+    "config": {}
+  },
+  "sap.ui": {
+    "_version": "1.3.0",
+    "technology": "UI5"
+  },
+  "sap.ui5":{
+    "_version": "1.2.0",
+    "componentName":"c4c.details-opportunitycollection.local"
+  }
+}

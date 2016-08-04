@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns="sap.m">
+	<Dialog class="sapUiPopupWithPadding widgetClass" contentWidth="400px" title="{i18nApp>DIALOG_TITLE}">
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" labelSpanL="3" labelSpanM="3"
+						layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024">
+						<f:content>
+							<Label text="{i18nApp>PERS_BTN_TXT}"/>
+							<Input value="{settings>/text/value}"/>
+							<Label text="{i18nApp>PERS_BTN_STL}"/>
+							<Select change="" selectedKey="{settings>/button_style/value}">
+								<items>
+									<core:Item key='Emphasized' text="{i18nApp>PERS_EMP}"/>
+									<core:Item key='Default' text="{i18nApp>PERS_STD}"/>
+								</items>
+							</Select>
+							<Label text="{i18nApp>PERS_BTN_ALN}"/>
+							<Select  selectedKey="{settings>/button_alignment/value}">
+								<items>
+									<core:Item key='End' text="{i18nApp>PERS_RIGHT}"/>
+									<core:Item key='Center' text="{i18nApp>PERS_CENTER}"/>
+									<core:Item key='Start' text="{i18nApp>PERS_LFT}"/>
+								</items>
+							</Select>
+							<Label text="{i18nApp>PERS_SHW_ICN}"/>
+							<Switch change='updateIcon' enabled="true" state="{settings>/show_button_icon/value}">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Switch>
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<beginButton>
+			<Button press="onWidgetSettingsDialogSave" text="{i18nApp>SAVE_BUTTON}" type="Emphasized"/>
+		</beginButton>
+		<endButton>
+			<Button press="onWidgetSettingsDialogClose" text="{i18nApp>CANCEL_BUTTON}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

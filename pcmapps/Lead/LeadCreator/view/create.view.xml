@@ -1,0 +1,77 @@
+<mvc:View height="100%" controllerName="c4c.create-LeadCollection.remote.view.create" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page
+		title="{path: 'i18n_Static>starterCreateTemplate.create.view.title,CHP.Lead.UI.HeaderInfo.TypeName.Name', formatter:'.formatTranslation'}"
+		class="marginBoxContent">
+		<content>
+			<f:SimpleForm id="LeadCollection_Form" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanS="4"
+				labelSpanL="1" labelSpanM="2" emptySpanL="2" emptySpanM="2" columnsL="2" columnsS="2" columnsM="2">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Name}"></Label>
+						<Input enabled="true" value="{/Name}" id="Name_449" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Company}"></Label>
+						<Input enabled="true" value="{/Company}" id="Company_450" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.ContactFirstName}"></Label>
+						<Input enabled="true" value="{/ContactFirstName}" id="ContactFirstName_451"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.ContactLastName}"></Label>
+						<Input enabled="true" value="{/ContactLastName}" id="ContactLastName_452" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.HouseNumber}"></Label>
+						<Input enabled="true" value="{/HouseNumber}" id="HouseNumber_453"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Street}"></Label>
+						<Input enabled="true" value="{/Street}" id="Street_454"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.City}"></Label>
+						<Input enabled="true" value="{/City}" id="City_455"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.PostalCode}"></Label>
+						<Input enabled="true" value="{/PostalCode}" id="PostalCode_456"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Country}"></Label>
+						<ComboBox enabled="true" name="Country" change="handleComboChange" items="{path:'/LeadCountry'}" id="Country_457"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.UserStatusCode}"></Label>
+						<ComboBox enabled="true" name="UserStatusCode" change="handleComboChange" items="{path:'/LeadUserStatusCode'}" id="UserStatusCode_458"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Category}"></Label>
+						<ComboBox enabled="true" name="Category" change="handleComboChange" items="{path:'/LeadCategory'}" id="Category_459"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<footer >
+			<Toolbar class="footer">
+				<Button text="{i18n_Static>starterCreateTemplate.create.view.reset.btn}" press='resetForm'/>
+				<ToolbarSpacer/>
+				<Button class="saveButton" text="{i18n_Static>starterCreateTemplate.create.view.save.btn}" press='saveForm'/>
+				<Button class="cancelButton" text="{i18n_Static>starterCreateTemplate.create.view.cancel.btn}" press='cancelForm'/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

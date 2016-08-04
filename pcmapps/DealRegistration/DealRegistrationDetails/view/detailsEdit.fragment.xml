@@ -1,0 +1,92 @@
+<core:FragmentDefinition xmlns="sap.m" controllerName="c4c.details-DealRegistrationCollection.local.view.details" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" id="DealRegistrationCollection_Form" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.DealID}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/DealRegistration/DealID}" id="DealID_622"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.DealName}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/DealRegistration/DealName}" id="DealName_623" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.StartDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true"
+							dateValue="{path:'EditObjectPageModel>/DealRegistration/StartDate', formatter:'.fnDateTimeFormatter'}" id="StartDate_624"
+							displayFormat="long" name="StartDate" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.EndDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true"
+							dateValue="{path:'EditObjectPageModel>/DealRegistration/EndDate', formatter:'.fnDateTimeFormatter'}" id="EndDate_625" displayFormat="long"
+							name="EndDate" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.TotalValue.TotalValueCurrencyCode}"></Label>
+						<l:HorizontalLayout class="create-horizontal">
+							<Input enabled="true" value="{EditObjectPageModel>/DealRegistration/TotalValue}" id="TotalValue_626" type="Number"
+								valueStateText="{i18n_Static>starterDetailsPage.details.Number.valueStateText}" liveChange="handleRequiredInputChange"></Input>
+							<ComboBox value="{EditObjectPageModel>/DealRegistration/DealRegistrationTotalValueCurrencyCodeValue}" name="TotalValueCurrencyCode"
+								change="handleComboChange" enabled="true" items="{path:'EditObjectPageModel>/DealRegistration/DealRegistrationTotalValueCurrencyCode'}"
+								id="TotalValueCurrencyCode_627"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+						</l:HorizontalLayout>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.CampaignID}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/DealRegistration/CampaignID}" id="CampaignID_629" name="CampaignID" type="Text"
+							placeholder="" showValueHelp="true" valueHelpRequest="openValueHelpDialog"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.UserStatusCode}"></Label>
+						<ComboBox value="{EditObjectPageModel>/DealRegistration/DealRegistrationUserStatusCodeValue}" name="UserStatusCode"
+							change="handleComboChange" enabled="true" items="{path:'EditObjectPageModel>/DealRegistration/DealRegistrationUserStatusCode'}"
+							id="UserStatusCode_630"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.Company}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/DealRegistration/Company}" id="Company_631" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.Country}"></Label>
+						<ComboBox value="{EditObjectPageModel>/DealRegistration/DealRegistrationCountryValue}" name="Country" change="handleComboChange"
+							enabled="true" items="{path:'EditObjectPageModel>/DealRegistration/DealRegistrationCountry'}" id="Country_632"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.City}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/DealRegistration/City}" id="City_633"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.PostalCode}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/DealRegistration/PostalCode}" id="PostalCode_634"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.ContactFirstName}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/DealRegistration/ContactFirstName}" id="ContactFirstName_635"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.ContactLastName}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/DealRegistration/ContactLastName}" id="ContactLastName_636"
+							liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

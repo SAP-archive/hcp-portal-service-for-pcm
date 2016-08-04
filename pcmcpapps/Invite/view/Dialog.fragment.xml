@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core">
+    <ViewSettingsDialog
+            confirm="handleConfirm">
+        <sortItems>
+            <ViewSettingsItem text="{i18n>invitees.table.col.name}" key="inviteeFirstName"  selected="true"/>
+            <ViewSettingsItem text="{i18n>invitees.table.col.email}" key="inviteeEmail" />
+            <ViewSettingsItem text="{i18n>invitees.table.col.status}" key="status" />
+        </sortItems>
+
+    </ViewSettingsDialog>
+</core:FragmentDefinition>

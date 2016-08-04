@@ -1,0 +1,187 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="c4c.details-appointmentcollection.local.view.details" xmlns:f="sap.ui.layout.form" height="100%">
+	<Page id="idPage" title="{i18n>CHP.Appointment.UI.HeaderInfo.TypeName.Subject}" class="sapUiFioriObjectPage" showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<Toolbar class="detailsToolbar">
+				<core:Icon src="sap-icon://appointment" class="toolbarImage sapThemePageBG-asColor"></core:Icon>
+				<Label text="{ObjectPageModel>/Appointment/SubjectName}" tooltip="{ObjectPageModel>/Appointment/SubjectName}" class="detailsToolbarLabel"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+			<IconTabBar select="handleIconTabBarSelect">
+				<items>
+					<IconTabFilter text="{i18n>CHP.Appointment.UI.Facets.UI.RefenceFacet.Appointment.UI.Identification}" key="Appointment">
+						<Toolbar design="Transparent" height="3rem">
+							<Text text="{i18n>CHP.Appointment.UI.Facets.UI.RefenceFacet.Appointment.UI.Identification}" class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="edit-overview" icon="sap-icon://edit" press="handleOverviewEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.view.Edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Appointment"/>
+								</customData>
+							</Button>
+							<Button class="confirmBtn" press="handleConfirmEdit" text="{i18n_Static>starterDetailsPage.details.view.Save.btn}" visible="false"></Button>
+							<Button class="cancelBtn" press="handleCancelEdit" text="{i18n_Static>starterDetailsPage.details.view.Cancel.btn}" visible="false"></Button>
+						</Toolbar>
+						<layout:VerticalLayout class="marginVerticalContent Appointment" width="100%">
+							<layout:content>
+								<core:Fragment fragmentName="c4c.details-appointmentcollection.local.view.detailsDisplay" type="XML"/>
+							</layout:content>
+						</layout:VerticalLayout>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Appointment.UI.Facets.UI.RefenceFacet.AppointmentInvolvedParty.UI.LineItem}" key="AppointmentInvolvedParty">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Appointment.UI.Facets.UI.RefenceFacet.AppointmentInvolvedParty.UI.LineItem', 'tableCountModel>/AppointmentInvolvedPartyCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="AppointmentInvolvedParty table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/AppointmentInvolvedParty'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.AppointmentInvolvedParty.UI.LineItem.UI.DataField.Name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.AppointmentInvolvedParty.UI.LineItem.UI.DataField.RoleText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.AppointmentInvolvedParty.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.AppointmentInvolvedParty.UI.LineItem.UI.DataField.Email}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Name}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>RoleText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Email}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Appointment.UI.Facets.UI.RefenceFacet.AppointmentNote.UI.LineItem}" key="AppointmentNote">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Appointment.UI.Facets.UI.RefenceFacet.AppointmentNote.UI.LineItem', 'tableCountModel>/AppointmentNoteCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="AppointmentNote"/>
+								</customData>
+							</Button>
+							<Button class="updateBtn" icon="sap-icon://edit" press="enableEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetUpdate.fragment.update.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="AppointmentNote"/>
+								</customData>
+							</Button>
+							<Button class="addBtn" icon="sap-icon://add" press="enableAdd" tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.add.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="AppointmentNote"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="AppointmentNote table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/AppointmentNote'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.AppointmentNote.UI.LineItem.UI.DataField.Text}"/>
+								</Column>
+								<Column width="30px" class="editableFacetColumn" visible="false"></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Text}"/>
+									</cells>
+									<cells>
+										<core:Icon src="sap-icon://edit" press="onEditFacetItem"></core:Icon>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Appointment.UI.Facets.UI.RefenceFacet.AppointmentAttachment.UI.LineItem}" key="AppointmentAttachment">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Appointment.UI.Facets.UI.RefenceFacet.AppointmentAttachment.UI.LineItem', 'tableCountModel>/AppointmentAttachmentCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="AppointmentAttachment"/>
+								</customData>
+							</Button>
+							<Button class="addBtn" icon="sap-icon://add" press="enableAdd" tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.add.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="AppointmentAttachment"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="AppointmentAttachment table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/AppointmentAttachment'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.AppointmentAttachment.UI.LineItem.UI.DataField.CategoryCode}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.AppointmentAttachment.UI.LineItem.UI.DataField.Name}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.AppointmentAttachment.UI.LineItem.UI.DataField.LinkWebURI}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>CategoryCodeText}"/>
+									</cells>
+									<cells>
+										<Link text="{ObjectPageModel>Name}" press="handleShowAttachment"></Link>
+									</cells>
+									<cells>
+										<Link text="{ObjectPageModel>LinkWebURI}" press="handleShowAttachment"></Link>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<BusyIndicator visible="{ObjectPageState>/showBusyIndicator}" class="details-bi"></BusyIndicator>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button icon="sap-icon://action" press="openActions" tooltip="{i18n_Static>starterDetailsPage.details.view.setAs.tooltip}">
+						<customData>
+							<core:CustomData key="model" value="ObjectPageModel"/>
+							<core:CustomData key="table" value="Appointment"/>
+						</customData>
+					</Button>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</core:View>

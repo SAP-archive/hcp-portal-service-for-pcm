@@ -1,0 +1,120 @@
+<core:FragmentDefinition
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:f="sap.ui.layout.form"
+        xmlns="sap.m">
+    <l:Grid
+            defaultSpan="L12 M12 S12"
+            width="auto">
+    <l:content>
+        <f:SimpleForm
+                      minWidth="1024"
+                      maxContainerCols="2"
+                      editable="true"
+                      layout="ResponsiveGridLayout"
+
+                      labelSpanL="3"
+                      labelSpanM="3"
+                      emptySpanL="4"
+                      emptySpanM="4"
+                      columnsL="1"
+                      columnsM="1"
+                      class="editableForm">
+            <f:content>
+
+                <VBox class="box">
+                    <Label text="{i18n>Step3.MainIndustry}">
+                        <layoutData>
+                            <l:GridData span="L12 M12 S12" />
+                        </layoutData>
+                    </Label>
+
+                    <ComboBox id="mainIndustry" class="ddbStyle" selectionChange="disableCheckBox" binding="{/PartnerData/}" selectedKey="{mainIndustry}"
+                              items="{
+                                      path: '/industries',
+                                      sorter: { path: 'Industry' }
+                                    }">
+
+
+                        <core:Item key="{code}" text="{Industry}" />
+                        <layoutData>
+                            <l:GridData
+                                    span="L12 M12 S12"
+                                    />
+                        </layoutData>
+                    </ComboBox>
+
+                </VBox>
+
+
+                <VBox>
+                    <Label text="{i18n>Step3.Header}"/>
+
+                        <l:Grid width="100%"
+                                id="industryCheckBox"  binding="{/PartnerData/}"
+                                class="gridMarginTop"
+                                hSpacing="2"
+                                defaultSpan="L4 M6 S12">
+                            <l:content>
+
+
+                            </l:content>
+                        </l:Grid>
+
+                    <layoutData>
+                        <l:GridData
+                                span="L12 M12 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step3.BrieflyDescribe}">
+
+                    </Label>
+                    <Input id="partnerOnboardingTextData"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L12 M12 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step3.YearFounded}"/>
+                    <Input id="txtYearFounded" type="Number" binding="{/PartnerData/}" value="{YearFounded}" valueStateText="{i18n>Error.Step3.YearFounded}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+
+                <VBox>
+                    <Label text="{i18n>Step3.TotalNumberofCustomers}"/>
+                    <Input id="txtTotalNumOfCust" type="Number" binding="{/PartnerData/}" value="{NumberOfCustomers}" valueStateText="{i18n>Error.Step3.TotalCustomers}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step3.NumOfEmployees}"/>
+                    <Input id="txtNoOfEmployees" type="Number" binding="{/PartnerData/}" value="{NumberOfEmployees}" valueStateText="{i18n>Error.Step3.Employees}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+            </f:content>
+        </f:SimpleForm>
+    </l:content>
+</l:Grid>
+
+</core:FragmentDefinition>

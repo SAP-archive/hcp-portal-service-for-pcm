@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified"
+	xmlns="sap.m">
+	<Dialog class="sapUiPopupWithPadding widgetClass" contentWidth="350px" showHeader='false'>
+		<content>
+			<l:Grid class='sapUiSmallMarginTopBottom' defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<FlexBox alignItems="Center" direction="Column" justifyContent="Center">
+						<items>
+							<core:Icon class='sapThemeBrand-asBackgroundColor sapThemeTextInverted-asColor registration-dialog-icon sapUiTinyMarginTopBottom'
+								src="sap-icon://edit"></core:Icon>
+						</items>
+						<Text class='registration-dialog-title sapUiTinyMarginTopBottom sapThemeLightText' text="{i18nApp>DIALOG_TITLE}" textAlign='center'></Text>
+					</FlexBox>
+					<Text class='sapThemeLightText sapUiSmallMarginTopBottom' text='{i18nApp>DIALOG_DESC}'></Text>
+					<l:FixFlex class="fixFlexVertical" visible='{registrationDataModel>/callback/showFields}'>
+						<l:fixContent>
+							<Input id="partner-registeration-form-firstnameInput" placeholder="{i18nApp>LABEL_FIRST_NAME}" type="Text"
+								value="{ path : 'registrationDataModel>/postData/candidateFirstName', type : 'sap.ui.model.type.String',constraints : { minLength: 1 } }"
+								valueStateText="{i18nApp>ERROR_FIELD_REQUIRED}"/>
+							<Input id="partner-registeration-form-lastnameInput" placeholder="{i18nApp>LABEL_LAST_NAME}" type="Text"
+								value="{ path : 'registrationDataModel>/postData/candidateLastName',type : 'sap.ui.model.type.String', constraints : { minLength: 1 } }"
+								valueStateText="{i18nApp>ERROR_FIELD_REQUIRED}"/>
+							<Input id="partner-registeration-form-emailInput" placeholder="{i18nApp>LABEL_EMAIL}" type="Email"
+								value="{ path : 'registrationDataModel>/postData/mail', type : '.typeEMail' }" valueStateText="{i18nApp>ERROR_NOT_VALID_EMAIL}"/>
+						</l:fixContent>
+					</l:FixFlex>
+				</l:content>
+			</l:Grid>
+	
+			<MessageStrip id="registrationMessageStrip" class="sapUiMediumMarginBottom" showIcon="false" text='{registrationDataModel>/callback/msg}'
+				type='{registrationDataModel>/callback/status}' visible='{registrationDataModel>/callback/displayMessage}'></MessageStrip>
+		</content>
+		<beginButton>
+			<Button id="popupRegButton" press="register" text="{i18nApp>REGISTER_BUTTON}" visible='{registrationDataModel>/callback/showFields}' type="Emphasized"/>
+		</beginButton>
+		<endButton>
+			<Button press="closeDialog" text="{i18nApp>CLOSE_BUTTON}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

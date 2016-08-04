@@ -1,0 +1,54 @@
+{
+  "_version": "1.3.0",
+  "sap.app": {
+    "_version": "1.3.0",
+    "id": "hcp://pcmsitetemplates/partnerportal/pages/partner_portal.json",
+    "baseId": "hcp://pcmsitetemplates/partnerportal/pageTemplates/FLPPage/manifest.json",
+    "title": "Partner Portal",
+    "description": "",
+    "crossNavigation": {
+      "inbounds": {
+        "0":{
+
+          "semanticObject": "Shell",
+          "action": "home",
+          "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+          }
+        },
+        "1":{
+          "semanticObject": "Home",
+          "action": "show",
+          "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+          }
+        }
+      },
+      "context": {}
+    }
+  },
+  "sap.cloud.portal": {
+      "applicationType": "page"
+  },
+  "sap.ui5":{
+      "_version": "1.2.0",
+      "componentName":"sap.ushell.components.flp"
+  },
+  "sap.flp": {
+       "config": {
+          "groups": [
+            "hcp://pcmsitetemplates/partnerportal/groups/overview.json",
+            "hcp://pcmsitetemplates/partnerportal/groups/applications.json",
+            "hcp://pcmsitetemplates/partnerportal/groups/new_transactions.json"
+          ]
+       }
+   },
+   "sap.ui": {
+        "_version": "1.3.0",
+        "technology": "UI5"
+   }
+}

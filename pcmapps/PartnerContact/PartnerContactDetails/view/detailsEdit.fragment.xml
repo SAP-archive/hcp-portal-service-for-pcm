@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns="sap.m" controllerName="c4c.details-PartnerContactCollection.local.view.details" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" id="PartnerContactCollection_Form" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.PartnerContact.UI.Identification.UI.DataField.EmployeeID}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/PartnerContact/EmployeeID}" id="EmployeeID_530"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.PartnerContact.UI.Identification.UI.DataField.FirstName}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/PartnerContact/FirstName}" id="FirstName_531" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.PartnerContact.UI.Identification.UI.DataField.MiddleName}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/PartnerContact/MiddleName}" id="MiddleName_532" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.PartnerContact.UI.Identification.UI.DataField.LastName}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/PartnerContact/LastName}" id="LastName_533" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.PartnerContact.UI.Identification.UI.DataField.StatusText}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/PartnerContact/StatusText}" id="StatusText_534"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.PartnerContact.UI.Identification.UI.DataField.Department}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/PartnerContact/Department}" id="Department_535"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.PartnerContact.UI.Identification.UI.DataField.Function}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/PartnerContact/Function}" id="Function_536"></Input>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

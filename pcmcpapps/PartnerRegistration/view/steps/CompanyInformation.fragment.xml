@@ -1,0 +1,188 @@
+<core:FragmentDefinition
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:f="sap.ui.layout.form"
+        xmlns="sap.m">
+
+    <f:SimpleForm
+            minWidth="1024"
+            maxContainerCols="2"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            hSpacing="2"
+            vSpacing="2"
+            labelSpanL="3"
+            labelSpanM="3"
+            emptySpanL="4"
+            emptySpanM="4"
+            columnsL="1"
+            columnsM="1"
+            class="editableForm">
+        <f:content>
+
+            <VBox>
+                <Label text="{i18n>Step1.CompanyName}">
+
+                </Label>
+                <Input id="txtCompanyName" binding="{/PartnerData/}" value="{CompanyName}" valueStateText="{i18n>Error.Step1.CompanyName}"/>
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+            <VBox>
+                <Label text="{i18n>Step1.Address}">
+
+                </Label>
+                <Input id="txtAddress" binding="{/PartnerData/}" value="{Address}" valueStateText="{i18n>Error.Step1.Address}"/>
+
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+            <VBox>
+            <Label text="{i18n>Step1.City}">
+
+            </Label>
+            <Input id="txtCity" binding="{/PartnerData/}" value="{City}" valueStateText="{i18n>Error.Step1.City}"/>
+
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+            <VBox>
+                <Label text="{i18n>Step1.Country}" />
+
+                <ComboBox id="ddbCountry" class="ddbStyle" valueStateText="{i18n>Error.Step1.Country}" binding="{/PartnerData/}" selectedKey="{Country}"
+                        items="{
+                                      path: '/countries',
+                                      sorter: { path: 'Description' }
+                                    }">
+                    <core:Item key="{Code}" text="{Description}"/>
+
+                </ComboBox>
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+            <VBox>
+                <Label text="{i18n>Step1.PostalCode}"/>
+                <Input id="txtPostalCode" binding="{/PartnerData/}" value="{PostalCode}" valueStateText="{i18n>Error.Step1.PostalCode}"/>
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+            <VBox>
+                <Label text="{i18n>Step1.CompanyPhone}">
+
+                </Label>
+                <Input id="txtCompanyPhone" binding="{/PartnerData/}" value="{CompanyPhone}" valueStateText="{i18n>Error.Step1.CompanyPhone}"/>
+
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+            <VBox>
+            <Label text="{i18n>Step1.CompanyEmail}">
+
+            </Label>
+            <Input id="txtCompanyEmail" binding="{/PartnerData/}" value="{CompanyEmail}" valueStateText="{i18n>Error.Step1.CompanyEmail}"/>
+
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+            <VBox>
+            <Label text="{i18n>Step1.CompanyWebAddress}">
+
+            </Label>
+            <Input id="txtCompanyWebAddress" binding="{/PartnerData/}" value="{CompanyWebAddress}" valueStateText="{i18n>Error.Step1.CompanyWebAddress}"/>
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+
+            <Toolbar design="Transparent" vSpacing="3" height="0rem">
+                <layoutData>
+                    <l:GridData
+                            span="L12 M12 S12"
+                            />
+                </layoutData>
+            </Toolbar>
+
+            <VBox>
+            <Label text="{i18n>Step1.PrimaryCommunicationLanguage}">
+
+            </Label>
+            <ComboBox id="ddbCommLang" class="ddbStyle" valueStateText="{i18n>Error.Step1.PrimaryCommunicationLanguage}" binding="{/PartnerData/}" selectedKey="{PrimaryCommunicationLanguage}"
+                    items="{
+                                  path: '/language',
+                                  sorter: { path: 'Description' }
+                                }">
+                <core:Item key="{Code}" text="{Description}"/>
+
+            </ComboBox>
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+
+            <VBox>
+            <Label text="{i18n>Step1.VATRegistrationCorporateTax}">
+
+            </Label>
+            <Input id="txtVat" binding="{/PartnerData/}" value="{VatRegistrationNumber}">
+
+            </Input>
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+            <VBox>
+            <Label text="{i18n>Step1.DUNS}">
+
+            </Label>
+            <Input id="txtDuns" maxLength="9" binding="{/PartnerData/}" value="{DUNSNumber}" valueStateText="{i18n>Error.Step1.DUNS}"/>
+                <layoutData>
+                    <l:GridData
+                            span="L4 M6 S12"
+                            />
+                </layoutData>
+            </VBox>
+
+
+        </f:content>
+    </f:SimpleForm>
+
+
+</core:FragmentDefinition>

@@ -1,0 +1,88 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:m="sap.m"
+	controllerName="c4c.table-dealregistrationcollection.remote.view.table" xmlns:html="http://www.w3.org/1999/xhtml" class="tableView">
+	<m:Page title="{i18n>CHP.DealRegistration.UI.HeaderInfo.TypeNamePlural.Name}" showNavButton="true" class="pageEl table-pattern-page"
+		navButtonPress="handleNavButtonPress">
+		<m:content>
+			<m:VBox>
+				<m:Table class="table" id="c4cTable" inset="false" growingScrollToLoad="false" growing="false" includeItemInSelection="true"
+					mode="{tableModel>/mode}" growingThreshold="{tableModel>/growingThreshold}" items="{ path: '/boCollection', filters: [] }">
+					<m:columns>
+						<m:Column>
+							<m:Label text="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.DealID}"
+								tooltip="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.DealID}"/>
+						</m:Column>
+						<m:Column>
+							<m:Label text="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.DealName}"
+								tooltip="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.DealName}"/>
+						</m:Column>
+						<m:Column minScreenWidth="Tablet" demandPopin="true">
+							<m:Label text="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.UserStatusCodeText}"
+								tooltip="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.UserStatusCodeText}"/>
+						</m:Column>
+						<m:Column minScreenWidth="Tablet" demandPopin="true">
+							<m:Label text="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.Company}"
+								tooltip="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.Company}"/>
+						</m:Column>
+						<m:Column minScreenWidth="Tablet" demandPopin="true">
+							<m:Label text="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.StartDate}"
+								tooltip="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.StartDate}"/>
+						</m:Column>
+						<m:Column minScreenWidth="Tablet" demandPopin="true">
+							<m:Label text="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.EndDate}"
+								tooltip="{i18n>CHP.DealRegistration.UI.LineItem.UI.DataField.EndDate}"/>
+						</m:Column>
+					</m:columns>
+					<m:infoToolbar>
+						<m:Toolbar visible="{tableModel>/showInfoBar}" active="true" press="toolBarPressed"
+							tooltip="{i18n_Static>starterTableTemplate.table.infoToolbar.tooltip}">
+							<m:Label text="{tableModel>/infoBarLabel}"></m:Label>
+						</m:Toolbar>
+					</m:infoToolbar>
+					<m:headerToolbar>
+						<m:Toolbar class="tableHeader">
+							<m:ComboBox id="queryCombobox" class="tableComboBox" selectionChange="queryChanged"
+								selectedKey="CHP.DealRegistration.UI.Query.UI.Filter.AllDeals">
+								<core:Item key="CHP.DealRegistration.UI.Query.UI.Filter.AllDeals" text="{i18n_AnnoExt>CHP.DealRegistration.UI.Query.UI.Filter.AllDeals}"/>
+							</m:ComboBox>
+							<m:ToolbarSpacer></m:ToolbarSpacer>
+							<m:Button class="filterBtn" icon="sap-icon://drop-down-list" press="openDialog"
+								tooltip="{i18n_Static>starterTableTemplate.table.settings.btn}" enabled="{tableModel>/filterBtnEnable}"></m:Button>
+						</m:Toolbar>
+					</m:headerToolbar>
+					<m:items >
+						<m:ColumnListItem>
+							<m:cells >
+								<m:Label text="{DealID}" tooltip="{DealID}"/>
+								<m:Link text="{DealName}" tooltip="{DealName}" press="navigateToDetails">
+									<m:customData>
+										<core:CustomData key="action" value="Details"/>
+										<core:CustomData key="targetObject" value="DealRegistration"/>
+									</m:customData>
+								</m:Link>
+								<m:Label text="{UserStatusCodeText}" tooltip="{UserStatusCodeText}"/>
+								<m:Label text="{Company}" tooltip="{Company}"/>
+								<m:Label text="{path:'StartDate', formatter:'.formatDate'}" tooltip="{path:'StartDate', formatter:'.formatDate'}"/>
+								<m:Label text="{path:'EndDate', formatter:'.formatDate'}" tooltip="{path:'EndDate', formatter:'.formatDate'}"/>
+							</m:cells>
+						</m:ColumnListItem>
+					</m:items>
+				</m:Table>
+				<m:VBox class="table-trigger">
+					<m:Text class="trigger-text" text="{i18n_Static>starterTableTemplate.More}"></m:Text>
+					<m:Text class="trigger-description" text="{i18n_Static>starterTableTemplate.More}"></m:Text>
+					<m:BusyIndicator visible="{tableSettingsModel>/showTriggerBusyIndicator}" class="table-trigger-bi"></m:BusyIndicator>
+				</m:VBox>
+			</m:VBox>
+			<m:BusyIndicator visible="{tableSettingsModel>/showBusyIndicator}" class="table-bi"></m:BusyIndicator>
+		</m:content>
+		<m:footer>
+			<m:Toolbar class="tableFooter">
+				<m:content>
+					<m:ToolbarSpacer></m:ToolbarSpacer>
+					<m:Button class="addRecordBtn" icon="sap-icon://add" press="handleCreateRecord"
+						tooltip="{i18n_Static>starterTableTemplate.table.addRecord.btn}"></m:Button>
+				</m:content>
+			</m:Toolbar>
+		</m:footer>
+	</m:Page>
+</mvc:View>

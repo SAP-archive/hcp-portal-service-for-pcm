@@ -1,0 +1,98 @@
+<core:FragmentDefinition xmlns="sap.m" controllerName="c4c.details-OpportunityCollection.local.view.details" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" id="OpportunityCollection_Form" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.OpportunityName}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Opportunity/OpportunityName}" id="OpportunityName_379"
+							liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.ID}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Opportunity/ID}" id="ID_380"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.AccountName}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Opportunity/AccountName}" id="AccountName_381"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.AccountID}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Opportunity/AccountID}" id="AccountID_382" name="AccountID" type="Text" placeholder=""
+							showValueHelp="true" valueHelpRequest="openValueHelpDialog"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.Probability}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Opportunity/Probability}" id="Probability_383" type="Number"
+							valueStateText="{i18n_Static>starterDetailsPage.details.Number.valueStateText}" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.Category}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Opportunity/OpportunityCategoryValue}" name="Category" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Opportunity/OpportunityCategory'}" id="Category_384"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.PriorityText}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Opportunity/PriorityText}" id="PriorityText_385"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.StartDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true"
+							dateValue="{path:'EditObjectPageModel>/Opportunity/StartDate', formatter:'.fnDateTimeFormatter'}" id="StartDate_386" displayFormat="long"
+							name="StartDate" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.CloseDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true"
+							dateValue="{path:'EditObjectPageModel>/Opportunity/CloseDate', formatter:'.fnDateTimeFormatter'}" id="CloseDate_387" displayFormat="long"
+							name="CloseDate" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.ExpectedValue.ExpectedValueCurrencyCode}"></Label>
+						<l:HorizontalLayout class="create-horizontal">
+							<Input enabled="true" value="{EditObjectPageModel>/Opportunity/ExpectedValue}" id="ExpectedValue_388" type="Number"
+								valueStateText="{i18n_Static>starterDetailsPage.details.Number.valueStateText}" liveChange="handleRequiredInputChange"></Input>
+							<ComboBox value="{EditObjectPageModel>/Opportunity/OpportunityExpectedValueCurrencyCodeValue}" name="ExpectedValueCurrencyCode"
+								change="handleComboChange" enabled="true" items="{path:'EditObjectPageModel>/Opportunity/OpportunityExpectedValueCurrencyCode'}"
+								id="ExpectedValueCurrencyCode_389"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+						</l:HorizontalLayout>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.SalesPhase}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Opportunity/OpportunitySalesPhaseValue}" name="SalesPhase" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Opportunity/OpportunitySalesPhase'}" id="SalesPhase_391"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.SalesCycle}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Opportunity/OpportunitySalesCycleValue}" name="SalesCycle" change="handleComboChange" enabled="false"
+							items="{path:'EditObjectPageModel>/Opportunity/OpportunitySalesCycle'}" id="SalesCycle_392"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.StatusText}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Opportunity/StatusText}" id="StatusText_393"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.OwnerName}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Opportunity/OwnerName}" id="OwnerName_394"></Input>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

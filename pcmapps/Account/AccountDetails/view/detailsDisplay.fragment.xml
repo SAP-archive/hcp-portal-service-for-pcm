@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+				emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Account.UI.Identification.UI.DataField.AccountName1}"></Label>
+						<Text text="{ObjectPageModel>/Account/AccountName1}" tooltip="{ObjectPageModel>/Account/AccountName1}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Account.UI.Identification.UI.DataField.AccountName2}"></Label>
+						<Text text="{ObjectPageModel>/Account/AccountName2}" tooltip="{ObjectPageModel>/Account/AccountName2}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Account.UI.Identification.UI.DataField.Phone}"></Label>
+						<Text text="{ObjectPageModel>/Account/Phone}" tooltip="{ObjectPageModel>/Account/Phone}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Account.UI.Identification.UI.DataField.Email}"></Label>
+						<Text text="{ObjectPageModel>/Account/Email}" tooltip="{ObjectPageModel>/Account/Email}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Account.UI.Identification.UI.DataField.Web}"></Label>
+						<Text text="{ObjectPageModel>/Account/Web}" tooltip="{ObjectPageModel>/Account/Web}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Account.UI.Identification.UI.DataField.Address}"></Label>
+						<Text text="{ObjectPageModel>/Account/Address}" tooltip="{ObjectPageModel>/Account/Address}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Account.UI.Identification.UI.DataField.EmployeeResponsible}"></Label>
+						<Text text="{ObjectPageModel>/Account/EmployeeResponsible}" tooltip="{ObjectPageModel>/Account/EmployeeResponsible}"></Text>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

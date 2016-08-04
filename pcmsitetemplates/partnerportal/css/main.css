@@ -1,0 +1,20 @@
+.cpv2-page-1280 {
+    max-width:1280px;
+    margin:0 auto;
+    background-color:white;
+}
+
+.siteDesignerShell .sapUShellApplicationContainer{
+	overflow:inherit;
+}
+.sapUShellApplicationContainer{
+	overflow:auto;
+}
+
+#pages_view{
+	display:block;
+}
+
+.contentArea{
+ background-color:white;	
+}

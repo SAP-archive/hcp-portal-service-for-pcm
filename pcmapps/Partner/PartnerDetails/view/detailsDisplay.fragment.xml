@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+				emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Partner.UI.Identification.UI.DataField.Name}"></Label>
+						<Text text="{ObjectPageModel>/Partner/Name}" tooltip="{ObjectPageModel>/Partner/Name}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Partner.UI.Identification.UI.DataField.AdditionalName}"></Label>
+						<Text text="{ObjectPageModel>/Partner/AdditionalName}" tooltip="{ObjectPageModel>/Partner/AdditionalName}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Partner.UI.Identification.UI.DataField.LifeCycleStatusCodeText}"></Label>
+						<Text text="{ObjectPageModel>/Partner/LifeCycleStatusCodeText}" tooltip="{ObjectPageModel>/Partner/LifeCycleStatusCodeText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Partner.UI.Identification.UI.DataField.ABCClassification}"></Label>
+						<Text text="{ObjectPageModel>/Partner/ABCClassification}" tooltip="{ObjectPageModel>/Partner/ABCClassification}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Partner.UI.Identification.UI.DataField.Level}"></Label>
+						<Text text="{ObjectPageModel>/Partner/LevelText}" tooltip="{ObjectPageModel>/Partner/LevelText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Partner.UI.Identification.UI.DataField.IndustryCodeText}"></Label>
+						<Text text="{ObjectPageModel>/Partner/IndustryCodeText}" tooltip="{ObjectPageModel>/Partner/IndustryCodeText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Partner.UI.Identification.UI.DataField.DUNS}"></Label>
+						<Text text="{ObjectPageModel>/Partner/DUNS}" tooltip="{ObjectPageModel>/Partner/DUNS}"></Text>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

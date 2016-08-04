@@ -1,0 +1,316 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="c4c.details-leadcollection.local.view.details" xmlns:f="sap.ui.layout.form" height="100%">
+	<Page id="idPage" title="{i18n>CHP.Lead.UI.HeaderInfo.TypeName.Name}" class="sapUiFioriObjectPage" showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<Toolbar class="detailsToolbar">
+				<core:Icon src="sap-icon://lead" class="toolbarImage sapThemePageBG-asColor"></core:Icon>
+				<Label text="{ObjectPageModel>/Lead/ID}" tooltip="{ObjectPageModel>/Lead/ID}" class="detailsToolbarLabel"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+			<IconTabBar select="handleIconTabBarSelect">
+				<items>
+					<IconTabFilter text="{i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.Lead.UI.Identification}" key="Lead">
+						<Toolbar design="Transparent" height="3rem">
+							<Text text="{i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.Lead.UI.Identification}" class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="edit-overview" icon="sap-icon://edit" press="handleOverviewEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.view.Edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Lead"/>
+								</customData>
+							</Button>
+							<Button class="confirmBtn" press="handleConfirmEdit" text="{i18n_Static>starterDetailsPage.details.view.Save.btn}" visible="false"></Button>
+							<Button class="cancelBtn" press="handleCancelEdit" text="{i18n_Static>starterDetailsPage.details.view.Cancel.btn}" visible="false"></Button>
+						</Toolbar>
+						<layout:VerticalLayout class="marginVerticalContent Lead" width="100%">
+							<layout:content>
+								<core:Fragment fragmentName="c4c.details-leadcollection.local.view.detailsDisplay" type="XML"/>
+							</layout:content>
+						</layout:VerticalLayout>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadItem.UI.LineItem}" key="LeadItem">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadItem.UI.LineItem', 'tableCountModel>/LeadItemCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="LeadItem"/>
+								</customData>
+							</Button>
+							<Button class="updateBtn" icon="sap-icon://edit" press="enableEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetUpdate.fragment.update.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="LeadItem"/>
+								</customData>
+							</Button>
+							<Button class="addBtn" icon="sap-icon://add" press="enableAdd" tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.add.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="LeadItem"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="LeadItem table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/LeadItem'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.LeadItem.UI.LineItem.UI.DataField.ProductID}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.LeadItem.UI.LineItem.UI.DataField.ProductDescription}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadItem.UI.LineItem.UI.DataField.Quantity.QuantityUnitOfMeasure}"/>
+								</Column>
+								<Column width="30px" class="editableFacetColumn" visible="false"></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>ProductID}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>ProductDescription}"/>
+									</cells>
+									<cells>
+										<Text text="{parts: ['ObjectPageModel>Quantity', 'ObjectPageModel>QuantityUnitOfMeasure'] , formatter:'.getFieldDetails'}"/>
+									</cells>
+									<cells>
+										<core:Icon src="sap-icon://edit" press="onEditFacetItem"></core:Icon>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadContact.UI.LineItem}" key="LeadContact">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadContact.UI.LineItem', 'tableCountModel>/LeadContactCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="LeadContact table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/LeadContact'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.LeadContact.UI.LineItem.UI.DataField.Name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.LeadContact.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadContact.UI.LineItem.UI.DataField.Mobile}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadContact.UI.LineItem.UI.DataField.Email}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Name}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Mobile}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Email}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadInvolvedParty.UI.LineItem}" key="LeadInvolvedParty">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadInvolvedParty.UI.LineItem', 'tableCountModel>/LeadInvolvedPartyCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="LeadInvolvedParty table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/LeadInvolvedParty'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.LeadInvolvedParty.UI.LineItem.UI.DataField.Name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.LeadInvolvedParty.UI.LineItem.UI.DataField.RoleText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadInvolvedParty.UI.LineItem.UI.DataField.AddressHostUUID}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadInvolvedParty.UI.LineItem.UI.DataField.Email}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadInvolvedParty.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Name}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>RoleText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>AddressHostUUID}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Email}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadSalesAndMarketingTeam.UI.LineItem}" key="LeadSalesAndMarketingTeam">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadSalesAndMarketingTeam.UI.LineItem', 'tableCountModel>/LeadSalesAndMarketingTeamCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="LeadSalesAndMarketingTeam table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/LeadSalesAndMarketingTeam'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.LeadSalesAndMarketingTeam.UI.LineItem.UI.DataField.Name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.LeadSalesAndMarketingTeam.UI.LineItem.UI.DataField.RoleText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadSalesAndMarketingTeam.UI.LineItem.UI.DataField.Email}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadSalesAndMarketingTeam.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Name}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>RoleText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Email}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadConversion.UI.LineItem}" key="LeadConversion">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadConversion.UI.LineItem', 'tableCountModel>/LeadConversionCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="LeadConversion table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/LeadConversion'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.LeadConversion.UI.LineItem.UI.DataField.SalesOpportunityID}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.LeadConversion.UI.LineItem.UI.DataField.CreationDateTime}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadConversion.UI.LineItem.UI.DataField.OwnerName}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>SalesOpportunityID}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'ObjectPageModel>CreationDateTime', formatter:'.formatDate'}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>OwnerName}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadAttachment.UI.LineItem}" key="LeadAttachment">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Lead.UI.Facets.UI.RefenceFacet.LeadAttachment.UI.LineItem', 'tableCountModel>/LeadAttachmentCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="LeadAttachment"/>
+								</customData>
+							</Button>
+							<Button class="addBtn" icon="sap-icon://add" press="enableAdd" tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.add.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="LeadAttachment"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="LeadAttachment table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/LeadAttachment'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.LeadAttachment.UI.LineItem.UI.DataField.CategoryCode}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.LeadAttachment.UI.LineItem.UI.DataField.Name}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.LeadAttachment.UI.LineItem.UI.DataField.LinkWebURI}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>CategoryCodeText}"/>
+									</cells>
+									<cells>
+										<Link text="{ObjectPageModel>Name}" press="handleShowAttachment"></Link>
+									</cells>
+									<cells>
+										<Link text="{ObjectPageModel>LinkWebURI}" press="handleShowAttachment"></Link>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<BusyIndicator visible="{ObjectPageState>/showBusyIndicator}" class="details-bi"></BusyIndicator>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</core:View>

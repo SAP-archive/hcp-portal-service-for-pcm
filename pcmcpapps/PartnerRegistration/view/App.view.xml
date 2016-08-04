@@ -1,0 +1,98 @@
+<core:View xmlns:core="sap.ui.core"
+           xmlns="sap.m"
+           xmlns:l="sap.ui.layout"
+           xmlns:f="sap.ui.layout.form"
+           xmlns:m="sap.m"
+           controllerName="c4c.registration.local.view.App"
+           xmlns:html="http://www.w3.org/1999/xhtml">
+    <m:Page
+
+            title="{i18n>page.title}"
+            showNavButton="false"
+            id="pageRegWizard"
+            height="100%"
+          >
+
+        <IconTabBar
+
+                expandable="false"
+                id="wizardTabBar"
+                select="wizardSelectTab">
+            <items>
+                <IconTabFilter
+
+                        iconColor="Positive"
+                        design="Vertical"
+
+                        text="{i18n>Step0.Title}"
+
+                        key="BecomeAPartner">
+
+                </IconTabFilter>
+
+                <IconTabSeparator icon="sap-icon://open-command-field"/>
+                <IconTabFilter
+
+                        iconColor="Positive"
+                        design="Vertical"
+
+                        text="{i18n>Step1.Title}"
+                        key="CompanyInformation"/>
+                <IconTabSeparator icon="sap-icon://open-command-field"/>
+                <IconTabFilter
+
+                        iconColor="Positive"
+                        design="Vertical"
+
+                        text="{i18n>Step2.Title}"
+                        key="ContactInformation"/>
+                <IconTabSeparator icon="sap-icon://open-command-field"/>
+                <IconTabFilter
+
+                        iconColor="Positive"
+                        design="Vertical"
+
+                        text="{i18n>Step3.Title}"
+                        key="AdditionalInformation"/>
+
+            </items>
+        </IconTabBar>
+
+        <content>
+
+            <NavContainer
+                    id="wizardContent"
+
+                    class="navContainerControl">
+
+                <pages id="wizard-steps">
+
+                    <m:Page id="BecomeAPartnerPage" showHeader="false">
+                        <core:Fragment fragmentName="c4c.registration.local.view.steps.BecomeAPartner" type="XML"/>
+                    </m:Page>
+                    <m:Page id="CompanyInformationPage" showHeader="false">
+                        <core:Fragment fragmentName="c4c.registration.local.view.steps.CompanyInformation" type="XML"/>
+                    </m:Page>
+
+                    <m:Page id="ContactInformationPage" showHeader="false">
+                        <core:Fragment fragmentName="c4c.registration.local.view.steps.ContactInformation" type="XML"/>
+                    </m:Page>
+                    <m:Page id="AdditionalInformationPage" showHeader="false">
+                        <core:Fragment fragmentName="c4c.registration.local.view.steps.AdditionalInformation" type="XML"/>
+                    </m:Page>
+                    <m:Page id="SuccessPage" showHeader="false">
+                        <core:Fragment fragmentName="c4c.registration.local.view.steps.Success" type="XML"/>
+                    </m:Page>
+                </pages>
+            </NavContainer>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button id="backBtn" text="{i18n>Button.Back}" press="back"/>
+                <Button id="next_submit" text="{i18n>Button.Continue}" press="next" />
+            </Toolbar>
+        </footer>
+    </m:Page>
+
+</core:View>

@@ -1,0 +1,77 @@
+{
+  "_version": "1.1",
+  "identification": {
+    "id": "hcp://pcmsitetemplates/partnerportal/catalogs/partner_applications.json",
+    "title": "Partner Applications",
+    "description": "Partner Applications Content Package",
+    "entityType": "catalog"
+  },
+  "payload": {
+    "appDescriptors": [
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/tasks.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/task_details.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/create_new_task.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/opportunities.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/opportunity_details.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/create_new_opportunity.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/my_profile.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/leads.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/appointments.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/create_new_lead.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/lead_details.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/appointment_details.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/create_new_appointment.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/deal_registrations.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/deal_registration_details.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/applications/create_deal_registration.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+Dear ${user.firstName} ${user.lastName},
+
+${user.header}
+
+${user.inviter_name} has invited you to join ${user.sp_name}. To accept the invitation use the link below.
+
+${user.activate_account_link}
+
+If the link above is not displayed or does not work, copy and paste the link below to the address bar of your browser..
+
+${user.footer}
+
+Best regards,
+Your SAP ID Service Team
+
+This e-mail may contain trade secrets or privileged, undisclosed, or otherwise confidential information. If you have received this e-mail in error, you are hereby notified that any review, copying, or distribution of it is strictly prohibited. Please inform us immediately and destroy the original transmittal. Thank you for your cooperation.

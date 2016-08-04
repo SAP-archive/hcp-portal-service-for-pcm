@@ -1,0 +1,12 @@
+[
+  {
+    "id": "hcp://pcmsitetemplates/partnerportal/site.json",
+    "_entityType": "PORTAL_SITE_V2_TEMPLATE_SITE",
+    "name": "Partner Portal",
+    "description": "A sample partner portal site template. This template is provided by SAP.",
+    "path": "partnerportal",
+    "thumbnail": "partnerportal/thumbnail.png",
+    "preview": "partnerportal/thumbnail.png",
+    "themes": []
+  }
+]

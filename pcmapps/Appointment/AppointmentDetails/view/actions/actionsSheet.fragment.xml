@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ActionSheet placement="Top">
+		<buttons>
+			<Button text="{i18n_AnnoExt>CHP.Appointment.UI.BOAction.UI.Action.SetasInProcess}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_App_InProcess"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+			<Button text="{i18n_AnnoExt>CHP.Appointment.UI.BOAction.UI.Action.SetasCompleted}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_App_AsCompleted"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

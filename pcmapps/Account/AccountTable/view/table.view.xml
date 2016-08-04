@@ -1,0 +1,73 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:m="sap.m"
+	controllerName="c4c.table-accountcollection.remote.view.table" xmlns:html="http://www.w3.org/1999/xhtml" class="tableView">
+	<m:Page title="{i18n>CHP.Account.UI.HeaderInfo.TypeNamePlural.AccountName}" showNavButton="true" class="pageEl table-pattern-page"
+		navButtonPress="handleNavButtonPress">
+		<m:content>
+			<m:VBox>
+				<m:Table class="table" id="c4cTable" inset="false" growingScrollToLoad="false" growing="false" includeItemInSelection="true"
+					mode="{tableModel>/mode}" growingThreshold="{tableModel>/growingThreshold}" items="{ path: '/boCollection', filters: [] }">
+					<m:columns>
+						<m:Column>
+							<m:Label text="{i18n>CHP.Account.UI.LineItem.UI.DataField.ExternalID}" tooltip="{i18n>CHP.Account.UI.LineItem.UI.DataField.ExternalID}"/>
+						</m:Column>
+						<m:Column>
+							<m:Label text="{i18n>CHP.Account.UI.LineItem.UI.DataField.AccountName}" tooltip="{i18n>CHP.Account.UI.LineItem.UI.DataField.AccountName}"/>
+						</m:Column>
+						<m:Column minScreenWidth="Tablet" demandPopin="true">
+							<m:Label text="{i18n>CHP.Account.UI.LineItem.UI.DataField.Address}" tooltip="{i18n>CHP.Account.UI.LineItem.UI.DataField.Address}"/>
+						</m:Column>
+						<m:Column minScreenWidth="Tablet" demandPopin="true">
+							<m:Label text="{i18n>CHP.Account.UI.LineItem.UI.DataField.CountryText}" tooltip="{i18n>CHP.Account.UI.LineItem.UI.DataField.CountryText}"/>
+						</m:Column>
+					</m:columns>
+					<m:infoToolbar>
+						<m:Toolbar visible="{tableModel>/showInfoBar}" active="true" press="toolBarPressed"
+							tooltip="{i18n_Static>starterTableTemplate.table.infoToolbar.tooltip}">
+							<m:Label text="{tableModel>/infoBarLabel}"></m:Label>
+						</m:Toolbar>
+					</m:infoToolbar>
+					<m:headerToolbar>
+						<m:Toolbar class="tableHeader">
+							<m:ComboBox id="queryCombobox" class="tableComboBox" selectionChange="queryChanged" selectedKey="CHP.Default.UI.Query.UI.Filter.All">
+								<core:Item key="CHP.Default.UI.Query.UI.Filter.All" text="{i18n_AnnoExt>CHP.Default.UI.Query.UI.Filter.All}"/>
+							</m:ComboBox>
+							<m:ToolbarSpacer></m:ToolbarSpacer>
+							<m:Button class="filterBtn" icon="sap-icon://drop-down-list" press="openDialog"
+								tooltip="{i18n_Static>starterTableTemplate.table.settings.btn}" enabled="{tableModel>/filterBtnEnable}"></m:Button>
+						</m:Toolbar>
+					</m:headerToolbar>
+					<m:items >
+						<m:ColumnListItem>
+							<m:cells >
+								<m:Label text="{ExternalID}" tooltip="{ExternalID}"/>
+								<m:Link text="{AccountName}" tooltip="{AccountName}" press="navigateToDetails">
+									<m:customData>
+										<core:CustomData key="action" value="Details"/>
+										<core:CustomData key="targetObject" value="Account"/>
+									</m:customData>
+								</m:Link>
+								<m:Label text="{Address}" tooltip="{Address}"/>
+								<m:Label text="{CountryText}" tooltip="{CountryText}"/>
+							</m:cells>
+						</m:ColumnListItem>
+					</m:items>
+				</m:Table>
+				<m:VBox class="table-trigger">
+					<m:Text class="trigger-text" text="{i18n_Static>starterTableTemplate.More}"></m:Text>
+					<m:Text class="trigger-description" text="{i18n_Static>starterTableTemplate.More}"></m:Text>
+					<m:BusyIndicator visible="{tableSettingsModel>/showTriggerBusyIndicator}" class="table-trigger-bi"></m:BusyIndicator>
+				</m:VBox>
+			</m:VBox>
+			<m:BusyIndicator visible="{tableSettingsModel>/showBusyIndicator}" class="table-bi"></m:BusyIndicator>
+		</m:content>
+		<m:footer>
+			<m:Toolbar class="tableFooter">
+				<m:content>
+					<m:ToolbarSpacer></m:ToolbarSpacer>
+					<m:Button class="addRecordBtn" icon="sap-icon://add" press="handleCreateRecord"
+						tooltip="{i18n_Static>starterTableTemplate.table.addRecord.btn}"></m:Button>
+				</m:content>
+			</m:Toolbar>
+		</m:footer>
+	</m:Page>
+</mvc:View>

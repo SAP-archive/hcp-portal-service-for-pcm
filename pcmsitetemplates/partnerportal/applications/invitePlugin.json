@@ -1,0 +1,60 @@
+{
+  "sap.app": {
+    "crossNavigation": {
+      "context": {
+        "sapSite": {
+          "value": ""
+        }
+      },
+      "inbounds": {
+        "ShellPlugin": {
+          "semanticObject": "InviteShell",
+          "action": "Plugin",
+          "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+          },
+          "tileImplementation": {
+            "id": "none"
+          },
+          "signature": {
+            "parameters": {
+
+            },
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    },
+    "title": "Invite Plugin",
+    "id": "hcp://pcmsitetemplates/partnerportal/applications/invitePlugin.json",
+    "_version": "1.3.0"
+  },
+  "sap.platform.hcp": {
+    "uri": "/InvitePlugin",
+    "appName": "pcmcpapps",
+    "_version": "1.2.0"
+  },
+  "sap.flp": {
+    "_version": "1.1.0",
+    "type": "plugin",
+    "config": {
+      "skipVariantResolving": true
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "_version": "1.3.0",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "_version": "1.2.0",
+    "componentName": "c4c.inviteaction"
+  },
+  "_version": "1.3.0"
+}

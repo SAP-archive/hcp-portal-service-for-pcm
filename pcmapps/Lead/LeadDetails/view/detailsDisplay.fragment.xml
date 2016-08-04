@@ -1,0 +1,91 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+				emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.ID}"></Label>
+						<Text text="{ObjectPageModel>/Lead/ID}" tooltip="{ObjectPageModel>/Lead/ID}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Name}"></Label>
+						<Text text="{ObjectPageModel>/Lead/Name}" tooltip="{ObjectPageModel>/Lead/Name}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Company}"></Label>
+						<Text text="{ObjectPageModel>/Lead/Company}" tooltip="{ObjectPageModel>/Lead/Company}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.StartDate}"></Label>
+						<Text text="{path: 'ObjectPageModel>/Lead/StartDate', formatter:'.formatDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.EndDate}"></Label>
+						<Text text="{path: 'ObjectPageModel>/Lead/EndDate', formatter:'.formatDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.ContactFirstName}"></Label>
+						<Text text="{ObjectPageModel>/Lead/ContactFirstName}" tooltip="{ObjectPageModel>/Lead/ContactFirstName}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.ContactLastName}"></Label>
+						<Text text="{ObjectPageModel>/Lead/ContactLastName}" tooltip="{ObjectPageModel>/Lead/ContactLastName}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.HouseNumber}"></Label>
+						<Text text="{ObjectPageModel>/Lead/HouseNumber}" tooltip="{ObjectPageModel>/Lead/HouseNumber}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Street}"></Label>
+						<Text text="{ObjectPageModel>/Lead/Street}" tooltip="{ObjectPageModel>/Lead/Street}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.City}"></Label>
+						<Text text="{ObjectPageModel>/Lead/City}" tooltip="{ObjectPageModel>/Lead/City}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.PostalCode}"></Label>
+						<Text text="{ObjectPageModel>/Lead/PostalCode}" tooltip="{ObjectPageModel>/Lead/PostalCode}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Country}"></Label>
+						<Text text="{ObjectPageModel>/Lead/CountryText}" tooltip="{ObjectPageModel>/Lead/CountryText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.CreatedOn}"></Label>
+						<Text text="{path: 'ObjectPageModel>/Lead/CreatedOn', formatter:'.formatDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.UserStatusCode}"></Label>
+						<Text text="{ObjectPageModel>/Lead/UserStatusCodeText}" tooltip="{ObjectPageModel>/Lead/UserStatusCodeText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.PriorityText}"></Label>
+						<Text text="{ObjectPageModel>/Lead/PriorityText}" tooltip="{ObjectPageModel>/Lead/PriorityText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Category}"></Label>
+						<Text text="{ObjectPageModel>/Lead/CategoryText}" tooltip="{ObjectPageModel>/Lead/CategoryText}"></Text>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

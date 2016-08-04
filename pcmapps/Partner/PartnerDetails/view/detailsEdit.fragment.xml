@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns="sap.m" controllerName="c4c.details-PartnerCollection.local.view.details" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" id="PartnerCollection_Form" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="3"
+				labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Partner.UI.Identification.UI.DataField.Name}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Partner/Name}" id="Name_349"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Partner.UI.Identification.UI.DataField.AdditionalName}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Partner/AdditionalName}" id="AdditionalName_350"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Partner.UI.Identification.UI.DataField.LifeCycleStatusCodeText}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Partner/LifeCycleStatusCodeText}" id="LifeCycleStatusCodeText_351"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Partner.UI.Identification.UI.DataField.ABCClassification}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Partner/ABCClassification}" id="ABCClassification_352"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Partner.UI.Identification.UI.DataField.Level}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Partner/PartnerLevelValue}" name="Level" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Partner/PartnerLevel'}" id="Level_353"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Partner.UI.Identification.UI.DataField.IndustryCodeText}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Partner/IndustryCodeText}" id="IndustryCodeText_354"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Partner.UI.Identification.UI.DataField.DUNS}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Partner/DUNS}" id="DUNS_355"></Input>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

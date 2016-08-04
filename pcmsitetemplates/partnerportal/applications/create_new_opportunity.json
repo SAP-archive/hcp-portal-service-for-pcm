@@ -1,0 +1,53 @@
+{
+  "_version": "1.3.0",
+  "sap.app": {
+    "_version": "1.3.0",
+    "id": "hcp://pcmsitetemplates/partnerportal/applications/create_new_opportunity.json",
+    "title": "Opportunity Creator",
+    "description": "App for creating new opportunities",
+    "tags": {
+      "keywords": [
+        "Create,Opportunity"
+      ]
+    },
+    "crossNavigation": {
+      "context": {},
+      "inbounds": {
+        "0":{
+          "semanticObject": "Opportunity",
+          "action": "Create",
+          "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+          },
+          "title": "Create Opportunity",
+          "icon": "sap-icon://tools-opportunity",
+          "size": "1x1"
+        }
+      }
+    }
+  },
+  "sap.platform.hcp": {
+    "_version": "1.2.0",
+    "uri": "/Opportunity/OpportunityCreator",
+    "appName": "pcmapps"
+  },
+  "sap.cloud.portal": {
+    "_version": "1.1.0",
+    "availablePageTemplates": []
+  },
+  "sap.flp": {
+    "_version": "1.1.0",
+    "type": "",
+    "config": {}
+  },
+  "sap.ui": {
+    "_version": "1.3.0",
+    "technology": "UI5"
+  },
+  "sap.ui5":{
+    "_version": "1.2.0",
+    "componentName":"c4c.create-OpportunityCollection.local"
+  }
+}

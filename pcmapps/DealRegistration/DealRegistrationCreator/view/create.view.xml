@@ -1,0 +1,93 @@
+<mvc:View height="100%" controllerName="c4c.create-DealRegistrationCollection.remote.view.create" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page
+		title="{path: 'i18n_Static>starterCreateTemplate.create.view.title,CHP.DealRegistration.UI.HeaderInfo.TypeName.Name', formatter:'.formatTranslation'}"
+		class="marginBoxContent">
+		<content>
+			<f:SimpleForm id="DealRegistrationCollection_Form" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"
+				labelSpanS="4" labelSpanL="1" labelSpanM="2" emptySpanL="2" emptySpanM="2" columnsL="2" columnsS="2" columnsM="2">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.DealName}"></Label>
+						<Input enabled="true" value="{/DealName}" id="DealName_608" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.StartDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true"
+							value="{path:'/StartDate', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}" id="StartDate_609"
+							displayFormat="long"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.EndDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true"
+							value="{path:'/EndDate', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}" id="EndDate_610"
+							displayFormat="long"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.TotalValue.TotalValueCurrencyCode}"></Label>
+						<l:HorizontalLayout class="create-horizontal">
+							<Input enabled="true" value="{/TotalValue}" id="TotalValue_611" type="Number"
+								valueStateText="{i18n_Static>starterDetailsPage.details.Number.valueStateText}" liveChange="handleRequiredInputChange"></Input>
+							<ComboBox enabled="true" name="TotalValueCurrencyCode" change="handleComboChange" items="{path:'/DealRegistrationTotalValueCurrencyCode'}"
+								id="TotalValueCurrencyCode_612"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+						</l:HorizontalLayout>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.CampaignID}"></Label>
+						<Input enabled="true" value="{/CampaignID}" id="CampaignID_614" name="CampaignID" type="Text" placeholder="" showValueHelp="true"
+							valueHelpRequest="openValueHelpDialog"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.UserStatusCode}"></Label>
+						<ComboBox enabled="true" name="UserStatusCode" change="handleComboChange" items="{path:'/DealRegistrationUserStatusCode'}"
+							id="UserStatusCode_615"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.Company}"></Label>
+						<Input enabled="true" value="{/Company}" id="Company_616" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.Country}"></Label>
+						<ComboBox enabled="true" name="Country" change="handleComboChange" items="{path:'/DealRegistrationCountry'}" id="Country_617"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.City}"></Label>
+						<Input enabled="true" value="{/City}" id="City_618"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.PostalCode}"></Label>
+						<Input enabled="true" value="{/PostalCode}" id="PostalCode_619"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.ContactFirstName}"></Label>
+						<Input enabled="true" value="{/ContactFirstName}" id="ContactFirstName_620"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.ContactLastName}"></Label>
+						<Input enabled="true" value="{/ContactLastName}" id="ContactLastName_621" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<footer >
+			<Toolbar class="footer">
+				<Button text="{i18n_Static>starterCreateTemplate.create.view.reset.btn}" press='resetForm'/>
+				<ToolbarSpacer/>
+				<Button class="saveButton" text="{i18n_Static>starterCreateTemplate.create.view.save.btn}" press='saveForm'/>
+				<Button class="cancelButton" text="{i18n_Static>starterCreateTemplate.create.view.cancel.btn}" press='cancelForm'/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

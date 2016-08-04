@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n_Static>starterDetailsPage.dialog.facetUpdate.fragment.title}" type="Message">
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<f:SimpleForm id="AppointmentNote_UpdateForm" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"
+						labelSpanS="4" labelSpanL="1" labelSpanM="2" emptySpanL="2" emptySpanM="2" columnsL="2" columnsS="2" columnsM="2">
+						<f:content>
+							<VBox>
+								<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+								<Label required="false" text="{i18n>CHP.AppointmentNote.UI.LineItem.UI.DataField.Text}"></Label>
+								<Input enabled="true" value="{/Text}" id="Text_572"></Input>
+							</VBox>
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<beginButton>
+			<Button class="saveButton" text="{i18n_Static>starterDetailsPage.dialog.facetUpdate.fragment.Save.btn}" press="confirmUpdate"/>
+		</beginButton>
+		<endButton>
+			<Button class="cancelButton" text="{i18n_Static>starterDetailsPage.dialog.facetAdd.fragment.cancel.btn}" press="handleExit"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

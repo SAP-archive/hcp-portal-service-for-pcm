@@ -1,0 +1,77 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+				emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.DealID}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/DealID}" tooltip="{ObjectPageModel>/DealRegistration/DealID}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.DealName}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/DealName}" tooltip="{ObjectPageModel>/DealRegistration/DealName}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.StartDate}"></Label>
+						<Text text="{path: 'ObjectPageModel>/DealRegistration/StartDate', formatter:'.formatDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.EndDate}"></Label>
+						<Text text="{path: 'ObjectPageModel>/DealRegistration/EndDate', formatter:'.formatDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.TotalValue.TotalValueCurrencyCode}"></Label>
+						<Text
+							text="{parts: ['ObjectPageModel>/DealRegistration/TotalValue', 'ObjectPageModel>/DealRegistration/TotalValueCurrencyCode'], formatter:'.getFieldDetails'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.CampaignID}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/CampaignID}" tooltip="{ObjectPageModel>/DealRegistration/CampaignID}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.UserStatusCode}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/UserStatusCodeText}" tooltip="{ObjectPageModel>/DealRegistration/UserStatusCodeText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.Company}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/Company}" tooltip="{ObjectPageModel>/DealRegistration/Company}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.Country}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/CountryText}" tooltip="{ObjectPageModel>/DealRegistration/CountryText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.City}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/City}" tooltip="{ObjectPageModel>/DealRegistration/City}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.PostalCode}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/PostalCode}" tooltip="{ObjectPageModel>/DealRegistration/PostalCode}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.ContactFirstName}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/ContactFirstName}" tooltip="{ObjectPageModel>/DealRegistration/ContactFirstName}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.DealRegistration.UI.Identification.UI.DataField.ContactLastName}"></Label>
+						<Text text="{ObjectPageModel>/DealRegistration/ContactLastName}" tooltip="{ObjectPageModel>/DealRegistration/ContactLastName}"></Text>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

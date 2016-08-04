@@ -1,0 +1,408 @@
+<core:View xmlns:core="sap.ui.core"
+           xmlns="sap.m"
+           xmlns:l="sap.ui.layout"
+           xmlns:f="sap.ui.layout.form"
+           xmlns:m="sap.m"
+           controllerName="appReview.local.view.App"
+           xmlns:html="http://www.w3.org/1999/xhtml">
+    <m:Page
+            title="{i18n>Page.Title}"
+            showNavButton="false"
+            class="pageEl"
+            navButtonPress="handleNavButtonPress">
+
+
+        <l:Grid
+                defaultSpan="L12 M12 S12"
+                width="auto">
+            <l:content>
+
+                <f:SimpleForm
+                        class="status_form"
+                        minWidth="1024"
+                        maxContainerCols="2"
+                        editable="false"
+                        title=""
+                        layout="ResponsiveGridLayout"
+                        labelSpanS="4"
+                        labelSpanL="1"
+                        labelSpanM="2"
+                        emptySpanL="2"
+                        emptySpanM="2"
+                        columnsL="2"
+                        columnsS="2"
+                        columnsM="2">
+                    <f:content>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L12 M12 S12"/>
+
+                            </layoutData>
+                            <Label text="{i18n>ApprovalStatus}"></Label>
+                            <ObjectStatus
+                                    id="appStatus"
+                                    state="{
+                                    parts:
+                                        [
+                                            {
+                                              path:'/RequestStatusCode'
+                                            }
+                                        ],
+                                    formatter: 'appReview.local.util.Formatter.getStatusState'
+                                    }"
+
+                                    text="{
+                                    parts:
+                                        [
+                                            {
+                                              path:'/RequestStatusCodeText'
+                                            }
+                                        ]
+
+                                    }"
+                            class="sapUiSmallMarginBegin">
+                            </ObjectStatus>
+
+                        </HBox>
+                    </f:content>
+                </f:SimpleForm>
+                <f:SimpleForm
+
+                        minWidth="1024"
+                        maxContainerCols="2"
+                        editable="false"
+                        title=""
+                        layout="ResponsiveGridLayout"
+                        labelSpanS="4"
+                        labelSpanL="1"
+                        labelSpanM="2"
+                        emptySpanL="2"
+                        emptySpanM="2"
+                        columnsL="2"
+                        columnsS="2"
+                        columnsM="2">
+                    <f:content>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>ApplicationRefNo}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{path:'/ApplicationID', formatter: '.getAppID'}" />
+                        </HBox>
+                    </f:content>
+                </f:SimpleForm>
+                <f:SimpleForm
+
+                        minWidth="1024"
+                        maxContainerCols="2"
+                        editable="false"
+                        title=""
+                        layout="ResponsiveGridLayout"
+                        labelSpanS="4"
+                        labelSpanL="1"
+                        labelSpanM="2"
+                        emptySpanL="2"
+                        emptySpanM="2"
+                        columnsL="2"
+                        columnsS="2"
+                        columnsM="2">
+                    <f:content>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>PreferredBusinessModel}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerProgramCodeText}" />
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>PreferredRelationshipType}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerTypeCodeText}" />
+                        </HBox>
+                    </f:content>
+                </f:SimpleForm>
+
+                <f:SimpleForm
+
+                        minWidth="1024"
+                        maxContainerCols="2"
+                        editable="false"
+                        title="{i18n>Header.CompanyInformation}"
+                        layout="ResponsiveGridLayout"
+                        labelSpanS="4"
+                        labelSpanL="1"
+                        labelSpanM="2"
+                        emptySpanL="2"
+                        emptySpanM="2"
+                        columnsL="2"
+                        columnsS="2"
+                        columnsM="2">
+                    <f:content>
+
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyName}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/CompanyName}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyAddress}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/Address}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyCity}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/City}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyCountry}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/CountryText}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>PostalCode}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PostalCode}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyPhone}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/CompanyPhone}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyEmail}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/CompanyEmail}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyWebAddress}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/CompanyWebAddress}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyPCL}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PrimaryCommunicationLanguageText}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyVAT}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/VatRegistrationNumber}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyDUNS}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/DUNSNumber}"/>
+                        </HBox>
+
+
+                    </f:content>
+                </f:SimpleForm>
+
+
+                <f:SimpleForm
+
+                        minWidth="1024"
+                        maxContainerCols="2"
+                        editable="false"
+                        title="{i18n>Header.ContactInformation}"
+                        layout="ResponsiveGridLayout"
+                        labelSpanS="4"
+                        labelSpanL="1"
+                        labelSpanM="2"
+                        emptySpanL="2"
+                        emptySpanM="2"
+                        columnsL="2"
+                        columnsS="2"
+                        columnsM="2">
+                    <f:content>
+
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>Salutation}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactSalutationText}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>JobTitle}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactJobTitle}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>FirstName}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactFirstName}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>LastName}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactLastName}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>PreferredLang}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactPreferredLanguageText}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>EmailAddress}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactEmail}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>Phone}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactPhone}"/>
+                        </HBox>
+
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>AddressAsCompany}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{path:'/AddressIndicator', formatter: '.getAddressIndicator'}" />
+                        </HBox>
+                        <HBox id="contactPostalCode">
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>ContactPostalCode}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactPostalCode}"/>
+                        </HBox>
+                        <HBox id="contactAddress">
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>ContactAddress}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactAddress}"/>
+                        </HBox>
+                        <HBox id="contactCountry">
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>ContactCountry}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactCountryText}"/>
+                        </HBox>
+                        <HBox id="contactCity">
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>ContactCity}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/PartnerContactCity}"/>
+                        </HBox>
+                    </f:content>
+                </f:SimpleForm>
+
+                <f:SimpleForm
+
+                        minWidth="1024"
+                        maxContainerCols="2"
+                        editable="false"
+                        title="{i18n>Header.CompanyProfileInformation}"
+                        layout="ResponsiveGridLayout"
+                        labelSpanS="4"
+                        labelSpanL="1"
+                        labelSpanM="2"
+                        emptySpanL="2"
+                        emptySpanM="2"
+                        columnsL="2"
+                        columnsS="2"
+                        columnsM="2">
+                    <f:content>
+
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>YearFounded}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/YearFounded}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>TotalNumberofCustomers}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/NumberOfCustomers}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>NumOfEmployees}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/NumberOfEmployees}"/>
+                        </HBox>
+                        <HBox>
+                            <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                            </layoutData>
+                            <Label text="{i18n>CompanyStrategy}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{/Text}"/>
+                        </HBox>
+                    </f:content>
+                </f:SimpleForm>
+                <Table items="{path: 'IndustryTableModel>/rows'}">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Label text="{i18n>Industries}"></Label>
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column><Text text="{i18n>Industry}" /></Column>
+                        <Column><Text text="{18n>Main}" /></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text
+                                        text="{IndustryTableModel>IndustrialSectorCodeText}" />
+
+                                <CheckBox selected="{path:'IndustryTableModel>DefaultIndicator', formatter: '.selectCheckbox'}" enabled="false" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+
+            </l:content>
+        </l:Grid>
+
+
+    </m:Page>
+
+</core:View>

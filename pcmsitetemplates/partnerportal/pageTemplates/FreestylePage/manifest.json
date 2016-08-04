@@ -1,0 +1,63 @@
+{
+  "_version": "1.3.0",
+  "sap.app": {
+    "_version": "1.3.0",
+    "id": "hcp://pcmsitetemplates/partnerportal/pageTemplates/FreestylePage/manifest.json",
+    "title": "Freestyle Content",
+    "description": "A page with multiple containers that allows you to create freestyle content",
+    "tags": {
+      "keywords": []
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "0":{
+          "semanticObject": "Home",
+          "action": "show",
+          "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+          }
+        },
+        "1":{
+          "semanticObject": "NewPartner",
+          "action": "Register",
+          "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+          }
+        }
+      }
+    }
+  },
+  "sap.platform.hcp": {
+    "_version": "1.2.0",
+    "appName": "pcmsitetemplates",
+    "uri": "/partnerportal/pageTemplates/FreestylePage"
+  },
+  "sap.ui5":{
+    "_version": "1.2.0",
+    "componentName":"cp.templates.FreestylePage",
+    "dependencies": {
+      "minUI5Version": "1.36.0",
+      "libs": {
+        "sap.m": {
+          "minVersion": "1.36.0"
+        }
+      }
+    }
+  },
+  "sap.cloud.portal": {
+    "applicationType": "page",
+    "thumbnail":"preview.png"
+  },
+  "sap.flp": {
+    "_version": "1.1.0",
+    "config": {}
+  },
+  "sap.ui": {
+    "_version": "1.3.0",
+    "technology": "UI5"
+  }
+}

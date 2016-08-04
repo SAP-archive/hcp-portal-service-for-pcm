@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ActionSheet placement="Top">
+		<buttons>
+			<Button text="{i18n_AnnoExt>CHP.Opportunity.UI.BOAction.UI.Action.SetasOpen}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_Opp_AsOpen"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+			<Button text="{i18n_AnnoExt>CHP.Opportunity.UI.BOAction.UI.Action.SetasInProcess}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_Opp_InProcess"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+			<Button text="{i18n_AnnoExt>CHP.Opportunity.UI.BOAction.UI.Action.SetasWon}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_Opp_AsWon"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+			<Button text="{i18n_AnnoExt>CHP.Opportunity.UI.BOAction.UI.Action.SetasLost}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_Opp_AsLost"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+			<Button text="{i18n_AnnoExt>CHP.Opportunity.UI.BOAction.UI.Action.SetasStopped}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_Opp_AsStopped"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

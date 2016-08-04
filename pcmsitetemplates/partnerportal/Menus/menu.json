@@ -1,0 +1,158 @@
+{
+  "_version": "1.0",
+  "identification": {
+    "id": "menu.json",
+    "entityType": "menu",
+    "i18n": "i18n/menu.properties"
+  },
+  "payload": {
+    "locked": "false",
+    "tags": [],
+    "entities": [
+      {
+        "title": "{{PARTNER_REGISTRATION}}",
+        "target": {
+          "semanticObject": "NewPartner",
+          "action": "Register"
+        },
+        "entityType": "PAGE"
+      },
+      {
+        "title": "{{PARTNER_PORTAL}}",
+        "target": {
+          "semanticObject": "Shell",
+          "action": "home"
+        },
+        "entityType": "PAGE",
+        "entities": [
+          {
+            "target": {
+              "semanticObject": "",
+              "action": ""
+            },
+            "title": "{{OVERVIEW}}",
+            "entityType": "FOLDER",
+            "entities": [
+              {
+                "target": {
+                  "semanticObject": "PartnerContact",
+                  "action": "Details"
+                },
+                "title": "{{MY_PROFILE}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "Partner",
+                  "action": "Details"
+                },
+                "title": "{{COMPANY_PROFILE}}",
+                "entityType": "APP"
+              }
+            ]
+          },
+          {
+            "target": {
+              "semanticObject": "",
+              "action": ""
+            },
+            "title": "{{APPLICATIONS}}",
+            "entityType": "FOLDER",
+            "entities": [
+              {
+                "target": {
+                  "semanticObject": "Lead",
+                  "action": "Table"
+                },
+                "title": "{{LEADS}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "Opportunity",
+                  "action": "Table"
+                },
+                "title": "{{OPPORTUNITIES}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "Appointment",
+                  "action": "Table"
+                },
+                "title": "{{APPOINTMENTS}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "Task",
+                  "action": "Table"
+                },
+                "title": "{{TASKS}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "DealRegistration",
+                  "action": "Table"
+                },
+                "title": "{{DEAL_REGISTRATIONS}}",
+                "entityType": "APP"
+              }
+            ]
+          },
+          {
+            "target": {
+              "semanticObject": "",
+              "action": ""
+            },
+            "title": "{{NEW_TRANSACTIONS}}",
+            "entityType": "FOLDER",
+            "entities": [
+              {
+                "target": {
+                  "semanticObject": "Lead",
+                  "action": "Create"
+                },
+                "title": "{{CREATE_LEAD}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "Opportunity",
+                  "action": "Create"
+                },
+                "title": "{{CREATE_OPPORTUNITY}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "Appointment",
+                  "action": "Create"
+                },
+                "title": "{{CREATE_APPOINTMENT}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "Task",
+                  "action": "Create"
+                },
+                "title": "{{CREATE_TASK}}",
+                "entityType": "APP"
+              },
+              {
+                "target": {
+                  "semanticObject": "DealRegistration",
+                  "action": "Create"
+                },
+                "title": "{{CREATE_DEAL_REGISTRATION}}",
+                "entityType": "APP"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

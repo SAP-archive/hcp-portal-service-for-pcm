@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+				emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Task.UI.Identification.UI.DataField.Subject}"></Label>
+						<Text text="{ObjectPageModel>/Task/Subject}" tooltip="{ObjectPageModel>/Task/Subject}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Task.UI.Identification.UI.DataField.Account}"></Label>
+						<Text text="{ObjectPageModel>/Task/Account}" tooltip="{ObjectPageModel>/Task/Account}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Task.UI.Identification.UI.DataField.AccountID}"></Label>
+						<Text text="{ObjectPageModel>/Task/AccountID}" tooltip="{ObjectPageModel>/Task/AccountID}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Task.UI.Identification.UI.DataField.StatusText}"></Label>
+						<Text text="{ObjectPageModel>/Task/StatusText}" tooltip="{ObjectPageModel>/Task/StatusText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Task.UI.Identification.UI.DataField.TaskStartDateTime}"></Label>
+						<Text text="{path: 'ObjectPageModel>/Task/TaskStartDateTime', formatter:'.formatTimeDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Task.UI.Identification.UI.DataField.TaskDueDateTime}"></Label>
+						<Text text="{path: 'ObjectPageModel>/Task/TaskDueDateTime', formatter:'.formatTimeDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Task.UI.Identification.UI.DataField.Category}"></Label>
+						<Text text="{ObjectPageModel>/Task/CategoryText}" tooltip="{ObjectPageModel>/Task/CategoryText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Task.UI.Identification.UI.DataField.Priority}"></Label>
+						<Text text="{ObjectPageModel>/Task/PriorityText}" tooltip="{ObjectPageModel>/Task/PriorityText}"></Text>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

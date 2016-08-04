@@ -1,0 +1,108 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="c4c.details-accountcollection.local.view.details" xmlns:f="sap.ui.layout.form" height="100%">
+	<Page id="idPage" title="{i18n>CHP.Account.UI.HeaderInfo.TypeName.AccountName}" class="sapUiFioriObjectPage" showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<Toolbar class="detailsToolbar">
+				<Label text="{ObjectPageModel>/Account/AccountName1}" tooltip="{ObjectPageModel>/Account/AccountName1}" class="detailsToolbarLabel"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+			<IconTabBar select="handleIconTabBarSelect">
+				<items>
+					<IconTabFilter text="{i18n>CHP.Account.UI.Facets.UI.RefenceFacet.Account.UI.Identification}" key="Account">
+						<Toolbar design="Transparent" height="3rem">
+							<Text text="{i18n>CHP.Account.UI.Facets.UI.RefenceFacet.Account.UI.Identification}" class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="edit-overview" icon="sap-icon://edit" press="handleOverviewEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.view.Edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Account"/>
+								</customData>
+							</Button>
+							<Button class="confirmBtn" press="handleConfirmEdit" text="{i18n_Static>starterDetailsPage.details.view.Save.btn}" visible="false"></Button>
+							<Button class="cancelBtn" press="handleCancelEdit" text="{i18n_Static>starterDetailsPage.details.view.Cancel.btn}" visible="false"></Button>
+						</Toolbar>
+						<layout:VerticalLayout class="marginVerticalContent Account" width="100%">
+							<layout:content>
+								<core:Fragment fragmentName="c4c.details-accountcollection.local.view.detailsDisplay" type="XML"/>
+							</layout:content>
+						</layout:VerticalLayout>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Account.UI.Facets.UI.RefenceFacet.Contact.UI.LineItem}" key="Contact">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Account.UI.Facets.UI.RefenceFacet.Contact.UI.LineItem', 'tableCountModel>/ContactCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="updateBtn" icon="sap-icon://edit" press="enableEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetUpdate.fragment.update.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Contact"/>
+								</customData>
+							</Button>
+							<Button class="addBtn" icon="sap-icon://add" press="enableAdd" tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.add.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Contact"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="Contact table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/Contact'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.Contact.UI.LineItem.UI.DataField.FirstName}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.Contact.UI.LineItem.UI.DataField.LastName}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.Contact.UI.LineItem.UI.DataField.Mobile}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.Contact.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.Contact.UI.LineItem.UI.DataField.Email}"/>
+								</Column>
+								<Column width="30px" class="editableFacetColumn" visible="false"></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>FirstName}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>LastName}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Mobile}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Email}"/>
+									</cells>
+									<cells>
+										<core:Icon src="sap-icon://edit" press="onEditFacetItem"></core:Icon>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<BusyIndicator visible="{ObjectPageState>/showBusyIndicator}" class="details-bi"></BusyIndicator>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</core:View>

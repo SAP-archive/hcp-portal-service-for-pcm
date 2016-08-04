@@ -1,0 +1,341 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="c4c.details-opportunitycollection.local.view.details" xmlns:f="sap.ui.layout.form" height="100%">
+	<Page id="idPage" title="{i18n>CHP.Opportunity.UI.HeaderInfo.TypeName.OpportunityName}" class="sapUiFioriObjectPage" showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<Toolbar class="detailsToolbar">
+				<core:Icon src="sap-icon://tools-opportunity" class="toolbarImage sapThemePageBG-asColor"></core:Icon>
+				<Label text="{ObjectPageModel>/Opportunity/OpportunityName}" tooltip="{ObjectPageModel>/Opportunity/OpportunityName}"
+					class="detailsToolbarLabel"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+			<IconTabBar select="handleIconTabBarSelect">
+				<items>
+					<IconTabFilter text="{i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.Opportunity.UI.Identification}" key="Opportunity">
+						<Toolbar design="Transparent" height="3rem">
+							<Text text="{i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.Opportunity.UI.Identification}" class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="edit-overview" icon="sap-icon://edit" press="handleOverviewEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.view.Edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Opportunity"/>
+								</customData>
+							</Button>
+							<Button class="confirmBtn" press="handleConfirmEdit" text="{i18n_Static>starterDetailsPage.details.view.Save.btn}" visible="false"></Button>
+							<Button class="cancelBtn" press="handleCancelEdit" text="{i18n_Static>starterDetailsPage.details.view.Cancel.btn}" visible="false"></Button>
+						</Toolbar>
+						<layout:VerticalLayout class="marginVerticalContent Opportunity" width="100%">
+							<layout:content>
+								<core:Fragment fragmentName="c4c.details-opportunitycollection.local.view.detailsDisplay" type="XML"/>
+							</layout:content>
+						</layout:VerticalLayout>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityItem.UI.LineItem}" key="OpportunityItem">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityItem.UI.LineItem', 'tableCountModel>/OpportunityItemCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="OpportunityItem"/>
+								</customData>
+							</Button>
+							<Button class="updateBtn" icon="sap-icon://edit" press="enableEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetUpdate.fragment.update.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="OpportunityItem"/>
+								</customData>
+							</Button>
+							<Button class="addBtn" icon="sap-icon://add" press="enableAdd" tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.add.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="OpportunityItem"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="OpportunityItem table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/OpportunityItem'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityItem.UI.LineItem.UI.DataField.ProductID}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityItem.UI.LineItem.UI.DataField.ProductDescription}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityItem.UI.LineItem.UI.DataField.Quantity.QuantityUnitOfMeasure}"/>
+								</Column>
+								<Column width="30px" class="editableFacetColumn" visible="false"></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>ProductID}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>ProductDescription}"/>
+									</cells>
+									<cells>
+										<Text text="{parts: ['ObjectPageModel>Quantity', 'ObjectPageModel>QuantityUnitOfMeasure'] , formatter:'.getFieldDetails'}"/>
+									</cells>
+									<cells>
+										<core:Icon src="sap-icon://edit" press="onEditFacetItem"></core:Icon>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityCompetitor.UI.LineItem}" key="OpportunityCompetitor">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityCompetitor.UI.LineItem', 'tableCountModel>/OpportunityCompetitorCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="OpportunityCompetitor table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/OpportunityCompetitor'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityCompetitor.UI.LineItem.UI.DataField.ContactName}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityCompetitor.UI.LineItem.UI.DataField.City}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityCompetitor.UI.LineItem.UI.DataField.Main}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>ContactName}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>City}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Main}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunitySalesTeam.UI.LineItem}" key="OpportunitySalesTeam">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunitySalesTeam.UI.LineItem', 'tableCountModel>/OpportunitySalesTeamCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="OpportunitySalesTeam table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/OpportunitySalesTeam'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.OpportunitySalesTeam.UI.LineItem.UI.DataField.Namecontent}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.OpportunitySalesTeam.UI.LineItem.UI.DataField.RoleText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunitySalesTeam.UI.LineItem.UI.DataField.Email}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunitySalesTeam.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Name/content}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>RoleText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Email}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityContact.UI.LineItem}" key="OpportunityContact">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityContact.UI.LineItem', 'tableCountModel>/OpportunityContactCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="OpportunityContact table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/OpportunityContact'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityContact.UI.LineItem.UI.DataField.Name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityContact.UI.LineItem.UI.DataField.RoleText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityContact.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityContact.UI.LineItem.UI.DataField.Mobile}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityContact.UI.LineItem.UI.DataField.Email}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Name}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>RoleText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Mobile}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Email}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityInvolvedParty.UI.LineItem}" key="OpportunityInvolvedParty">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityInvolvedParty.UI.LineItem', 'tableCountModel>/OpportunityInvolvedPartyCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="OpportunityInvolvedParty table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/OpportunityInvolvedParty'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityInvolvedParty.UI.LineItem.UI.DataField.Namecontent}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityInvolvedParty.UI.LineItem.UI.DataField.RoleCodeText}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityInvolvedParty.UI.LineItem.UI.DataField.Address}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityInvolvedParty.UI.LineItem.UI.DataField.Email}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityInvolvedParty.UI.LineItem.UI.DataField.Phone}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityInvolvedParty.UI.LineItem.UI.DataField.PrimaryContactNamecontent}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityInvolvedParty.UI.LineItem.UI.DataField.PrimaryContactEmail}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Name/content}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>RoleCodeText}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Address}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Email}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Phone}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>PrimaryContactName/content}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>PrimaryContactEmail}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityAttachment.UI.LineItem}" key="OpportunityAttachment">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.Opportunity.UI.Facets.UI.RefenceFacet.OpportunityAttachment.UI.LineItem', 'tableCountModel>/OpportunityAttachmentCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="OpportunityAttachment"/>
+								</customData>
+							</Button>
+							<Button class="addBtn" icon="sap-icon://add" press="enableAdd" tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.add.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="OpportunityAttachment"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="OpportunityAttachment table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/OpportunityAttachment'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityAttachment.UI.LineItem.UI.DataField.CategoryCode}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.OpportunityAttachment.UI.LineItem.UI.DataField.Name}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.OpportunityAttachment.UI.LineItem.UI.DataField.LinkWebURI}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>CategoryCodeText}"/>
+									</cells>
+									<cells>
+										<Link text="{ObjectPageModel>Name}" press="handleShowAttachment"></Link>
+									</cells>
+									<cells>
+										<Link text="{ObjectPageModel>LinkWebURI}" press="handleShowAttachment"></Link>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<BusyIndicator visible="{ObjectPageState>/showBusyIndicator}" class="details-bi"></BusyIndicator>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button icon="sap-icon://action" press="openActions" tooltip="{i18n_Static>starterDetailsPage.details.view.setAs.tooltip}">
+						<customData>
+							<core:CustomData key="model" value="ObjectPageModel"/>
+							<core:CustomData key="table" value="Opportunity"/>
+						</customData>
+					</Button>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</core:View>

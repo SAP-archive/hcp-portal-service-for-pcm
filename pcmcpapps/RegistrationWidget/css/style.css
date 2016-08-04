@@ -1,0 +1,26 @@
+.InputWrapper .sapMFlexItem {
+    width: 100%
+}
+.widget .sapUiView.sapUiXMLView {
+    display: block;
+}
+.widgetClass.sapUiPopupWithPadding .sapMDialog,
+.widgetClass.sapMDialog {
+    min-width: 336px;
+    height: auto;
+}
+.widgetClass.sapUiPopupWithPadding .sapMDialogScrollCont {
+    padding: 1rem 1rem 0rem 1rem;
+}
+.registration-dialog-icon {
+    height: 60px;
+    width: 60px;
+    border-radius: 64px;
+    line-height: 60px;
+    font-size: 1.8rem;
+}
+
+.registration-dialog-title{
+	 font-size: 1.5rem;
+	 text-align:center;
+}

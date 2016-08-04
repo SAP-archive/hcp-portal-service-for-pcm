@@ -1,0 +1,82 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+				emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.OpportunityName}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/OpportunityName}" tooltip="{ObjectPageModel>/Opportunity/OpportunityName}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.ID}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/ID}" tooltip="{ObjectPageModel>/Opportunity/ID}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.AccountName}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/AccountName}" tooltip="{ObjectPageModel>/Opportunity/AccountName}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.AccountID}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/AccountID}" tooltip="{ObjectPageModel>/Opportunity/AccountID}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.Probability}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/Probability}" tooltip="{ObjectPageModel>/Opportunity/Probability}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.Category}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/CategoryText}" tooltip="{ObjectPageModel>/Opportunity/CategoryText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.PriorityText}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/PriorityText}" tooltip="{ObjectPageModel>/Opportunity/PriorityText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.StartDate}"></Label>
+						<Text text="{path: 'ObjectPageModel>/Opportunity/StartDate', formatter:'.formatDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.CloseDate}"></Label>
+						<Text text="{path: 'ObjectPageModel>/Opportunity/CloseDate', formatter:'.formatDate'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.ExpectedValue.ExpectedValueCurrencyCode}"></Label>
+						<Text
+							text="{parts: ['ObjectPageModel>/Opportunity/ExpectedValue', 'ObjectPageModel>/Opportunity/ExpectedValueCurrencyCode'], formatter:'.getFieldDetails'}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.SalesPhase}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/SalesPhaseText}" tooltip="{ObjectPageModel>/Opportunity/SalesPhaseText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.SalesCycle}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/SalesCycleText}" tooltip="{ObjectPageModel>/Opportunity/SalesCycleText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.StatusText}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/StatusText}" tooltip="{ObjectPageModel>/Opportunity/StatusText}"></Text>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.OwnerName}"></Label>
+						<Text text="{ObjectPageModel>/Opportunity/OwnerName}" tooltip="{ObjectPageModel>/Opportunity/OwnerName}"></Text>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

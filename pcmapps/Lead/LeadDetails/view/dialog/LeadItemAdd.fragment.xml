@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core">
+	<Dialog title="{i18n_Static>starterDetailsPage.dialog.facetAdd.fragment.title}" type="Message">
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<f:SimpleForm id="LeadItem_Form" class="addDialogContent" minWidth="1024" maxContainerCols="2" editable="false"
+						layout="ResponsiveGridLayout" labelSpanS="4" labelSpanL="1" labelSpanM="2" emptySpanL="2" emptySpanM="2" columnsL="2" columnsS="2"
+						columnsM="2">
+						<f:content>
+							<VBox>
+								<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+								<Label required="false" text="{i18n>CHP.LeadItem.UI.LineItem.UI.DataField.ProductID}"></Label>
+								<Input enabled="true" value="{/ProductID}" id="ProductID_492" name="ProductID" type="Text" placeholder="" showValueHelp="true"
+									valueHelpRequest="openValueHelpDialog"></Input>
+							</VBox>
+							<VBox>
+								<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+								<Label required="false" text="{i18n>CHP.LeadItem.UI.LineItem.UI.DataField.ProductDescription}"></Label>
+								<Input enabled="true" value="{/ProductDescription}" id="ProductDescription_493"></Input>
+							</VBox>
+							<VBox>
+								<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+								<Label required="false" text="{i18n>CHP.LeadItem.UI.LineItem.UI.DataField.Quantity.QuantityUnitOfMeasure}"></Label>
+								<l:HorizontalLayout class="create-horizontal">
+									<Input enabled="true" value="{/Quantity}" id="Quantity_494" type="Number"
+										valueStateText="{i18n_Static>starterDetailsPage.details.Number.valueStateText}" liveChange="handleRequiredInputChange"></Input>
+									<ComboBox enabled="true" name="QuantityUnitOfMeasure" change="handleComboChange" items="{path:'/LeadItemQuantityUnitOfMeasure'}"
+										id="QuantityUnitOfMeasure_495"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+								</l:HorizontalLayout>
+							</VBox>
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<beginButton>
+			<Button class="saveButton" text="{i18n_Static>starterDetailsPage.dialog.facetAdd.fragment.Save.btn}" press="confirmAdd"/>
+		</beginButton>
+		<endButton>
+			<Button class="cancelButton" text="{i18n_Static>starterDetailsPage.dialog.facetAdd.fragment.cancel.btn}" press="handleExit"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

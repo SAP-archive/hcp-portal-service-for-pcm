@@ -1,0 +1,54 @@
+<mvc:View controllerName="cp.templates.FreestylePage.Template" height="100%"
+		  xmlns:appContainer="sap.ushell.components.container"
+		  xmlns:commons="sap.ui.commons"
+		  xmlns:core="sap.ui.core"
+		  xmlns:cpControls="sap.hana.uis.flp.control"
+		  xmlns:l="sap.ui.layout"
+		  xmlns:mvc="sap.ui.core.mvc"
+		  xmlns="sap.m"
+		  class='cpv2-page-1280'>
+	<Page enableScrolling="false" showFooter="false" showHeader="false">
+		<content>
+			<FlexBox
+				direction="Column"
+				
+                >
+				
+				<items>
+	   <l:Grid hSpacing="0" vSpacing="0" class='contentArea'>
+
+		        <VBox>
+		            <layoutData>
+                      <l:GridData span="L12 M12 S12"/>
+                    </layoutData>
+                    <cpControls:Widget  alias="intro_text"></cpControls:Widget>
+         
+                </VBox>
+                <VBox>
+		            <layoutData>
+                      <l:GridData span="L12 M12 S12"/>
+                    </layoutData>
+                    <cpControls:Widget  alias="join_us"></cpControls:Widget>
+         
+                </VBox>
+                
+                <VBox>
+		           <layoutData>
+                      <l:GridData span="L12 M12 S12"/>
+                    </layoutData>
+                    <cpControls:Widget  alias="intro_image"></cpControls:Widget>
+                </VBox>
+                
+                <VBox>
+		           <layoutData>
+                      <l:GridData span="L12 M12 S12"/>
+                    </layoutData>
+                    <cpControls:Widget  alias="main_html"></cpControls:Widget>
+                </VBox>
+                
+		    </l:Grid>
+		    </items>
+		    </FlexBox>
+		    </content>
+		    </Page>
+</mvc:View>

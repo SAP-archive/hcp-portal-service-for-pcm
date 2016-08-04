@@ -1,0 +1,102 @@
+<core:FragmentDefinition
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:f="sap.ui.layout.form"
+        xmlns="sap.m">
+
+
+ <f:SimpleForm
+                minWidth="1024"
+                maxContainerCols="2"
+                editable="true"
+                layout="ResponsiveGridLayout"
+
+                labelSpanL="3"
+                labelSpanM="3"
+                emptySpanL="4"
+                emptySpanM="4"
+                columnsL="1"
+                columnsM="1"
+                class="editableForm">
+    <f:content>
+        <VBox class="box">
+
+
+            <Text class="caption" text="{i18n>Success.ThanksForApplication}"/>
+            <Label text="{i18n>Success.ThanksForApplication.Explanation}"/>
+
+            <layoutData>
+                <l:GridData
+                        span="L12 M12 S12"
+                     />
+            </layoutData>
+        </VBox>
+
+        <VBox>
+            <Toolbar design="Transparent" vSpacing="3" height="0rem"/>
+            <layoutData>
+                <l:GridData
+                        span="L12 M12 S12"
+                        />
+            </layoutData>
+        </VBox>
+
+        <VBox class="box">
+            <Text class="panelDesc" text="{i18n>Success.ForYourRecords}"/>
+            <layoutData>
+                <l:GridData
+                        span="L12 M12 S12"
+                        />
+            </layoutData>
+        </VBox>
+
+        <VBox>
+            <Label id="lblApplicationStatus" text="{i18n>Success.ApplicationStatus}"/>
+            <Label id="lblApplicationStatusValue" text="{i18n>Success.ApplicationStatus.Value}"/>
+            <layoutData>
+                <l:GridData span="L2 M3 S12" />
+            </layoutData>
+        </VBox>
+
+        <VBox>
+            <Label id="lblApplicationRefNo" text="{i18n>Success.ApplicationRefNo}"/>
+            <Label id="lblApplicationRefNoValue"/>
+            <layoutData>
+                <l:GridData span="L2 M3 S12" />
+            </layoutData>
+        </VBox>
+
+        <VBox>
+            <Label id="lblApplicationDate" text="{i18n>Success.ApplicationDate}"/>
+            <Label id="lblApplicationDateValue"/>
+            <layoutData>
+                <l:GridData span="L2 M3 S12" />
+            </layoutData>
+        </VBox>
+
+        <VBox>
+            <Label id="lblApplicationTime" text="{i18n>Success.ApplicationTime}"/>
+            <Label id="lblApplicationTimeValue"/>
+            <layoutData>
+                <l:GridData span="L2 M3 S12" />
+            </layoutData>
+        </VBox>
+
+        <VBox class="box">
+            <Text id="trackSubmission" class="caption" text="{i18n>Success.TrackSubmission}"/>
+            <core:HTML id="linkToStatusHtml"></core:HTML>
+            <layoutData>
+                <l:GridData
+                        span="L12 M12 S12"
+                        />
+            </layoutData>
+        </VBox>
+
+    </f:content>
+ </f:SimpleForm>
+
+
+
+
+</core:FragmentDefinition>

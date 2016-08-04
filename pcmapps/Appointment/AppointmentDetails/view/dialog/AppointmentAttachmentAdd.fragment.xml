@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core">
+	<Dialog title="{i18n_Static>starterDetailsPage.dialog.facetAdd.fragment.title}" type="Message">
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<f:SimpleForm id="AppointmentAttachment_Form" class="addDialogContent" minWidth="1024" maxContainerCols="2" editable="false"
+						layout="ResponsiveGridLayout" labelSpanS="4" labelSpanL="1" labelSpanM="2" emptySpanL="2" emptySpanM="2" columnsL="2" columnsS="2"
+						columnsM="2">
+						<f:content>
+							<VBox>
+								<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+								<Label required="true" text="{i18n>CHP.AppointmentAttachment.UI.LineItem.UI.DataField.CategoryCode}"></Label>
+								<ComboBox enabled="true" name="CategoryCode" change="handleComboChange" items="{path:'/AppointmentAttachmentCategoryCode'}"
+									id="CategoryCode_573"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+							</VBox>
+							<VBox>
+								<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+								<Label required="true" text="{i18n>CHP.AppointmentAttachment.UI.LineItem.UI.DataField.Name}"></Label>
+								<Input enabled="true" value="{/Name}" id="Name_574" liveChange="handleRequiredInputChange"></Input>
+							</VBox>
+							<VBox>
+								<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+								<Label required="true" text="{i18n>CHP.AppointmentAttachment.UI.LineItem.UI.DataField.LinkWebURI}"></Label>
+								<Input enabled="true" value="{/LinkWebURI}" id="LinkWebURI_575" liveChange="handleRequiredInputChange"></Input>
+							</VBox>
+							<VBox>
+								<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+								<Label required="true" text="{i18n_Static>starterDetailsPage.dialog.facetAdd.fragment.FileUpload.label}"></Label>
+								<u:FileUploader enabled="true" change="handleFileSelect" width="250px"/>
+							</VBox>
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<beginButton>
+			<Button class="saveButton" text="{i18n_Static>starterDetailsPage.dialog.facetAdd.fragment.Save.btn}" press="confirmAdd"/>
+		</beginButton>
+		<endButton>
+			<Button class="cancelButton" text="{i18n_Static>starterDetailsPage.dialog.facetAdd.fragment.cancel.btn}" press="handleExit"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

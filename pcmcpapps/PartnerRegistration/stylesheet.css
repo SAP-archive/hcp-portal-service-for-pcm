@@ -1,0 +1,76 @@
+#configBtn{
+    display: none !important;
+}
+
+#shell-container-pane{
+    display: none !important;
+}
+
+#shell-container-canvas{
+    left: 0 !important;
+}
+
+.container1{
+    height: 100% !important;
+
+}
+.container1 > div {
+    height: 100%;
+}
+.pageEl{
+    position: static;
+}
+
+.sapUiForm .sapMLabel:after {
+    content: "";
+}
+
+#appRegistration,#appRegistrationView,#appRegistrationView--pageRegWizard-scroll
+{
+    height: 100%;
+}
+
+#appRegistrationView--wizardTabBar-content{
+    display: none;
+
+
+}
+.editableForm.RemoveFade{
+    margin-top: 50px;
+}
+
+#appRegistrationView--wizardContent  .sapMCrslControls.sapMCrslHud{
+    display: none;
+}
+#appRegistrationView--wizardContent  .panelDesc{
+    line-height: 18px;
+    font-size: 16px;
+}
+#appRegistrationView--wizardContent  .caption{
+    display: block;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#appRegistrationView--wizardContent .box{
+    padding: 10px;
+
+}
+
+.sapUiFormResGridCont>div{
+    padding: 25px 15px 5px 25px;
+}
+
+.indicatorStyle{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.ddbStyle{
+    min-width: 100%!important;
+}
+
+#appRegistrationView--pageRegWizard-cont{
+    overflow-x: hidden;
+    overflow-y: hidden !important;
+}

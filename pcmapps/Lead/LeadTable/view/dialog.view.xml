@@ -1,0 +1,41 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.commons.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons"
+	controllerName="c4c.table-leadcollection.remote.view.dialog" xmlns:m="sap.m" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:ViewSettingsDialog title="{i18n_Static>starterTableTemplate.dialog.title}" id="c4cDialog" confirm="confirmDialog" cancel="onExit"
+		resetFilters="onResetFilters">
+		<m:sortItems>
+			<m:ViewSettingsItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.ID}" key="ID" selected="true"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.Name}" key="Name"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.Account}" key="Account"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.UserStatusCodeText}" key="UserStatusCodeText"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.CreatedOn}" key="CreatedOn"/>
+		</m:sortItems>
+		<m:filterItems>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.ID}" key='ID'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="ID"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.Name}" key='Name'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="Name"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.Account}" key='Account'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="Account"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.UserStatusCodeText}" key='UserStatusCodeText'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="UserStatusCodeText"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Lead.UI.LineItem.UI.DataField.CreatedOn}" key='CreatedOn'>
+				<m:customControl>
+					<m:DateRangeSelection class="sap-datetimepicker" name="CreatedOn" displayFormat="MM/dd/yyyy" valueFormat="MM/dd/yyyy"
+						change="onFilterChange"/>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+		</m:filterItems>
+	</m:ViewSettingsDialog>
+</mvc:View>

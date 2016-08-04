@@ -1,0 +1,14 @@
+Dear ${user.firstName} ${user.lastName},
+
+An account has been created for you. To activate your account for ${user.sp_name}, click the link below. You will be taken to a page where you will also set a password for your account.
+
+<a href="${user.activate_account_link}">${user.activate_account_link}</a>
+
+If the link above is not displayed or does not work, copy and paste the link below to the address bar of your browser.
+
+<#if user.target_url??><a href="${user.target_url}">For subsequent access to the site, click here: </a></#if>
+
+Best regards,
+Your SAP Cloud Identity Service Team
+
+This e-mail may contain trade secrets or privileged, undisclosed, or otherwise confidential information. If you have received this e-mail in error, you are hereby notified that any review, copying, or distribution of it is strictly prohibited. Please inform us immediately and destroy the original transmittal. Thank you for your cooperation.

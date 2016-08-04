@@ -1,0 +1,166 @@
+<core:FragmentDefinition
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:f="sap.ui.layout.form"
+        xmlns="sap.m">
+    <l:Grid
+            defaultSpan="L12 M12 S12"
+            width="auto">
+    <l:content>
+        <f:SimpleForm
+                      minWidth="1024"
+                      maxContainerCols="2"
+                      editable="true"
+                      layout="ResponsiveGridLayout"
+                      labelSpanL="3"
+                      labelSpanM="3"
+                      emptySpanL="4"
+                      emptySpanM="4"
+                      columnsL="1"
+                      columnsM="1"
+                      class="editableForm">
+            <f:content>
+                <VBox>
+                    <Label text="{i18n>Step2.Salutation}"/>
+                    <ComboBox valueStateText="{i18n>Error.Step2.Salutation}" class="ddbStyle" id="ddbSalutation" binding="{/PartnerData/}" selectedKey="{PartnerContactSalutation}"
+                            items="{
+                                      path: '/PartnerContactSalutation',
+                                      sorter: { path: 'Description' }
+                                    }">
+                        <core:Item key="{Code}" text="{Description}" />
+                    </ComboBox>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.JobTitle}"/>
+                    <Input id="txtJobTitle" binding="{/PartnerData/}" value="{PartnerContactJobTitle}" valueStateText="{i18n>Error.Step2.JobTitle}"/>
+                        <layoutData>
+                            <l:GridData
+                                    span="L4 M6 S12"
+                                    />
+                        </layoutData>
+                </VBox>
+
+
+                <VBox>
+                    <Label text="{i18n>Step2.PreferredLanguage}" />
+                    <ComboBox id="ddbPreferredLanguage" class="ddbStyle" valueStateText="{i18n>Error.Step2.PreferredLanguage}" binding="{/PartnerData/}" selectedKey="{PartnerContactPreferredLanguage}"
+                            items="{
+                                      path: '/language',
+                                      sorter: { path: 'Description' }
+                                    }">
+                        <core:Item key="{Code}" text="{Description}" />
+                    </ComboBox>
+                        <layoutData>
+                            <l:GridData
+                                    span="L4 M6 S12"
+                                    />
+                        </layoutData>
+
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.FirstName}"/>
+                    <Input id="txtFirstName" binding="{/PartnerData/}" enabled="false" value="{PartnerContactFirstName}" />
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.LastName}" />
+                    <Input id="txtLastName" binding="{/PartnerData/}" enabled="false" value="{PartnerContactLastName}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.EMailAddress}"/>
+                    <Input id="txtEmaiLAddress" binding="{/PartnerData/}" enabled="false" value="{PartnerContactEmail}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.Phone}"/>
+                    <Input id="txtPhone" binding="{/PartnerData/}" value="{PartnerContactPhone}" valueStateText="{i18n>Error.Step2.Phone}"/>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.AddressAsCompany}"/>
+                    <Switch id="sameAsIndicator" class="indicatorStyle" binding="{/PartnerData/}" state="{AddressIndicator}" customTextOn="{i18n>Step2.No}" customTextOff="{i18n>Step2.Yes}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.PostalCode}"/>
+                    <Input id="txtPostalCodeContact" value="{PartnerContactPostalCode}"  binding="{/PartnerData/}" enabled="{AddressIndicator}" valueStateText="{i18n>Error.Step2.PostalCode}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.Address}"/>
+                    <Input id="txtAddressContact" value="{PartnerContactAddress}" binding="{/PartnerData/}" enabled="{AddressIndicator}" valueStateText="{i18n>Error.Step2.Address}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+                <VBox>
+                    <Label text="{i18n>Step2.Country}"/>
+                    <ComboBox id="PartnerContactCountry" class="ddbStyle" binding="{/PartnerData/}" enabled="{AddressIndicator}" selectedKey="{PartnerContactCountry}" valueStateText="{i18n>Error.Step2.Country}"
+                            items="{
+                                      path: '/countries',
+                                      sorter: { path: 'Description' }
+                                    }">
+                        <core:Item key="{Code}" text="{Description}" />
+                    </ComboBox>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+                </VBox>
+
+
+                <VBox>
+                    <Label text="{i18n>Step2.City}"/>
+                    <Input id="txtCityContact" value="{PartnerContactCity}" binding="{/PartnerData/}" enabled="{AddressIndicator}" valueStateText="{i18n>Error.Step2.City}"/>
+                    <layoutData>
+                        <l:GridData
+                                span="L4 M6 S12"
+                                />
+                    </layoutData>
+            </VBox>
+
+
+            </f:content>
+        </f:SimpleForm>
+    </l:content>
+</l:Grid>
+
+</core:FragmentDefinition>

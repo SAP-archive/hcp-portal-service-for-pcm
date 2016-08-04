@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n_Static>starterDetailsPage.dialog.delete.fragment.title}" type="Message">
+		<content>
+			<Text text="{i18n_Static>starterDetailsPage.dialog.delete.fragment.contentDesription}"/>
+		</content>
+		<beginButton>
+			<Button class="okButton" text="{i18n_Static>starterDetailsPage.dialog.delete.fragment.ok.btn}" press="handleConfirm"/>
+		</beginButton>
+		<endButton>
+			<Button class="cancelButton" text="{i18n_Static>starterDetailsPage.dialog.delete.fragment.cancel.btn}" press="handleExit"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

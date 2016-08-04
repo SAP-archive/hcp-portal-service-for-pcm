@@ -1,0 +1,64 @@
+<core:FragmentDefinition xmlns="sap.m" controllerName="c4c.details-AppointmentCollection.local.view.details" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" id="AppointmentCollection_Form" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.SubjectName}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Appointment/SubjectName}" id="SubjectName_550"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.Account}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Appointment/Account}" id="Account_551"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.AccountID}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Appointment/AccountID}" id="AccountID_552" name="AccountID" type="Text" placeholder=""
+							showValueHelp="true" valueHelpRequest="openValueHelpDialog"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.Location}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Appointment/Location}" id="Location_553"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.AppointmentStartDateTime}"></Label>
+						<DateTimeInput class="sap-datetimepicker" enabled="true" type="DateTime"
+							dateValue="{path:'EditObjectPageModel>/Appointment/AppointmentStartDateTime', formatter:'.fnDateTimeFormatter'}"
+							id="AppointmentStartDateTime_554" name="AppointmentStartDateTime" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.AppointmentEndDateTime}"></Label>
+						<DateTimeInput class="sap-datetimepicker" enabled="true" type="DateTime"
+							dateValue="{path:'EditObjectPageModel>/Appointment/AppointmentEndDateTime', formatter:'.fnDateTimeFormatter'}"
+							id="AppointmentEndDateTime_555" name="AppointmentEndDateTime" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.Category}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Appointment/AppointmentCategoryValue}" name="Category" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Appointment/AppointmentCategory'}" id="Category_556"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.Priority}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Appointment/AppointmentPriorityValue}" name="Priority" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Appointment/AppointmentPriority'}" id="Priority_557"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.StatusText}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Appointment/StatusText}" id="StatusText_558"></Input>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

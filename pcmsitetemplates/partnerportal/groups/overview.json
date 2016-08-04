@@ -1,0 +1,47 @@
+{
+  "_version": "1.0",
+  "identification": {
+    "id": "hcp://pcmsitetemplates/partnerportal/groups/overview.json",
+    "title": "Overview",
+    "description": "",
+    "entityType": "group"
+  },
+  "payload": {
+    "locked": "false",
+    "tags": [],
+    "tiles": [
+      {
+        "target": {
+          "semanticObject": "PartnerContact",
+          "action": "Details"
+        },
+        "id": "1f789309-11e0-475f-92b1-3ca8f54d2d4b",
+        "appId": "hcp://pcmsitetemplates/partnerportal/applications/lead_details.json"
+      },
+      {
+        "target": {
+          "semanticObject": "Partner",
+          "action": "Details"
+        },
+        "id": "3efea89e-487e-440c-9272-7aaf8bde4eac",
+        "appId": "hcp://pcmsitetemplates/partnerportal/applications/company_profile.json"
+      },
+      {
+        "target": {
+          "semanticObject": "Approval",
+          "action": "Approval"
+        },
+        "id": "53a130c4-3e1d-40ae-8566-d556153fe661",
+        "appId": "hcp://pcmsitetemplates/partnerportal/applications/application_status.json"
+      },
+      {
+        "target": {
+          "semanticObject": "Register",
+          "action": "Display"
+        },
+        "id": "4fa8add3-01c0-4b80-badc-cbb036491240",
+        "appId": "hcp://pcmsitetemplates/partnerportal/applications/partner_registration.json"
+      }
+    ]
+  }
+}

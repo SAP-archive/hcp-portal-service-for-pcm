@@ -1,0 +1,55 @@
+<mvc:View height="100%" controllerName="c4c.create-AppointmentCollection.remote.view.create" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page
+		title="{path: 'i18n_Static>starterCreateTemplate.create.view.title,CHP.Appointment.UI.HeaderInfo.TypeName.Subject', formatter:'.formatTranslation'}"
+		class="marginBoxContent">
+		<content>
+			<f:SimpleForm id="AppointmentCollection_Form" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"
+				labelSpanS="4" labelSpanL="1" labelSpanM="2" emptySpanL="2" emptySpanM="2" columnsL="2" columnsS="2" columnsM="2">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.SubjectName}"></Label>
+						<Input enabled="true" value="{/SubjectName}" id="SubjectName_544"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.AccountID}"></Label>
+						<Input enabled="true" value="{/AccountID}" id="AccountID_545" name="AccountID" type="Text" placeholder="" showValueHelp="true"
+							valueHelpRequest="openValueHelpDialog" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.AppointmentStartDateTime}"></Label>
+						<DateTimeInput class="sap-datetimepicker" enabled="true" type="DateTime" value="{path:'/AppointmentStartDateTime'}"
+							id="AppointmentStartDateTime_546"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.AppointmentEndDateTime}"></Label>
+						<DateTimeInput class="sap-datetimepicker" enabled="true" type="DateTime" value="{path:'/AppointmentEndDateTime'}"
+							id="AppointmentEndDateTime_547"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.Category}"></Label>
+						<ComboBox enabled="true" name="Category" change="handleComboChange" items="{path:'/AppointmentCategory'}" id="Category_548"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Appointment.UI.Identification.UI.DataField.Priority}"></Label>
+						<ComboBox enabled="true" name="Priority" change="handleComboChange" items="{path:'/AppointmentPriority'}" id="Priority_549"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<footer >
+			<Toolbar class="footer">
+				<Button text="{i18n_Static>starterCreateTemplate.create.view.reset.btn}" press='resetForm'/>
+				<ToolbarSpacer/>
+				<Button class="saveButton" text="{i18n_Static>starterCreateTemplate.create.view.save.btn}" press='saveForm'/>
+				<Button class="cancelButton" text="{i18n_Static>starterCreateTemplate.create.view.cancel.btn}" press='cancelForm'/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

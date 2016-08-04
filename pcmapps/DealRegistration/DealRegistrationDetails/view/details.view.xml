@@ -1,0 +1,233 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="c4c.details-dealregistrationcollection.local.view.details" xmlns:f="sap.ui.layout.form" height="100%">
+	<Page id="idPage" title="{i18n>CHP.DealRegistration.UI.HeaderInfo.TypeName.Name}" class="sapUiFioriObjectPage" showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<Toolbar class="detailsToolbar">
+				<core:Icon src="sap-icon://decision" class="toolbarImage sapThemePageBG-asColor"></core:Icon>
+				<Label text="{ObjectPageModel>/DealRegistration/DealID}" tooltip="{ObjectPageModel>/DealRegistration/DealID}" class="detailsToolbarLabel"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+			<IconTabBar select="handleIconTabBarSelect">
+				<items>
+					<IconTabFilter text="{i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.DealRegistration.UI.Identification}" key="DealRegistration">
+						<Toolbar design="Transparent" height="3rem">
+							<Text text="{i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.DealRegistration.UI.Identification}" class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="edit-overview" icon="sap-icon://edit" press="handleOverviewEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.view.Edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="DealRegistration"/>
+								</customData>
+							</Button>
+							<Button class="confirmBtn" press="handleConfirmEdit" text="{i18n_Static>starterDetailsPage.details.view.Save.btn}" visible="false"></Button>
+							<Button class="cancelBtn" press="handleCancelEdit" text="{i18n_Static>starterDetailsPage.details.view.Cancel.btn}" visible="false"></Button>
+						</Toolbar>
+						<layout:VerticalLayout class="marginVerticalContent DealRegistration" width="100%">
+							<layout:content>
+								<core:Fragment fragmentName="c4c.details-dealregistrationcollection.local.view.detailsDisplay" type="XML"/>
+							</layout:content>
+						</layout:VerticalLayout>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.DealItem.UI.LineItem}" key="DealItem">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.DealItem.UI.LineItem', 'tableCountModel>/DealItemCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="DealItem"/>
+								</customData>
+							</Button>
+							<Button class="updateBtn" icon="sap-icon://edit" press="enableEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetUpdate.fragment.update.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="DealItem"/>
+								</customData>
+							</Button>
+							<Button class="addBtn" icon="sap-icon://add" press="enableAdd" tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.add.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="DealItem"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="DealItem table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/DealItem'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.DealItem.UI.LineItem.UI.DataField.ProductID}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.DealItem.UI.LineItem.UI.DataField.ProductDescription}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.DealItem.UI.LineItem.UI.DataField.Quantity.QuantityUnitOfMeasure}"/>
+								</Column>
+								<Column width="30px" class="editableFacetColumn" visible="false"></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>ProductID}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>ProductDescription}"/>
+									</cells>
+									<cells>
+										<Text text="{parts: ['ObjectPageModel>Quantity', 'ObjectPageModel>QuantityUnitOfMeasure'] , formatter:'.getFieldDetails'}"/>
+									</cells>
+									<cells>
+										<core:Icon src="sap-icon://edit" press="onEditFacetItem"></core:Icon>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.Questionnaire1.UI.LineItem}" key="Questionnaire1">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.Questionnaire1.UI.LineItem', 'tableCountModel>/Questionnaire1Count'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Questionnaire1"/>
+								</customData>
+							</Button>
+							<Button class="updateBtn" icon="sap-icon://edit" press="enableEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetUpdate.fragment.update.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Questionnaire1"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="Questionnaire1 table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/Questionnaire1'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.Questionnaire1.UI.LineItem.UI.DataField.Question}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.Questionnaire1.UI.LineItem.UI.DataField.Answer}"/>
+								</Column>
+								<Column width="30px" class="editableFacetColumn" visible="false"></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Question}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>AnswerText}"/>
+									</cells>
+									<cells>
+										<core:Icon src="sap-icon://edit" press="onEditFacetItem"></core:Icon>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.Questionnaire2.UI.LineItem}" key="Questionnaire2">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.Questionnaire2.UI.LineItem', 'tableCountModel>/Questionnaire2Count'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+							<Button class="deleteBtn" icon="sap-icon://sys-cancel" press="enableDelete"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetAdd.fragment.edit.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Questionnaire2"/>
+								</customData>
+							</Button>
+							<Button class="updateBtn" icon="sap-icon://edit" press="enableEdit"
+								tooltip="{i18n_Static>starterDetailsPage.details.facetUpdate.fragment.update.btn}">
+								<customData>
+									<core:CustomData key="model" value="ObjectPageModel"/>
+									<core:CustomData key="table" value="Questionnaire2"/>
+								</customData>
+							</Button>
+						</Toolbar>
+						<Table class="Questionnaire2 table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/Questionnaire2'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.Questionnaire2.UI.LineItem.UI.DataField.Question}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.Questionnaire2.UI.LineItem.UI.DataField.Answer}"/>
+								</Column>
+								<Column width="30px" class="editableFacetColumn" visible="false"></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>Question}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>Answer}"/>
+									</cells>
+									<cells>
+										<core:Icon src="sap-icon://edit" press="onEditFacetItem"></core:Icon>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.DealDocumentFlow.UI.LineItem}" key="DealDocumentFlow">
+						<Toolbar design="Transparent" height="3rem">
+							<Text
+								text="{ parts:['i18n>CHP.DealRegistration.UI.Facets.UI.RefenceFacet.DealDocumentFlow.UI.LineItem', 'tableCountModel>/DealDocumentFlowCount'] , formatter:'.getTitle'}"
+								class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Table class="DealDocumentFlow table-details-page" delete="handleDelete" growing="true" mode="SingleSelectMaster" inset="false"
+							items="{path: 'ObjectPageModel>/DealDocumentFlow'}">
+							<columns>
+								<Column>
+									<Text text="{i18n>CHP.DealDocumentFlow.UI.LineItem.UI.DataField.OpportunityID}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CHP.DealDocumentFlow.UI.LineItem.UI.DataField.CreationDateTime}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>CHP.DealDocumentFlow.UI.LineItem.UI.DataField.OwnerName}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ObjectPageModel>OpportunityID}"/>
+									</cells>
+									<cells>
+										<Text text="{path:'ObjectPageModel>CreationDateTime', formatter:'.formatDate'}"/>
+									</cells>
+									<cells>
+										<Text text="{ObjectPageModel>OwnerName}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<BusyIndicator visible="{ObjectPageState>/showBusyIndicator}" class="details-bi"></BusyIndicator>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</core:View>

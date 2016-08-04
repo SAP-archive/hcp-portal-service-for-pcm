@@ -1,0 +1,48 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.commons.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons"
+	controllerName="c4c.table-appointmentcollection.remote.view.dialog" xmlns:m="sap.m" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:ViewSettingsDialog title="{i18n_Static>starterTableTemplate.dialog.title}" id="c4cDialog" confirm="confirmDialog" cancel="onExit"
+		resetFilters="onResetFilters">
+		<m:sortItems>
+			<m:ViewSettingsItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.SubjectName}" key="SubjectName" selected="true"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.StatusText}" key="StatusText"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.AppointmentStartDateTime}" key="AppointmentStartDateTime"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.AppointmentEndDateTime}" key="AppointmentEndDateTime"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.Account}" key="Account"/>
+			<m:ViewSettingsItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.CategoryText}" key="CategoryText"/>
+		</m:sortItems>
+		<m:filterItems>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.SubjectName}" key='SubjectName'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="SubjectName"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.StatusText}" key='StatusText'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="StatusText"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.AppointmentStartDateTime}" key='AppointmentStartDateTime'>
+				<m:customControl>
+					<m:DateRangeSelection class="sap-datetimepicker" name="AppointmentStartDateTime" displayFormat="MM/dd/yyyy" valueFormat="MM/dd/yyyy"
+						change="onFilterChange"/>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.AppointmentEndDateTime}" key='AppointmentEndDateTime'>
+				<m:customControl>
+					<m:DateRangeSelection class="sap-datetimepicker" name="AppointmentEndDateTime" displayFormat="MM/dd/yyyy" valueFormat="MM/dd/yyyy"
+						change="onFilterChange"/>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.Account}" key='Account'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="Account"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+			<m:ViewSettingsCustomItem text="{i18n>CHP.Appointment.UI.LineItem.UI.DataField.CategoryText}" key='CategoryText'>
+				<m:customControl>
+					<m:Input placeholder="{i18n_Static>starterTableTemplate.dialog.inputPlaceholder}" change="onFilterChange" name="CategoryText"></m:Input>
+				</m:customControl>
+			</m:ViewSettingsCustomItem>
+		</m:filterItems>
+	</m:ViewSettingsDialog>
+</mvc:View>

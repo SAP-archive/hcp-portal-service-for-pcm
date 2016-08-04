@@ -1,0 +1,37 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="c4c.details-partnercontactcollection.local.view.details" xmlns:f="sap.ui.layout.form" height="100%">
+	<Page id="idPage" title="{i18n>CHP.PartnerContact.UI.HeaderInfo.TypeName.Name}" class="sapUiFioriObjectPage" showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<Toolbar class="detailsToolbar">
+				<core:Icon src="sap-icon://my-view" class="toolbarImage sapThemePageBG-asColor"></core:Icon>
+				<Label text="{ObjectPageModel>/PartnerContact/EmployeeID}" tooltip="{ObjectPageModel>/PartnerContact/EmployeeID}"
+					class="detailsToolbarLabel"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+			<IconTabBar select="handleIconTabBarSelect" class="one-facet">
+				<items>
+					<IconTabFilter text="{i18n>CHP.PartnerContact.UI.Facets.UI.RefenceFacet.PartnerContact.UI.Identification}" key="PartnerContact">
+						<Toolbar design="Transparent" height="3rem">
+							<Text text="{i18n>CHP.PartnerContact.UI.Facets.UI.RefenceFacet.PartnerContact.UI.Identification}" class="sapMH4FontSize"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<layout:VerticalLayout class="marginVerticalContent PartnerContact" width="100%">
+							<layout:content>
+								<core:Fragment fragmentName="c4c.details-partnercontactcollection.local.view.detailsDisplay" type="XML"/>
+							</layout:content>
+						</layout:VerticalLayout>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<BusyIndicator visible="{ObjectPageState>/showBusyIndicator}" class="details-bi"></BusyIndicator>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</core:View>

@@ -1,0 +1,59 @@
+<core:FragmentDefinition xmlns="sap.m" controllerName="c4c.details-TaskCollection.local.view.details" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" id="TaskCollection_Form" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="3"
+				labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Task.UI.Identification.UI.DataField.Subject}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Task/Subject}" id="Subject_583"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Task.UI.Identification.UI.DataField.Account}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Task/Account}" id="Account_584"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Task.UI.Identification.UI.DataField.AccountID}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Task/AccountID}" id="AccountID_585" name="AccountID" type="Text" placeholder=""
+							showValueHelp="true" valueHelpRequest="openValueHelpDialog"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Task.UI.Identification.UI.DataField.StatusText}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Task/StatusText}" id="StatusText_586"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Task.UI.Identification.UI.DataField.TaskStartDateTime}"></Label>
+						<DateTimeInput class="sap-datetimepicker" enabled="true" type="DateTime"
+							dateValue="{path:'EditObjectPageModel>/Task/TaskStartDateTime', formatter:'.fnDateTimeFormatter'}" id="TaskStartDateTime_587"
+							name="TaskStartDateTime" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Task.UI.Identification.UI.DataField.TaskDueDateTime}"></Label>
+						<DateTimeInput class="sap-datetimepicker" enabled="true" type="DateTime"
+							dateValue="{path:'EditObjectPageModel>/Task/TaskDueDateTime', formatter:'.fnDateTimeFormatter'}" id="TaskDueDateTime_588"
+							name="TaskDueDateTime" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Task.UI.Identification.UI.DataField.Category}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Task/TaskCategoryValue}" name="Category" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Task/TaskCategory'}" id="Category_589"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Task.UI.Identification.UI.DataField.Priority}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Task/TaskPriorityValue}" name="Priority" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Task/TaskPriority'}" id="Priority_590"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

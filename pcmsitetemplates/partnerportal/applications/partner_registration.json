@@ -1,0 +1,53 @@
+{
+  "_version": "1.3.0",
+  "sap.app": {
+    "_version": "1.3.0",
+    "id": "hcp://pcmsitetemplates/partnerportal/applications/partner_registration.json",
+    "title": "Partner Registration",
+    "description": "",
+    "tags": {
+      "keywords": [
+        "Partner Registration"
+      ]
+    },
+    "crossNavigation": {
+      "context": {},
+      "inbounds": {
+        "0":{
+          "semanticObject": "Register",
+          "action": "Display",
+          "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+          },
+          "title": "Partner Registration",
+          "icon": "sap-icon://pending",
+          "size": "1x1"
+        }
+      }
+    }
+  },
+  "sap.platform.hcp": {
+    "_version": "1.2.0",
+    "uri": "/PartnerRegistration",
+    "appName": "pcmcpapps"
+  },
+  "sap.cloud.portal": {
+    "_version": "1.1.0",
+    "availablePageTemplates": []
+  },
+  "sap.flp": {
+    "_version": "1.1.0",
+    "type": "",
+    "config": {}
+  },
+  "sap.ui": {
+    "_version": "1.3.0",
+    "technology": "UI5"
+  },
+  "sap.ui5":{
+    "_version": "1.2.0",
+    "componentName": "c4c.registration.local"
+  }
+}

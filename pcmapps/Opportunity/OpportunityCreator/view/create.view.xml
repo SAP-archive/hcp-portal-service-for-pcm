@@ -1,0 +1,78 @@
+<mvc:View height="100%" controllerName="c4c.create-OpportunityCollection.remote.view.create" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page
+		title="{path: 'i18n_Static>starterCreateTemplate.create.view.title,CHP.Opportunity.UI.HeaderInfo.TypeName.OpportunityName', formatter:'.formatTranslation'}"
+		class="marginBoxContent">
+		<content>
+			<f:SimpleForm id="OpportunityCollection_Form" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"
+				labelSpanS="4" labelSpanL="1" labelSpanM="2" emptySpanL="2" emptySpanM="2" columnsL="2" columnsS="2" columnsM="2">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.OpportunityName}"></Label>
+						<Input enabled="true" value="{/OpportunityName}" id="OpportunityName_368" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.AccountID}"></Label>
+						<Input enabled="true" value="{/AccountID}" id="AccountID_369" name="AccountID" type="Text" placeholder="" showValueHelp="true"
+							valueHelpRequest="openValueHelpDialog" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.Probability}"></Label>
+						<Input enabled="true" value="{/Probability}" id="Probability_370" type="Number"
+							valueStateText="{i18n_Static>starterDetailsPage.details.Number.valueStateText}" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.Category}"></Label>
+						<ComboBox enabled="true" name="Category" change="handleComboChange" items="{path:'/OpportunityCategory'}" id="Category_371"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.StartDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true"
+							value="{path:'/StartDate', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}" id="StartDate_372"
+							displayFormat="long"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.CloseDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true"
+							value="{path:'/CloseDate', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}" id="CloseDate_373"
+							displayFormat="long"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.ExpectedValue.ExpectedValueCurrencyCode}"></Label>
+						<l:HorizontalLayout class="create-horizontal">
+							<Input enabled="true" value="{/ExpectedValue}" id="ExpectedValue_374" type="Number"
+								valueStateText="{i18n_Static>starterDetailsPage.details.Number.valueStateText}" liveChange="handleRequiredInputChange"></Input>
+							<ComboBox enabled="true" name="ExpectedValueCurrencyCode" change="handleComboChange" items="{path:'/OpportunityExpectedValueCurrencyCode'}"
+								id="ExpectedValueCurrencyCode_375"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+						</l:HorizontalLayout>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.SalesPhase}"></Label>
+						<ComboBox enabled="true" name="SalesPhase" change="handleComboChange" items="{path:'/OpportunitySalesPhase'}" id="SalesPhase_377"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Opportunity.UI.Identification.UI.DataField.SalesCycle}"></Label>
+						<ComboBox enabled="true" name="SalesCycle" change="handleComboChange" items="{path:'/OpportunitySalesCycle'}" id="SalesCycle_378"><core:Item key="{Code}" text="{Description}"/></ComboBox>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<footer >
+			<Toolbar class="footer">
+				<Button text="{i18n_Static>starterCreateTemplate.create.view.reset.btn}" press='resetForm'/>
+				<ToolbarSpacer/>
+				<Button class="saveButton" text="{i18n_Static>starterCreateTemplate.create.view.save.btn}" press='saveForm'/>
+				<Button class="cancelButton" text="{i18n_Static>starterCreateTemplate.create.view.cancel.btn}" press='cancelForm'/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

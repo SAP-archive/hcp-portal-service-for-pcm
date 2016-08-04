@@ -1,0 +1,99 @@
+<core:FragmentDefinition xmlns="sap.m" controllerName="c4c.details-LeadCollection.local.view.details" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" id="LeadCollection_Form" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="3"
+				labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.ID}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Lead/ID}" id="ID_460"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Name}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Lead/Name}" id="Name_461" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Company}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Lead/Company}" id="Company_462" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.StartDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true" dateValue="{path:'EditObjectPageModel>/Lead/StartDate', formatter:'.fnDateTimeFormatter'}"
+							id="StartDate_463" displayFormat="long" name="StartDate" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.EndDate}"></Label>
+						<DatePicker class="sap-datepicker" enabled="true" dateValue="{path:'EditObjectPageModel>/Lead/EndDate', formatter:'.fnDateTimeFormatter'}"
+							id="EndDate_464" displayFormat="long" name="EndDate" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.ContactFirstName}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Lead/ContactFirstName}" id="ContactFirstName_465"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="true" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.ContactLastName}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Lead/ContactLastName}" id="ContactLastName_466" liveChange="handleRequiredInputChange"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.HouseNumber}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Lead/HouseNumber}" id="HouseNumber_467"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Street}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Lead/Street}" id="Street_468"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.City}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Lead/City}" id="City_469"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.PostalCode}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Lead/PostalCode}" id="PostalCode_470"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Country}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Lead/LeadCountryValue}" name="Country" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Lead/LeadCountry'}" id="Country_471"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.CreatedOn}"></Label>
+						<DatePicker class="sap-datepicker" enabled="false"
+							dateValue="{path:'EditObjectPageModel>/Lead/CreatedOn', formatter:'.fnDateTimeFormatter'}" id="CreatedOn_472" displayFormat="long"
+							name="CreatedOn" change="handleDateChange"/>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.UserStatusCode}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Lead/LeadUserStatusCodeValue}" name="UserStatusCode" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Lead/LeadUserStatusCode'}" id="UserStatusCode_473"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.PriorityText}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Lead/PriorityText}" id="PriorityText_474"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Lead.UI.Identification.UI.DataField.Category}"></Label>
+						<ComboBox value="{EditObjectPageModel>/Lead/LeadCategoryValue}" name="Category" change="handleComboChange" enabled="true"
+							items="{path:'EditObjectPageModel>/Lead/LeadCategory'}" id="Category_475"><core:Item key="{EditObjectPageModel>Code}" text="{EditObjectPageModel>Description}"/></ComboBox>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

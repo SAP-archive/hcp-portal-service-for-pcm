@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ActionSheet placement="Top">
+		<buttons>
+			<Button text="{i18n_AnnoExt>CHP.Task.UI.BOAction.UI.Action.SettoInProcess}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_Task_InProcess"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+			<Button text="{i18n_AnnoExt>CHP.Task.UI.BOAction.UI.Action.SettoComplete}" press="actionPressed">
+				<customData>
+					<core:CustomData key="funcName" value="Set_Task_AsCompleted"/>
+					<core:CustomData key="ObjectID" value=""/>
+				</customData>
+			</Button>
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

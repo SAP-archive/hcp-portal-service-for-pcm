@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns="sap.m" controllerName="c4c.details-AccountCollection.local.view.details" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm minWidth="1024" id="AccountCollection_Form" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="3"
+				labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<f:content>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Account.UI.Identification.UI.DataField.AccountName1}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Account/AccountName1}" id="AccountName1_668"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Account.UI.Identification.UI.DataField.AccountName2}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Account/AccountName2}" id="AccountName2_669"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Account.UI.Identification.UI.DataField.Phone}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Account/Phone}" id="Phone_670"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Account.UI.Identification.UI.DataField.Email}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Account/Email}" id="Email_671"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Account.UI.Identification.UI.DataField.Web}"></Label>
+						<Input enabled="true" value="{EditObjectPageModel>/Account/Web}" id="Web_672"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Account.UI.Identification.UI.DataField.Address}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Account/Address}" id="Address_673"></Input>
+					</VBox>
+					<VBox>
+						<layoutData><l:GridData span="L4 M6 S12"/></layoutData>
+						<Label required="false" text="{i18n>CHP.Account.UI.Identification.UI.DataField.EmployeeResponsible}"></Label>
+						<Input enabled="false" value="{EditObjectPageModel>/Account/EmployeeResponsible}" id="EmployeeResponsible_674"></Input>
+					</VBox>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

@@ -1,0 +1,35 @@
+#configBtn{
+    display: none !important;
+}
+
+#shell-container-pane{
+    display: none !important;
+}
+
+#shell-container-canvas{
+    left: 0 !important;
+}
+
+.container1{
+    height: 100% !important;
+
+}
+.container1 > div {
+    height: 100%;
+}
+.pageEl{
+    position: static;
+}
+.pageEl{
+
+}
+
+.status_form .sapMObjStatusText ,.status_form .sapMLabel{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.sapMOH {
+    margin: 0.5rem 0rem;
+    padding: 0 0;
+}
