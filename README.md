@@ -42,9 +42,11 @@ The SAP HCP portal service for partner channel management configuration guide pr
        * PartnerContact.
        * Applicant.
        * Candidate.
+
 ###  2.4 Create email template in SCI
    1.	Download SAPID Mail Templates.zip as an example.
    2.	Open a BCP ticket BC-NEO-IAM. Use the email templates you downloaded and adjust it according to your needs.
+
 ### 2.5	Set up trust between the customer account and SCI (for log-on scenario).
 
    ##### 2.5.1	Customer HCP Account Settings
@@ -67,7 +69,8 @@ The SAP HCP portal service for partner channel management configuration guide pr
     last_name  | lastname
     Mail       | email
 
-   10.	Save and close
+   10.	Save and close.
+
 
    ##### 2.5.2	SCI IDP Settings:
    1.	Open the admin page of your SCI IDP account
@@ -110,6 +113,5 @@ The SAP HCP portal service for partner channel management configuration guide pr
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.
    3. Create a new Config for OAuth Identity Provider.
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 
