@@ -119,14 +119,14 @@ The SAP HCP portal service for partner channel management configuration guide pr
    ![Image configure OAUTH](/resources/image1.jpg)
 
    You will see the following screen
-   ![Image OAUTH identity](resources/image2.jpg)
+   ![Image OAUTH identity](/resources/image2.jpg)
 
    4. In a new browser, open the customer HCP account trust setting and fill out the required details:
-   ![Image customer HCP account ](https://github.com/SAP/hcp-portal-service-for-pcm/tree/master/resources/image3.jpg)
+   ![Image customer HCP account ](/resources/image3.jpg)
 
    5. Back in the Administrator section, click on OAUTH2.0 CLIENT REGISTRATION.
    6. Create a new OAuth Client Registration.
-   ![Image OAUTH2.0 CLIENT REGISTRATION  ](https://github.com/SAP/hcp-portal-service-for-pcm/tree/master/resources/image4.jpg)
+   ![Image OAUTH2.0 CLIENT REGISTRATION  ](/resources/image4.jpg)
 
 #### 2.8	Upload destinations to customer HCP account
 
