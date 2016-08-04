@@ -88,7 +88,7 @@ The SAP HCP portal service for partner channel management configuration guide pr
   (email) that was assigned to it when the customer account was provisioned to the Portal Service.
   If the user cannot log in, make sure that the user was added to the SCI account (go to the SCI admin page and upload the user with his/her full details in a CSV file format. To see the required details, you can export a user to a CSV file and edit the file).
 
-##### 2.6	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
+#### 2.6	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
    1. Request a signed certificate from [SAP Support Portal](http://help.sap.com/disclaimer?site=https://support.sap.com/support-programs-services/services/trust-center/sso.html) (open in Internet Explorer only)
    2. Open a KeyStore Explorer application, and then:
        1. Click on Create a new KeyStore.
@@ -181,22 +181,22 @@ Note that the Callback is configured on the CRM per HCP system, which means that
    2.	Click the Administration tab and choose General Settings.
    3.	Click on Communication Systems.
    4.	Create a new system with the following details:
-   + ID = PCM_PORTAL
-   + Host Name = <application>-<tenant>.hana.ondemand.com
-   + System Access Type = Internet
+            + ID = PCM_PORTAL
+            + Host Name = <application>-<tenant>.hana.ondemand.com
+            + System Access Type = Internet
    5. Save the settings.
    6. Set Actions to Active.
    7. Click on Communication Arrangement.
    8. Click on New, then:
-   + Select Scenario: Choose the Channel Partner Registration Portal Callback option and click Next.
-   + Define Business Data: Choose the system you created on step 4.
-   + Define Technical Data:
+         + Select Scenario: Choose the Channel Partner Registration Portal Callback option and click Next.
+         + Define Business Data: Choose the system you created on step 4.
+         + Define Technical Data:
      1.	Communication Method = Direct Connection.
      2.	Application Protocol = HTTP.
      3. Authentication Method = User ID and Password.
      4.	Click the Edit Credentials button and set the details of the TENANT_ADMIN user.
-   + Review: Review and verify the correctness of the data you filled in, then click on Finish.
-   + Confirm settings.
+        + Review: Review and verify the correctness of the data you filled in, then click on Finish.
+        + Confirm settings.
    9.	In the Communication Arrangement, click the entry of the new arrangement, then click Edit.
    10.	Choose Technical Data from the upper bar (instead of Business Data).
    11.	Click the Edit Advanced button.
