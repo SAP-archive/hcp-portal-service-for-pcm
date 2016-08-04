@@ -116,10 +116,10 @@ The SAP HCP portal service for partner channel management configuration guide pr
    1. Log in to C4C backend with an Admin work center authorization.
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.
    3. Create a new Config for OAuth Identity Provider.
-   ![Image configure OAUTH](https://github.com/SAP/hcp-portal-service-for-pcm/tree/master/resources/image1.jpg)
+   ![Image configure OAUTH](/resources/image1.jpg)
 
    You will see the following screen
-   ![Image OAUTH identity](https://github.com/SAP/hcp-portal-service-for-pcm/tree/master/resources/image2.jpg)
+   ![Image OAUTH identity](resources/image2.jpg)
 
    4. In a new browser, open the customer HCP account trust setting and fill out the required details:
    ![Image customer HCP account ](https://github.com/SAP/hcp-portal-service-for-pcm/tree/master/resources/image3.jpg)
