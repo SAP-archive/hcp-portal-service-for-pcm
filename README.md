@@ -48,8 +48,7 @@ The SAP HCP portal service for partner channel management configuration guide pr
    2.	Open a BCP ticket BC-NEO-IAM. Use the email templates you downloaded and adjust it according to your needs.
 
 ### 2.5	Set up trust between the customer account and SCI (for log-on scenario).
-
-   ##### 2.5.1	Customer HCP Account Settings
+   #####  2.5.1	Customer HCP Account Settings
    1.	Open the customer HCP account cockpit and navigate to the Trust screen.
    2.	Edit the Local Service Provider and change the Configuration Type to Custom.
    3.	Click the Generate Key Pair button to fill up the Signing Key and Signing Certificate.
@@ -72,7 +71,7 @@ The SAP HCP portal service for partner channel management configuration guide pr
    10.	Save and close.
 
 
-   ##### 2.5.2	SCI IDP Settings:
+##### 2.5.2	SCI IDP Settings:
    1.	Open the admin page of your SCI IDP account
    https://<your SCI account name>.<account domain; Example:  accounts400>.ondemand.com/admin/
    2.	Click Applications.
@@ -85,7 +84,7 @@ The SAP HCP portal service for partner channel management configuration guide pr
   (email) that was assigned to it when the customer account was provisioned to the Portal Service.
   If the user cannot log in, make sure that the user was added to the SCI account (go to the SCI admin page and upload the user with his/her full details in a CSV file format. To see the required details, you can export a user to a CSV file and edit the file).
 
-  ##### 2.6	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
+##### 2.6	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
    1. Request a signed certificate from [SAP Support Portal](http://help.sap.com/disclaimer?site=https://support.sap.com/support-programs-services/services/trust-center/sso.html) (open in Internet Explorer only)
    2. Open a KeyStore Explorer application, and then:
        1. Click on Create a new KeyStore.
@@ -108,7 +107,7 @@ The SAP HCP portal service for partner channel management configuration guide pr
       8. Choose a file name for the exported file and click Finish.
       9. Open the exported file with notepad, and copy the entire text (including the header and footer).
       10. Paste the text into the proper section of SCI as described above.
-   #### 2.7	Set up trust between the customer account and SAP C4C backend (for C4C invitation flow)
+#### 2.7	Set up trust between the customer account and SAP C4C backend (for C4C invitation flow)
    1. Log in to C4C backend with an Admin work center authorization.
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.
    3. Create a new Config for OAuth Identity Provider.
