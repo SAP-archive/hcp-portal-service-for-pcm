@@ -1,7 +1,18 @@
-# SAP HANA Cloud Platform, Portal Service  Partner Channel Management Configuration Guide
+
+# Welcome to SAP HANA Cloud Platform, Portal Service - Partner Channel Management Configuration Guide
 
 
 The SAP HCP portal service for partner channel management configuration guide provides all you need to deploy PCM solution on your HCP account and connect it to your SAP Cloud for Customer (C4C) tenant and SAP Cloud Identity (SCI) tenant.
+
+## How to Deploy the Partner Channel Management Solution
+This guide will show you how to download the partner channel management solution from the SAP HANA Cloud Platform, portal service GitHub repository and deploy it to your account.
+
+The Partner Channel Management solution includes several components:
+
+*  pcmapps - an HTML5 application containing UI5 Components corresponding to C4C Business Objects such as Lead, Opportunity, Task etc. There are 3 types of applications: List, Object Detailes and Create New Object.
+*  pcmcpapps - an HTML5 application containsing the following UI5 Applications: Self-Registration, Invitation, Registration Status
+*  pcmsitetemplate - an HTML5 application containing a Site Template for creating a new Partner Channel Management site
+*  SAPID Mail Templates.zip -  a sample mail template for emails that will be sent after Self-Registration and Invitation.
 
 ##  1. Prerequisites
 
@@ -47,8 +58,9 @@ The SAP HCP portal service for partner channel management configuration guide pr
        * Candidate.
 
 ###  2.4 Create email template in SCI
-   1.	Download SAPID Mail Templates.zip as an example.
-   2.	Open a BCP ticket BC-NEO-IAM. Use the email templates you downloaded and adjust it according to your needs.
+   1.	Download SAPID Mail Templates.zip from [ https://github.com/SAP/hcp-portal-service-for-pcm/releases](https://github.com/SAP/hcp-portal-service-for-pcm/releases)
+   2.	Adjust the template according to your needs.
+   3.   Open a BCP ticket BC-NEO-IAM. Attach the email templates to the BCP.
 
 ### 2.5	Set up trust between the customer account and SCI (for log-on scenario).
 
@@ -116,17 +128,9 @@ The SAP HCP portal service for partner channel management configuration guide pr
    1. Log in to C4C backend with an Admin work center authorization.
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.
    3. Create a new Config for OAuth Identity Provider.
-   ![Image configure OAUTH](/resources/image1.jpg)
-
-   You will see the following screen
-   ![Image OAUTH identity](/resources/image2.jpg)
-
    4. In a new browser, open the customer HCP account trust setting and fill out the required details:
-   ![Image customer HCP account ](/resources/image3.jpg)
-
-   5. Back in the Administrator section, click on OAUTH2.0 CLIENT REGISTRATION.
-   6. Create a new OAuth Client Registration.
-   ![Image OAUTH2.0 CLIENT REGISTRATION  ](/resources/image4.jpg)
+   5. Back in the Administrator section, click on OAUTH2.0 CLIENT REGISTRATION
+   6. Create a new OAuth Client Registration
 
 #### 2.8	Upload destinations to customer HCP account
 
@@ -185,13 +189,13 @@ The configuration is mandatory for enabling the entire self-registration scenari
 Note that the Callback is configured on the CRM per HCP system, which means that only one HCP account can be configured.
 
 ##### 2.9.2	Instructions
-   1. Enter the C4C PCM CRM, for example: https://my312033.crm.ondemand.com, as an administrator.
-   2. Click the Administration tab and choose General Settings.
-   3. Click on Communication Systems.
-   4. Create a new system with the following details:
-         + ID = PCM_PORTAL
-         + Host Name = <application>-<tenant>.hana.ondemand.com
-         + System Access Type = Internet
+   1.	Enter the C4C PCM CRM, for example: https://my312033.crm.ondemand.com, as an administrator.
+   2.	Click the Administration tab and choose General Settings.
+   3.	Click on Communication Systems.
+   4.	Create a new system with the following details:
+            + ID = PCM_PORTAL
+            + Host Name = <application>-<tenant>.hana.ondemand.com
+            + System Access Type = Internet
    5. Save the settings.
    6. Set Actions to Active.
    7. Click on Communication Arrangement.
@@ -199,10 +203,10 @@ Note that the Callback is configured on the CRM per HCP system, which means that
          + Select Scenario: Choose the Channel Partner Registration Portal Callback option and click Next.
          + Define Business Data: Choose the system you created on step 4.
          + Define Technical Data:
-            1.	Communication Method = Direct Connection.
-            2.	Application Protocol = HTTP.
-            3. Authentication Method = User ID and Password.
-            4.	Click the Edit Credentials button and set the details of the TENANT_ADMIN user.
+     1.	Communication Method = Direct Connection.
+     2.	Application Protocol = HTTP.
+     3. Authentication Method = User ID and Password.
+     4.	Click the Edit Credentials button and set the details of the TENANT_ADMIN user.
         + Review: Review and verify the correctness of the data you filled in, then click on Finish.
         + Confirm settings.
    9.	In the Communication Arrangement, click the entry of the new arrangement, then click Edit.
