@@ -36,18 +36,20 @@ The Partner Channel Management solution includes several components:
          1.  	Clone the repository to your computer, or download it as a ZIP file by clicking the Clone or download button and selecting Download ZIP, and extract its contents.
          2. 	Archive every folder content to ZIP files (pcmapps, pcmcpapps, pcmsitetemplate).
 
- 3. Import the following ZIP files to SAP Web IDE and deploy them to your account:
+ 3. Import the following ZIP files to your account:
     * pcmapps.zip	(Business applications)
     * pcmcpapps.zip	(Invitation application)
-    * pcmsitetemplate.zip	(Site template)
+    * pcmsitetemplate.zip	(Site template).
+
+   You can import the files to SAP Web IDE and then deploy them to HCP, or you can directly deploy them to HCP through the HCP cockpit (Applications >>HTML5 Applications >> Import from File.
  4. (Optional):Preview your site template in WEB-IDE.
 
 ### 2.2	Import scilogin plugin
    1.	Go to [https://github.com/SAP/sap-hcp-portal-service-samples.](https://github.com/SAP/sap-hcp-portal-service-samples)
    2.	Download the ZIP.
    3.	Extract the ZIP to your desktop.
-   4.	Import sciloginplugin.zip to SAP Web IDE.
-   5.	Deploy the plugin to your account.
+   4.	Import sciloginplugin.zip to your account (using SAP Web IDE or through HCP cockpit).
+
 
 ### 2.3 Create PCM roles
    1. Open the SAP HCP account cockpit and navigate to Services >> Portal Service >> Configure Portal Service >> Roles.
