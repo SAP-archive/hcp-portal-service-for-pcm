@@ -9,8 +9,8 @@ This guide will show you how to download the partner channel management solution
 
 The Partner Channel Management solution includes several components:
 
-*  pcmapps - an HTML5 application containing UI5 Components corresponding to C4C Business Objects such as Lead, Opportunity, Task etc. There are 3 types of applications: List, Object Detailes and Create New Object.
-*  pcmcpapps - an HTML5 application containsing the following UI5 Applications: Self-Registration, Invitation, Registration Status
+*  pcmapps - an HTML5 application containing UI5 Components corresponding to the following C4C Business Objects: Account, Appointment, DealRegistration, Lead, Opportunity, Partner, PartnerContact and Task. There are 3 types of applications: List, Object Details and Create New Object.
+*  pcmcpapps - an HTML5 application containing the following UI5 Applications: Self-Registration, Invitation, Registration Status
 *  pcmsitetemplate - an HTML5 application containing a Site Template for creating a new Partner Channel Management site
 *  SAPID Mail Templates.zip -  a sample mail template for emails that will be sent after Self-Registration and Invitation.
 
