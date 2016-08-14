@@ -237,5 +237,6 @@ Note that the Callback is configured on the CRM per HCP system, which means that
 
 [https://cp.hana.ondemand.com/dps/d/preview/0cec219614e94fd3bdd0f0561e9b70e0/1511/en-US/frameset.htm?b7027a7e846f4cbf9391d6a475c24ce5.html ](https://cp.hana.ondemand.com/dps/d/preview/0cec219614e94fd3bdd0f0561e9b70e0/1511/en-US/frameset.htm?b7027a7e846f4cbf9391d6a475c24ce5.html )
 
+© 2016 SAP SE or an SAP affiliate company. All rights reserved.
 
 
