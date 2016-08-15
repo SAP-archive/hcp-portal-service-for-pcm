@@ -191,44 +191,43 @@ Note that the Callback is configured on the CRM per HCP system, which means that
 
 ##### 2.9.2	Instructions
    1.	Enter the C4C PCM CRM, for example: https://my312033.crm.ondemand.com, as an administrator.
-   2.	Click the Administration tab and choose General Settings.
+   2.	Click Administration tab and choose General Settings.
    3.	Click on Communication Systems.
    4.	Create a new system with the following details:
-            + ID = PCM_PORTAL
-            + Host Name = <application>-<tenant>.hana.ondemand.com
-            + System Access Type = Internet
+            1. ID = PCM_PORTAL
+            2. Host Name = [application name]-[account].hana.ondemand.com
+            3. System Access Type = Internet
    5. Save the settings.
    6. Set Actions to Active.
    7. Click on Communication Arrangement.
    8. Click on New, then:
-         + Select Scenario: Choose the Channel Partner Registration Portal Callback option and click Next.
-         + Define Business Data: Choose the system you created on step 4.
-         + Define Technical Data:
-     1.	Communication Method = Direct Connection.
-     2.	Application Protocol = HTTP.
-     3. Authentication Method = User ID and Password.
-     4.	Click the Edit Credentials button and set the details of the TENANT_ADMIN user.
-        + Review: Review and verify the correctness of the data you filled in, then click on Finish.
-        + Confirm settings.
+         1. Select Scenario: Choose the Channel Partner Registration Portal Callback option and click Next.
+         2. Define Business Data: Choose the communication system you created on step 4, and click Next.
+         3. Define Technical Data:
+               1. Communication Method = Direct Connection.
+               2. Application Protocol = Http.
+               3. Authentication Method = User ID and Password.
+               4. Click the Edit Credentials button and set the details of the TENANT_ADMIN user you have on HCP.
+        4. Review: Review and verify the correctness of the data you filled in, then click on Finish and then Confirm
    9.	In the Communication Arrangement, click the entry of the new arrangement, then click Edit.
-   10.	Choose Technical Data from the upper bar (instead of Business Data).
-   11.	Click the Edit Advanced button.
+   10.	Switch to the Technical Data tab.
+   11.	Click the Edit Advanced Settings button.
    12.	Make sure that the port is 443 and in the Path field add: portal/v1/services/invitations/continue _flow
    13.	Click Save.
 
 ## 3. Create & Configure the PCM Site
-1.	Navigate to the Site Directory of your portal service.
-2.	Create a new site and select the Partner Portal site template
-3.	In the Site Designer, click "+" and then “New App”.
-4.	Select “sciloginplugin”.
-5.	Click the cog icon and configure the plugin:
-   + Set Application Type to “Shell Plugin”.
-   + Add Catalog “Anonymous”.
+1.	In the HCP cockpit, go to Services – Portal Service, and from there click on Go to Service. That will open the Site Directory of your portal service.
+2.	Click the “+” to create a new site. Select the Partner Portal site template and click Create.
+3.	In the Site Designer that opens, click "+" (at the bottom of the screen) and then “New App”.
+4.	Select “sciloginplugin” from the list of apps, and click OK.
+5.	In the Apps list on the left, click the cog icon next to the sciloginplugin app and edit the app as follows:
+   + Set App Type to “Shell Plugin”.
+   + In the Assigned Catalogs, add the catalog “Anonymous”.
 6.	(Optional) Set site alias:
    + Go to site settings.
    + Click Edit and set site alias.
    + Click Save.
-7.	Publish the site.
+7.	Publish the site by clicking on the Publish button on the site header. That will make the site available for all users.
 8.	The URL of the published site will be used later on for future actions.
 
 ## 4.	SAP C4C Documentation
