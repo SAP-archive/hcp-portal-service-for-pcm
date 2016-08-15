@@ -201,13 +201,13 @@ Note that the Callback is configured on the CRM per HCP system, which means that
    6. Set Actions to Active.
    7. Click on Communication Arrangement.
    8. Click on New, then:
-         1. Select Scenario: Choose the Channel Partner Registration Portal Callback option and click Next.
-         2. Define Business Data: Choose the communication system you created on step 4, and click Next.
-         3. Define Technical Data:
-               1. Communication Method = Direct Connection.
-               2. Application Protocol = Http.
-               3. Authentication Method = User ID and Password.
-               4. Click the Edit Credentials button and set the details of the TENANT_ADMIN user you have on HCP.
+      1. Select Scenario: Choose the Channel Partner Registration Portal Callback option and click Next.
+      2. Define Business Data: Choose the communication system you created on step 4, and click Next.
+      3. Define Technical Data:
+         1. Communication Method = Direct Connection.
+         2. Application Protocol = Http.
+         3. Authentication Method = User ID and Password.
+         4. Click the Edit Credentials button and set the details of the TENANT_ADMIN user you have on HCP.
         4. Review: Review and verify the correctness of the data you filled in, then click on Finish and then Confirm
    9.	In the Communication Arrangement, click the entry of the new arrangement, then click Edit.
    10.	Switch to the Technical Data tab.
@@ -221,12 +221,12 @@ Note that the Callback is configured on the CRM per HCP system, which means that
 3.	In the Site Designer that opens, click "+" (at the bottom of the screen) and then “New App”.
 4.	Select “sciloginplugin” from the list of apps, and click OK.
 5.	In the Apps list on the left, click the cog icon next to the sciloginplugin app and edit the app as follows:
-   + Set App Type to “Shell Plugin”.
-   + In the Assigned Catalogs, add the catalog “Anonymous”.
+    + Set App Type to “Shell Plugin”.
+    + In the Assigned Catalogs, add the catalog “Anonymous”.
 6.	(Optional) Set site alias:
-   + Go to site settings.
-   + Click Edit and set site alias.
-   + Click Save.
+    + Go to site settings.
+    + Click Edit and set site alias.
+    + Click Save.
 7.	Publish the site by clicking on the Publish button on the site header. That will make the site available for all users.
 8.	The URL of the published site will be used later on for future actions.
 
