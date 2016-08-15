@@ -9,8 +9,8 @@ This guide will show you how to download the partner channel management solution
 
 The Partner Channel Management solution includes several components:
 
-*  pcmapps - an HTML5 application containing UI5 Components corresponding to the following C4C Business Objects: Account, Appointment, DealRegistration, Lead, Opportunity, Partner, PartnerContact and Task. There are 3 types of applications: List, Object Details and Create New Object.
-*  pcmcpapps - an HTML5 application containing the following UI5 Applications: Self-Registration, Invitation, Registration Status
+*  pcmapps - an HTML5 application containing UI5 Components corresponding to C4C Business Objects such as Lead, Opportunity, Task etc. There are 3 types of applications: List, Object Detailes and Create New Object.
+*  pcmcpapps - an HTML5 application containsing the following UI5 Applications: Self-Registration, Invitation, Registration Status
 *  pcmsitetemplate - an HTML5 application containing a Site Template for creating a new Partner Channel Management site
 *  SAPID Mail Templates.zip -  a sample mail template for emails that will be sent after Self-Registration and Invitation.
 
@@ -137,49 +137,48 @@ The Partner Channel Management solution includes several components:
 #### 2.8	Upload destinations to customer HCP account
 
 ##### 2.8.1	SAPID Destination
-  + Name=sapid
-  + Type=HTTP
-  + URL=https://<your SCI account name>.<account domain;
-  Example: accounts400>.ondemand.com/
-  + ProxyType=Internet
-  +	Cloud Connector Version=2
-  +	Authentication=ClientCertificateAuthentication
-  + KeyStore Location=sapid.jks
-  + KeyStore Password=<use the certificate password you chose when you created the certificate>
-  +	TrustAll=true
+  + Name = sapid
+  + Type = HTTP
+  + Description = (enter a description)
+  + URL = https://..ondemand.com/ (enter the URL to your SCI)
+  + ProxyType = Internet
+  +	Authentication = ClientCertificateAuthentication
+  + KeyStore Location = sapid.jks
+  + KeyStore Password = (specify the certificate password)
+  +	TrustAll = true (add this manually)
 
   oAuth C4C destination (used for connecting to the SAP C4C backend during partner flow) with the parameters in the next section.
 
 ##### 2.8.2	C4C Destination
-  + Name=C4C
-  + Type=HTTP
-  + URL=<C4C backend URL>
+  + Name = C4C
+  + Type = HTTP
+  + Description = (enter description)
+  + URL = (enter the full URL of your C4C tenant)
   + ProxyType=Internet
-  + Cloud Connector Version=2
   + Authentication=OAuth2SAMLBearerAssertion
-  + Audience=<C4C backend URL without the protocol>
-  + Client Key=<same as Token Service User>
-  + Token Service URL=<C4C backend URL>/sap/bc/sec/oauth2/token
-  + Token Service User=<oAuth client ID registered in C4C>
-  + Token Service Password=<the password provided during SAML client configuration, under field "Client Secret">
-  + authnContextClassRef=urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession
-  + nameIdFormat=urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
-  + scope=UIWC:CC_HOME
+  + Audience = (same as the URL, without https)
+  + Client Key = (this should be taken from the client registration screen in C4C, under the Client ID column)
+  + Token Service URL = …/sap/bc/sec/oauth2/token (this relative path should come after the full URL to C4C tenant. Add your sap-client ID after the token)
+  + Token Service User = (same as value as the client key)
+  + Token Service Password = (the password you specified in C4C client registration)
+  + authnContextClassRef = urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession (add this manually)
+  + nameIdFormat = urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress (add this manually)
+  + scope = UIWC:CC_HOME (add this manually)
 
   Public C4C destination (used for connecting to the C4C backend during an anonymous scenario on a public site) with the parameters in the next section.
 
 ##### 2.8.3	C4C__Public Destination
-+ Type=HTTP
-+ authnContextClassRef=urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession
-+ Authentication=BasicAuthentication
-+ Name=C4C__public
-+ CloudConnectorVersion=2
++ Name = C4C__public (double underscore)
++ Type = HTTP
++ Description = (enter description)
++ URL = …/sap/byd/odata/v1/pcmportal (this relative path should come after the full URL to C4C tenant)
++ authnContextClassRef = urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession (add this manually)
 + ProxyType=Internet
-+ URL=<C4C backend URL>/sap/byd/odata/v1/pcmportal
-+ nameIdFormat=urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
-+ User=<admin user ID>
-+ Password=<admin user password>
-+ scope=UIWC:CC_HOME
++ Authentication = BasicAuthentication
++ User = (admin user of the C4C tenant)
++ Password=<admin user password> (admin password of the C4C tenant)
++ nameIdFormat = urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress (add this manually)
++ scope = UIWC:CC_HOME (add this manually)
 
 #### 2.9	Configure SAP C4C Backend
 
@@ -237,6 +236,5 @@ Note that the Callback is configured on the CRM per HCP system, which means that
 
 [https://cp.hana.ondemand.com/dps/d/preview/0cec219614e94fd3bdd0f0561e9b70e0/1511/en-US/frameset.htm?b7027a7e846f4cbf9391d6a475c24ce5.html ](https://cp.hana.ondemand.com/dps/d/preview/0cec219614e94fd3bdd0f0561e9b70e0/1511/en-US/frameset.htm?b7027a7e846f4cbf9391d6a475c24ce5.html )
 
-© 2016 SAP SE or an SAP affiliate company. All rights reserved.
 
 
