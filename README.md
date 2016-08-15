@@ -208,7 +208,7 @@ Note that the Callback is configured on the CRM per HCP system, which means that
          2. Application Protocol = Http.
          3. Authentication Method = User ID and Password.
          4. Click the Edit Credentials button and set the details of the TENANT_ADMIN user you have on HCP.
-        4. Review: Review and verify the correctness of the data you filled in, then click on Finish and then Confirm
+       4. Review: Review and verify the correctness of the data you filled in, then click on Finish and then Confirm
    9.	In the Communication Arrangement, click the entry of the new arrangement, then click Edit.
    10.	Switch to the Technical Data tab.
    11.	Click the Edit Advanced Settings button.
