@@ -11,15 +11,6 @@
     "crossNavigation": {
       "inbounds": {
         "0":{
-          "semanticObject": "Home",
-          "action": "show",
-          "deviceTypes": {
-            "desktop": true,
-            "tablet": true,
-            "phone": true
-          }
-        },
-        "1":{
           "semanticObject": "Shell",
           "action": "home",
           "deviceTypes": {

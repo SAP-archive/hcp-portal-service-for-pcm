@@ -202,30 +202,8 @@
 				var newCollection = data.d.results || [],
 					currentCollection = this.C4CoModel.getData() || [];
 
-				if (this.currentIndex === 0) {
-					//No content in table
-					currentCollection.boCollection = currentCollection.boCollection.concat(newCollection);
-					this.C4CoModel.setData(currentCollection, true);
-				} else {
-					//adding content table - fix rerendering of table
-					var table = this.getTable(),
-						tableDom = table.$().find("tbody")[0],
-						template = table.mBindingInfos.items.template,
-						templateClone,
-						r = sap.ui.getCore().createRenderManager(),
-						i;
-
-					for (i = 0; i < newCollection.length; i++) {
-						templateClone = template.clone();
-						templateClone.setBindingContext(newCollection[i]);
-						table.insertAggregation("items", templateClone, this.currentIndex + i, true);
-						r.renderControl(templateClone);
-					}
-
-					r.flush(tableDom, false, this.currentIndex);
-					r.destroy();
-				}
-
+				currentCollection.boCollection = currentCollection.boCollection.concat(newCollection);
+				this.C4CoModel.setData(currentCollection, true);
 				this.currentIndex += newCollection.length;
 				callback();
 			}.bind(this), false, isInitialRequest);

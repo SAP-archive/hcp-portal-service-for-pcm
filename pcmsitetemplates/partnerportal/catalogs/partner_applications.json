@@ -71,6 +71,10 @@
       {
         "namespace": "",
         "id": "hcp://pcmsitetemplates/partnerportal/applications/create_deal_registration.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/pages/partner_portal.json"
       }
     ]
   }

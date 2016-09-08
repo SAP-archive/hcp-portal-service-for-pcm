@@ -11,6 +11,10 @@
       {
         "namespace": "",
         "id": "hcp://pcmsitetemplates/partnerportal/applications/application_status.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/pages/partner_portal.json"
       }
     ]
   }

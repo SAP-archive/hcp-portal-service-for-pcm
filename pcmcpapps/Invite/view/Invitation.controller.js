@@ -9,6 +9,7 @@ sap.ui.controller("c4c.manage-invitations.local.view.Invitation", {
     oDialog: null,
     busyDialog: null,
     service: null,
+    table: null,
 
     RESPONSE_STATUS: {
         SUCCESS: "",
@@ -28,16 +29,27 @@ sap.ui.controller("c4c.manage-invitations.local.view.Invitation", {
     },
 
     onInit: function () {
-       var view = this.getView();
+        var view = this.getView(),
+            tableRendered = new jQuery.Deferred(),
+            invitationsLoaded = new jQuery.Deferred();
+        if (!this.table){
+            this.table = sap.ui.getCore().byId('Invitation--idInviteesTable');
+            this.table.onAfterRendering = function(){
+                tableRendered.resolve();
+            };
+        }
+        jQuery.when(invitationsLoaded, tableRendered).done(function(oModel){
+            this.table.setModel(oModel);
+        }.bind(this));
         this.service = new sap.ui.fiori.util.Services(this.getSiteId());
 
         this.service.loadResourceBundle(this.getOwnerComponent().getModel("i18n"));
 
         this.service.load(function(invitations){
-           var data = {invitationFlows: invitations};
+            var data = {invitationFlows: invitations};
             var oModel = new sap.ui.model.json.JSONModel();
             oModel.setData(data);
-            view.setModel(oModel);
+            invitationsLoaded.resolve(oModel);
         });
 
         var formModel = new sap.ui.model.json.JSONModel();
@@ -86,10 +98,9 @@ sap.ui.controller("c4c.manage-invitations.local.view.Invitation", {
     },
 
     deleteInvitee: function (evt) {
-        var view = this.getView();
         var path = evt.getParameter("listItem").getBindingContext().getPath();
         var idx = parseInt(path.substring(path.lastIndexOf("/") + 1),10);
-        var m = view.getModel();
+        var m = this.table.getModel();
         var d = m.getData();
         var itemData = d.invitationFlows[idx];
         if (itemData.status === "SUCCESS"){
@@ -99,6 +110,7 @@ sap.ui.controller("c4c.manage-invitations.local.view.Invitation", {
         this.service.uninvite(itemData.inviteeEmail, function () {
             d.invitationFlows.splice(idx, 1);
             m.setData(d);
+            m.refresh();
         });
 
 
@@ -163,7 +175,7 @@ sap.ui.controller("c4c.manage-invitations.local.view.Invitation", {
                 invitationFlow.messageStatus = that.RESPONSE_STATUS.ERROR;
             }
             that.displayResponseMessage(invitationFlow.messageStatus);
-            if (invitationFlow.messageStatus === that.RESPONSE_STATUS.ERROR || invitationFlow.messageStatus === that.RESPONSE_STATUS.ALREADY_EXIST) {
+            if (invitationFlow.messageStatus === that.RESPONSE_STATUS.ALREADY_EXIST) {
                 return;
             }
             that.oForm.getModel().setData({
@@ -174,7 +186,7 @@ sap.ui.controller("c4c.manage-invitations.local.view.Invitation", {
                 department: "",
                 functionVal: ""
             });
-            var oModel = that.getView().getModel();
+            var oModel = that.table.getModel();
 
             oModel.oData.invitationFlows.push(invitationFlow);
             oModel.refresh();

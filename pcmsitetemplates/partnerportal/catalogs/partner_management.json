@@ -19,8 +19,11 @@
       {
         "namespace": "",
         "id": "hcp://pcmsitetemplates/partnerportal/applications/invitePlugin.json"
+      },
+      {
+        "namespace": "",
+        "id": "hcp://pcmsitetemplates/partnerportal/pages/partner_portal.json"
       }
-
     ]
   }
 }
