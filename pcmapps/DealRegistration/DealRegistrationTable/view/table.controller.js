@@ -366,8 +366,8 @@
 		 * @memberOf view.c4ctable
 		 * @param item
 		 */
-		setQueryComboBoxSelection: function(item) {
-			item = item || window.generalNameSpace.utils.getDefaultQuery(this.queries);
+		setQueryComboBoxSelection: function(eItem) {
+			var item = eItem || window.generalNameSpace.utils.getDefaultQuery(this.queries);
 			this.getQueryCombobox().setSelectedKey(item);
 		},
 
@@ -548,7 +548,8 @@
 			}
 		},
 
-		formatDate: function(date) {
+		formatDate: function(eDate) {
+			var date = eDate;
 			if (!date) {
 				return "";
 			}
@@ -558,7 +559,8 @@
 			return dateFormat.format(new Date(date));
 		},
 
-		formatTimeDate: function(date) {
+		formatTimeDate: function(eDate) {
+			var date = eDate;
 			if (!date) {
 				return "";
 			}

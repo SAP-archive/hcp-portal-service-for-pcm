@@ -33,7 +33,7 @@
 				}
 			}
 
-			function getComboBoxesData(index) {
+			function getComboBoxesData(eIndex) {
 
 				var oBD = this.busyDialog;
 				oBD.open();
@@ -64,7 +64,7 @@
 
 						});
 
-						viewData[getComboPath(index)] = collection;
+						viewData[getComboPath(eIndex)] = collection;
 
 						oViewModel.setData(viewData);
 
@@ -136,7 +136,7 @@
 				bundle,
 				labels = fragment.$().find(".sapMLabelRequired:visible");
 
-			$.each(labels,function() {
+			$.each(labels, function() {
 				input = $(this).closest(".sapMVBox").find("input");
 				inputId = input.attr("id");
 				inputId = inputId.indexOf("-inner") >= 0 ? inputId.substr(0, inputId.indexOf("-inner")) : inputId;
@@ -195,7 +195,7 @@
 			var fragment = this.getFormView();
 			var input = fragment.$().find(".sapMInputBaseErrorInner");
 			var inputId;
-			input.each(function(i, val) {
+			input.each(function(t, val) {
 				inputId = val.id;
 				inputId = inputId.indexOf("-inner") >= 0 ? inputId.substr(0, inputId.indexOf("-inner")) : inputId;
 				input = sap.ui.getCore().byId(inputId);
@@ -240,20 +240,22 @@
 			var oBD = this.busyDialog;
 			oBD.open();
 
-			$.each(viewData, function(key, value) {
+			$.each(viewData, function(eKey, eValue) {
+				var value = eValue,
+					key = eKey;
 
-				function getMonth(value) {
-					var month = value.getMonth() + 1;
+				function getMonth(val) {
+					var month = val.getMonth() + 1;
 					return month < 10 ? "0" + month : month;
 				}
 
-				function getTime(value) {
-					return value.toTimeString().match(/\d{2}:\d{2}:\d{2}/)[0];
+				function getTime(val) {
+					return val.toTimeString().match(/\d{2}:\d{2}:\d{2}/)[0];
 				}
 
-				function getDateTime(value, timestamp) {
-					var date = value.getFullYear() + "-" + getMonth(value) + "-" + value.getDate();
-					var time = timestamp ? getTime(value) : "00:00:00";
+				function getDateTime(val, timestamp) {
+					var date = val.getFullYear() + "-" + getMonth(val) + "-" + value.getDate();
+					var time = timestamp ? getTime(val) : "00:00:00";
 					return date + "T" + time + ".000";
 				}
 

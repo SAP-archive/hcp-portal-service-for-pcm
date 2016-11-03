@@ -124,6 +124,7 @@
                             candidateLastName: "",
                             mail: ""
                         };
+                        registrationData.requestSent = false;
                         m.refresh();
 
                     },

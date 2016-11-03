@@ -67,11 +67,11 @@
 
 			this.setPartnerPersonalDetails();
 
-            try {
-                this.disableCheckBox(null);
-            }catch(err){
-                //do nothing
-            }
+			try {
+				this.disableCheckBox(null);
+			}catch(err){
+				//do nothing
+			}
 		},
 
 		onAfterRendering: function(){
@@ -107,7 +107,7 @@
 		},
 
 		loadBundle: function(){
-		// Load resource Bundle
+			// Load resource Bundle
 			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
 		},
 
@@ -258,17 +258,17 @@
 
 		disableCheckBox: function(oEvent){
 
-            var checkBoxToDisable;
-            if (oEvent == null) {//first loading
-                //get combobox selection
-                var selected = this.getView().byId("mainIndustry");
-                if (selected.getSelectedKey() === "") {
-                    selected.setSelectedKey(11);
-                }
-                checkBoxToDisable = sap.ui.getCore().byId("CB-" + selected.getSelectedItem().getKey());
-            } else {
-                checkBoxToDisable = sap.ui.getCore().byId("CB-" + oEvent.getParameters().selectedItem.mProperties.key);
-            }
+			var checkBoxToDisable;
+			if (oEvent === null) {//first loading
+				//get combobox selection
+				var selected = this.getView().byId("mainIndustry");
+				if (selected.getSelectedKey() === "") {
+					selected.setSelectedKey(11);
+				}
+				checkBoxToDisable = sap.ui.getCore().byId("CB-" + selected.getSelectedItem().getKey());
+			} else {
+				checkBoxToDisable = sap.ui.getCore().byId("CB-" + oEvent.getParameters().selectedItem.mProperties.key);
+			}
 
 			checkBoxToDisable.setProperty("enabled",false);
 
@@ -283,8 +283,8 @@
 			}
 		},
 
-		validateFields: function(validationFields, shouldContinue){
-
+		validateFields: function(validationFields, eShouldContinue) {
+			var shouldContinue = eShouldContinue;
 			jQuery.each(validationFields,function(key, val) {
 				var dataFieldEl = sap.ui.getCore().byId("appRegistrationView--" + key);
 				if (val === "") {
@@ -417,8 +417,8 @@
 				arrString = arrString + "{\"IndustryClassificationSystemCode\":\"0005\", \"DefaultIndicator\":\"true\", \"listID\":\"0005\", \"IndustrialSectorCode\":\"" + mainIndustry + "\"}, ";
 			}
 			var industries = this.getView().byId("industryCheckBox").mAggregations.content,
-				totalIndustries = industries.length,
-				i;
+					totalIndustries = industries.length,
+					i;
 
 			for (i = 0; i < totalIndustries; i++) {
 				if (industries[i].mProperties.selected) {
@@ -465,8 +465,8 @@
 						jQuery.ajax({
 							url: cpCallURL,
 							data: cpDataJson,
-                            headers: { "X-CSRF-Token": window.csrfToken},
-							success: function(res){
+							headers: { "X-CSRF-Token": window.csrfToken},
+							success: function(response){
 								selfView.setBusy(false);
 								selfView.byId("wizardTabBar").setVisible(false);
 								selfView.byId("backBtn").setVisible(false);
@@ -480,8 +480,8 @@
 								applicationID = applicationID.replace(/^0+/, "");
 								selfView.byId("appRegistrationView--lblApplicationRefNoValue").setText(applicationID);
 								//set flowId and taskId on window for selenium tests. Not delivered to factory
-								window.flowId = res.registrationFlow.flowId;
-								window.taskId = res.registrationFlow.taskId;
+								window.flowId = response.registrationFlow.flowId;
+								window.taskId = response.registrationFlow.taskId;
 								//application status link
 								var clickStr = resourceBundle.getText("Success.Click");
 								var hereStr = resourceBundle.getText("Success.Here");

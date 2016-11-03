@@ -47,7 +47,8 @@ sap.ui.define(["sap/ui/core/UIComponent"], function(UIComponent){
                     status: "None",
                     msg: "",
                     showFields: true
-                }
+                },
+                requestSent: true
             });
             this.setModel(registrationDataModel, "registrationDataModel");
         },

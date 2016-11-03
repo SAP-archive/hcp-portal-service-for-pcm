@@ -11,7 +11,7 @@
 						</items>
 						<Text class='registration-dialog-title sapUiTinyMarginTopBottom sapThemeLightText' text="{i18nApp>DIALOG_TITLE}" textAlign='center'></Text>
 					</FlexBox>
-					<Text class='sapThemeLightText sapUiSmallMarginTopBottom' text='{i18nApp>DIALOG_DESC}'></Text>
+					<Text class='sapThemeLightText sapUiSmallMarginTopBottom' text='{i18nApp>DIALOG_DESC}' visible ='{registrationDataModel>/requestSent}'></Text>
 					<l:FixFlex class="fixFlexVertical" visible='{registrationDataModel>/callback/showFields}'>
 						<l:fixContent>
 							<Input id="partner-registeration-form-firstnameInput" placeholder="{i18nApp>LABEL_FIRST_NAME}" type="Text"

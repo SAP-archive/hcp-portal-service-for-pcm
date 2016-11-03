@@ -269,8 +269,8 @@
 					element.dispatchEvent(evt);
 				}
 
-				function base64toBlob(base64Data, contentType) {
-					contentType = contentType || "";
+				function base64toBlob(base64Data, eContentType) {
+					var contentType = eContentType || "";
 					var sliceSize = 1024;
 					var byteCharacters = atob(base64Data);
 					var bytesLength = byteCharacters.length;
@@ -636,8 +636,8 @@
 			var isAttachment = this.tableName.match(/Attachment/),
 				afterRenderingSuper = this.oDialog.onAfterRendering.bind(this.oDialog);
 
-			this.oDialog.fixUI = function(hide, url, upload) {
-
+			this.oDialog.fixUI = function(hide, url, eUpload) {
+				var upload = eUpload;
 				if (isAttachment) {
 
 					var dialog = this.getDomRef(),
@@ -1368,8 +1368,8 @@
 			this.scope.hideBusyIndicator();
 		},
 
-		fnDateTimeFormatter: function fnDateTimeFormatter(oValue) {
-			oValue += "";
+		fnDateTimeFormatter: function fnDateTimeFormatter(value) {
+			var oValue = value + "";
 			if (typeof(oValue) !== "undefined" && oValue.length !== 0) {
 				return new Date(oValue);
 			}

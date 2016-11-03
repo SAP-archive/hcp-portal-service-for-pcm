@@ -30,9 +30,7 @@
       "config": {
         "icon": "pcmsitetemplates/partnerportal/thumbnail.png",
         "isOnline": "false",
-        "isMultiHomePageEnabled": true,
-        "theme.id": "sap_bluecrystal",
-        "theme.active": "[\"sap_bluecrystal\",\"sap_hcb\"]"
+        "isMultiHomePageEnabled": true
       },
       "availablePageTemplates": [
         {

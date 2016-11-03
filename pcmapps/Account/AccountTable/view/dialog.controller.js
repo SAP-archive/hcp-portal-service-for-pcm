@@ -26,7 +26,7 @@
 				var fromValue, toValue;
 				fromValue = oEvent.getParameters().from;
 				toValue = oEvent.getParameters().to;
-				if (fromValue === null && toValue == null) {
+				if (fromValue === null && toValue === null) {
 					delete this.filterMap[columnId];
 				} else {
 					fromValue = fromValue || toValue;

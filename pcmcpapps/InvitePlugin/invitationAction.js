@@ -85,6 +85,10 @@
     var RendererLoadedPromise = new jQuery.Deferred(),
         renderer = sap.ushell.Container.getRenderer("fiori2");
 
+    function renderLoaded(){
+        RendererLoadedPromise.resolve();
+    }
+
     if (renderer && renderer.addToolAreaItem){
         RendererLoadedPromise.resolve();
     } else {
@@ -96,7 +100,5 @@
         init();
     });
 
-    function renderLoaded(){
-        RendererLoadedPromise.resolve();
-    }
+
 }());
