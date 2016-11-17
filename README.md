@@ -30,10 +30,10 @@ The Partner Channel Management solution includes several components:
 
 ### 2.1 	Deploy PCM artifacts
  1. Navigate to	[ https://github.com/SAP/hcp-portal-service-for-pcm/releases](https://github.com/SAP/hcp-portal-service-for-pcm/releases)
- 2. Prepare content for deployment. There are two options:
-     a. Download ZIP files from the Releases folder.
-     b. Clone and Create a Zip file:
-         1.  	Clone the repository to your computer, or download it as a ZIP file by clicking the Clone or download button and selecting Download ZIP, and extract its contents.
+ 2. Prepare content for deployment. There are two options:  
+     a. Download ZIP files from the Releases folder.  
+     b. Clone and Create a Zip file:  
+         1.  	Clone the repository to your computer, or download it as a ZIP file by clicking the Clone or download button and selecting Download ZIP, and extract its contents.  
          2. 	Archive every folder content to ZIP files (pcmapps, pcmcpapps, pcmsitetemplate).
 
  3. Import the following ZIP files to your account:
@@ -42,10 +42,10 @@ The Partner Channel Management solution includes several components:
     * pcmsitetemplate.zip	(Site template).
 
    You can import the files to SAP Web IDE and then deploy them to HCP, or you can directly deploy them to HCP through the HCP cockpit (Applications >>HTML5 Applications >> Import from File.
- 4. (Optional, if you imported the pcm applications via SAP Web IDE):
- 	a. Preview your site template in SAP WEB-IDE.
-	b. Open SAP Web IDE and right click on the 'pcmsitetemplates project'.
-	c. Choose Run -> Run as -> Preview Site Template.
+ 4. (Optional, if you imported the pcm applications via SAP Web IDE):  
+ 	a. Preview your site template in SAP WEB-IDE.  
+	b. Open SAP Web IDE and right click on the 'pcmsitetemplates project'.  
+	c. Choose Run -> Run as -> Preview Site Template.  
 
 ### 2.2	Import scilogin plugin
    1.	Go to [https://github.com/SAP/sap-hcp-portal-service-samples.](https://github.com/SAP/sap-hcp-portal-service-samples)
@@ -78,6 +78,7 @@ The Partner Channel Management solution includes several components:
    3.	Click the Generate Key Pair button to populate the Signing Key and Signing Certificate.
    4.	Change the Principle Propagation value to Enabled.
    5.	Save the settings and download the metadata by clicking the Get Metadata link.
+   ![alt text](https://drive.google.com/file/d/0B8YIii3PXvDISVZWTzBGYXczWjQ/view?usp=sharing "HCP metadata")
    6.	Go to the Trusted Identity Provider tab and click the Add Trusted Identity Provider link.
    7.	Browse and upload the IDP metadata file.
 
