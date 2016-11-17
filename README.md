@@ -78,7 +78,7 @@ The Partner Channel Management solution includes several components:
    3.	Click the Generate Key Pair button to populate the Signing Key and Signing Certificate.
    4.	Change the Principle Propagation value to Enabled.
    5.	Save the settings and download the metadata by clicking the Get Metadata link.
-   ![alt text](https://drive.google.com/file/d/0B8YIii3PXvDISVZWTzBGYXczWjQ/view?usp=sharing "HCP metadata")
+   ![HCP metadata](https://drive.google.com/file/d/0B8YIii3PXvDISVZWTzBGYXczWjQ/view?usp=sharing)
    6.	Go to the Trusted Identity Provider tab and click the Add Trusted Identity Provider link.
    7.	Browse and upload the IDP metadata file.
 
@@ -97,21 +97,21 @@ The Partner Channel Management solution includes several components:
 
 
 ##### 2.5.2	SCI IDP Settings:
-   1.	Open the admin page of your SCI IDP account
-   https://<your SCI account name>.<account domain; Example:  accounts400>.ondemand.com/admin/
+   1.	Open the admin page of your SCI IDP account. For example:
+   https://<your SCI account name>.<account domain>.ondemand.com/admin/
    2.	Click Applications.
    3.	Add a new application and choose the customer's name as the application name.
    4.	Open the SAML 2.0 Configuration and upload the customer's account SP metadata, which you downloaded already.
    5.	Save and close.
 
 
-  You should now be able to log on to the Portal Service’s Admin Space with the user ID
-  (email) that was assigned to it when the customer account was provisioned to the Portal Service.
+  You should now be able to log on to the portal service’s Admin Space with the user ID
+  (email) that was assigned to it when the customer account was provisioned to the portal service.
   If the user cannot log in, make sure that the user was added to the SCI account (go to the SCI admin page and upload the user with his/her full details in a CSV file format. To see the required details, you can export a user to a CSV file and edit the file).
 
 #### 2.6	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
    1. Request a signed certificate from [SAP Support Portal](http://help.sap.com/disclaimer?site=https://support.sap.com/support-programs-services/services/trust-center/sso.html) (open in Internet Explorer only)
-   2. Open a KeyStore Explorer application, and then:
+   2. Open a KeyStore Explorer application, and then do the following:
        1. Click on Create a new KeyStore.
        2. Choose JKS type.
        3. Go to Tools >> Import Key Pair.
@@ -119,14 +119,16 @@ The Partner Channel Management solution includes several components:
        5. Enter the certificate password under Decryption Password, and choose the certificate file.
        6. Choose an alias (or leave the default).
        7. You are now requested to choose a new password - enter the original certificate password.
-       8. Save the JKS file with the name sapid.jks. When requested to choose a new password, choose again the original certificate password.
-   3. On the customer HCP account, go to Destinations and upload the JKS file using the certificates upload option.
-   4. On the SCI IDP customer application, go to Certificate for API Authentication and upload the public part of the P12 certificate you created. For getting the public part, do the following:
+       8. Save the JKS file with the name sapid.jks. 
+       9. When requested to choose a new password, choose the original certificate password again.
+   3. In the customer HCP account, go to Destinations and upload the JKS file using the certificates upload option.
+   4. Open the SCI admin console and choose the customer application under 'Applications & Resources', go to the 'Certificate for API Authentication' section and upload the public part of the P12 certificate you created.   
+   For getting the public part, do the following:
       1. Open IE only and go to Internet Options >> Content >> Certificates >> Import.
       2. Browse to the P12 file.
       3. Type the password you chose when you created the certificate (leave check-boxes as default).
       4. Place the certificate in the Personal store and click Finish.
-      5. Find the certificate you uploaded under the Personal store and click Export.
+      5. In IE, find the certificate you uploaded under the Personal store and click on the Export button.
       6. Click Next until you reach the file format options.
       7. Choose Base-64 encoded X.509 (.CER) format.
       8. Choose a file name for the exported file and click Finish.
