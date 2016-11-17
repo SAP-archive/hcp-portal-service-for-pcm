@@ -2,16 +2,16 @@
 # Welcome to SAP HANA Cloud Platform, Portal Service - Partner Channel Management Configuration Guide
 
 
-The SAP HCP portal service for partner channel management configuration guide provides all you need to deploy PCM solution on your HCP account and connect it to your SAP Cloud for Customer (C4C) tenant and SAP Cloud Identity (SCI) tenant.
+The SAP HANA Cloud Platform, portal service for Partner Channel Management configuration guide provides all you need to deploy a PCM solution on your HCP account and connect it to your SAP Cloud for Customer (C4C) tenant and SAP Cloud Identity (SCI) tenant.
 
 ## How to Deploy the Partner Channel Management Solution
-This guide will show you how to download the partner channel management solution from the SAP HANA Cloud Platform, portal service GitHub repository and deploy it to your account.
+This guide will show you how to download the partner channel management solution from the SAP HCP, portal service GitHub repository and deploy it to your account.
 
 The Partner Channel Management solution includes several components:
 
-*  pcmapps - an HTML5 application containing UI5 Components corresponding to C4C Business Objects such as Lead, Opportunity, Task etc. There are 3 types of applications: List, Object Detailes and Create New Object.
-*  pcmcpapps - an HTML5 application containsing the following UI5 Applications: Self-Registration, Invitation, Registration Status
-*  pcmsitetemplate - an HTML5 application containing a Site Template for creating a new Partner Channel Management site
+*  pcmapps - an HTML5 application containing UI5 Components corresponding to C4C Business Objects such as Lead, Opportunity, Task etc. There are 3 types of applications: List, Object Details, and Create New Object.
+*  pcmcpapps - an HTML5 application containing the following UI5 Applications: Self-Registration, Invitation, Registration and Status.
+*  pcmsitetemplate - an HTML5 application containing a Site Template for creating a new Partner Channel Management site.
 *  SAPID Mail Templates.zip -  a sample mail template for emails that will be sent after Self-Registration and Invitation.
 
 ##  1. Prerequisites
@@ -21,18 +21,18 @@ The Partner Channel Management solution includes several components:
 *	SAP Cloud Identity (SCI) tenant
 *	SAP Cloud for Customer (C4C) tenant
 *	Users:
-     -  Admin access to HCP account.
-	 -  TENANT_ADMIN user for Portal Service.
-     -  C4C admin user.
-     - 	SCI admin user.
+     -  Admin access to an HCP account
+	 -  TENANT_ADMIN user for Portal Service
+     -  C4C admin user
+     - 	SCI admin user
 
 ## 2. Configure Your Account
 
 ### 2.1 	Deploy PCM artifacts
  1. Navigate to	[ https://github.com/SAP/hcp-portal-service-for-pcm/releases](https://github.com/SAP/hcp-portal-service-for-pcm/releases)
  2. Prepare content for deployment. There are two options:
-     + Download ZIP files from releases folder.
-     + Clone and Create Zip:
+     a. Download ZIP files from the Releases folder.
+     b. Clone and Create a Zip file:
          1.  	Clone the repository to your computer, or download it as a ZIP file by clicking the Clone or download button and selecting Download ZIP, and extract its contents.
          2. 	Archive every folder content to ZIP files (pcmapps, pcmcpapps, pcmsitetemplate).
 
@@ -42,34 +42,40 @@ The Partner Channel Management solution includes several components:
     * pcmsitetemplate.zip	(Site template).
 
    You can import the files to SAP Web IDE and then deploy them to HCP, or you can directly deploy them to HCP through the HCP cockpit (Applications >>HTML5 Applications >> Import from File.
- 4. (Optional):Preview your site template in WEB-IDE.
+ 4. (Optional, if you imported the pcm applications via SAP Web IDE):
+ 	a. Preview your site template in SAP WEB-IDE.
+	b. Open SAP Web IDE and right click on the 'pcmsitetemplates project'.
+	c. Choose Run -> Run as -> Preview Site Template.
 
 ### 2.2	Import scilogin plugin
    1.	Go to [https://github.com/SAP/sap-hcp-portal-service-samples.](https://github.com/SAP/sap-hcp-portal-service-samples)
-   2.	Download the ZIP.
-   3.	Extract the ZIP to your desktop.
-   4.	Import sciloginplugin.zip to your account (using SAP Web IDE or through HCP cockpit).
+   2.	Download the ZIP file.
+   3.	Extract it to your desktop.
+   4.	Import sciloginplugin.zip to your account (using SAP Web IDE or through the HCP cockpit).
 
 
 ### 2.3 Create PCM roles
    1. Open the SAP HCP account cockpit and navigate to Services >> Portal Service >> Configure Portal Service >> Roles.
-   2. Create new roles:
-       * PartnerManager.
-       * PartnerContact.
-       * Applicant.
-       * Candidate.
+   2. Create the following new roles:
+       * PartnerManager
+       * PartnerContact
+       * Applicant
+       * Candidate
 
-###  2.4 Create email template in SCI
+###  2.4 Create an email template in SCI
+   The email template for the PCM invitation flow includes a SAP logo as well as pre-defined text. You may update the email template used by the SCI to send invitations to users according to your needs.
+   
    1.	Download SAPID Mail Templates.zip from [ https://github.com/SAP/hcp-portal-service-for-pcm/releases](https://github.com/SAP/hcp-portal-service-for-pcm/releases)
    2.	Adjust the template according to your needs.
-   3.   Open a BCP ticket BC-NEO-IAM. Attach the email templates to the BCP.
+   3.   Open a BCP ticket BC-NEO-IAM. 
+   4.	Attach the email templates to the BCP.
 
-### 2.5	Set up trust between the customer account and SCI (for log-on scenario).
+### 2.5	Set up a trust between the customer account and SCI (for log-on scenario)
 
 #####  2.5.1	Customer HCP Account Settings
    1.	Open the customer HCP account cockpit and navigate to the Trust screen.
    2.	Edit the Local Service Provider and change the Configuration Type to Custom.
-   3.	Click the Generate Key Pair button to fill up the Signing Key and Signing Certificate.
+   3.	Click the Generate Key Pair button to populate the Signing Key and Signing Certificate.
    4.	Change the Principle Propagation value to Enabled.
    5.	Save the settings and download the metadata by clicking the Get Metadata link.
    6.	Go to the Trusted Identity Provider tab and click the Add Trusted Identity Provider link.
