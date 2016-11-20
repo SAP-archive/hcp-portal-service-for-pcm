@@ -144,20 +144,20 @@ The Partner Channel Management solution includes several components:
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.  
    ![oauthidp](/resources/pcm4.png)
    3. Create a new OAuth 2.0 Identity Provider.  
-   ![newoauthprovider](resources/pcm5.png)
+   ![newoauthprovider](resources/pcm5.jpg)
        You will see the following screen:  
-         ![oauthprovider](/resources/pcm6.png)
+         ![oauthprovider](/resources/pcm6.jpg)
 
    4. In a new browser, open the customer HCP account trust setting and fill out the required details:  
-   ![hcptrust](/resources/pcm7.png)
+   ![hcptrust](/resources/pcm7.jpg)
    5. Back in the Administrator section, click on OAUTH2.0 CLIENT REGISTRATION
    6. Create a new OAuth Client Registration as follows:
    	* Copy the 'Client ID' value to a Notepad. This value will later be used in the C4C destination.  
 	* In 'Client Secret' add a password (remember it for future use)  
 	* Description is optional. You can write the password for reference.  
 	* In 'Issuer name' select the OAuth provider you created
-	* Select the 'UIWC:CC_HOME' scope ID that appears in the Scope table
-   ![clientreg](/resources/pcm8.png)
+	* Select the 'UIWC:CC_HOME' scope ID that appears in the Scope table  
+   ![clientreg](/resources/pcm8.jpg)
 
 #### 2.8	Upload destinations to customer HCP account
 
