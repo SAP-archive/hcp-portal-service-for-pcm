@@ -83,8 +83,9 @@ The Partner Channel Management solution includes several components:
    6.	Go to the 'Trusted Identity Provider' tab and click the Add Trusted Identity Provider link.
    7.	Browse and upload the IDP metadata file.
 
-        TIP: You can get the IDP (SCI) metadata file by navigating to: https://<your SCI account name>.<accounts400>.ondemand.com/saml2/metadata
-	Open the above URL in Chrome and copy the entire text starting from <ns3… until the end. Then, paste it to a text file and save.
+        TIP: You can get the IDP (SCI) metadata file by navigating to: https://<your SCI account name>.<accounts>.ondemand.com/saml2/metadata
+	Open the above URL in Chrome and copy the entire text starting from <ns3… until the end. Then, paste it to a text file and save.  
+	![idpmetadata](/resources/pcm2.png)  
    8.	In the General tab, change the User ID Source to attribute, and then in the Source Value field, put mail.
    9.	In the Attributes tab, click Add Assertion-Based Attribute to add the following attributes mapping (after adding one pair, click the link again to add more input fields):
 
@@ -139,14 +140,16 @@ The Partner Channel Management solution includes several components:
 
 #### 2.7	Set up trust between the customer account and SAP C4C backend (for C4C invitation flow)
    1. Log in to C4C backend with an Admin work center authorization.
+   ![c4cadmin](/resources/pcm3.png)  
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.
+   ![oauthidp](/resources/pcm4.png)
    3. Create a new OAuth 2.0 Identity Provider.
-         ![alt text](resources/image1.jpg)
-         You will see the following screen:
-         ![alt text](resources/image2.jpg)
+   ![newoauthprovider](resources/pcm5.png)
+       You will see the following screen:
+         ![oauthprovider](/resources/pcm6.png)
 
    4. In a new browser, open the customer HCP account trust setting and fill out the required details:
-   ![alt text](resources/image3.jpg)
+   ![hcptrust](/resources/pcm7.png)
    5. Back in the Administrator section, click on OAUTH2.0 CLIENT REGISTRATION
    6. Create a new OAuth Client Registration as follows:
    	* Copy the 'Client ID' value to a Notepad. This value will later be used in the C4C destination.  
@@ -154,12 +157,13 @@ The Partner Channel Management solution includes several components:
 	* Description is optional. You can write the password for reference.  
 	* In 'Issuer name' select the OAuth provider you created
 	* Select the 'UIWC:CC_HOME' scope ID that appears in the Scope table
-   ![alt text](resources/image4.jpg)
+   ![clientreg](/resources/pcm8.png)
 
 #### 2.8	Upload destinations to customer HCP account
 
 The destination file is created in your HCP account by opening the account's cockpit in the destination page and clicking on the "New Destination" button: https://account.[datacenter].hana.ondemand.com/cockpit#/acc/[account's name]/destinations    
 The values in the destination fields are case sensitive, so please make sure to create the destinations based on the instructions below.  
+![dest](/resources/pcm9.png)  
 
 ##### 2.8.1	SAPID Destination  
 Destination used for the invitation flow with SCI.  
@@ -185,7 +189,8 @@ oAuth C4C destination (used for connecting to the SAP C4C backend during partner
   + ProxyType=Internet
   + Authentication=OAuth2SAMLBearerAssertion
   + Audience = (same as the URL, without https://, E.g. myXXXXXX.crm.ondemand.com)
-  + Client Key = (this should be taken from the client registration screen in C4C, under the Client ID field)
+  + Client Key = (this should be taken from the client registration screen in C4C, under the Client ID field)  
+  ![clientkey](/resources/pcm10.png)
   + Token Service URL = …/sap/bc/sec/oauth2/token (this relative path should come after the full URL to C4C tenant. Add your sap-client ID after the token, E.g. https://myXXXXXX.crm.ondemand.com/sap/bc/sec/oauth2/token?sap-client=073
 Please contact your C4C contact to get the sap-client value)
   + Token Service User = (same value as of the client key)
@@ -193,7 +198,8 @@ Please contact your C4C contact to get the sap-client value)
   Additional properties:  
   + authnContextClassRef = urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession (add this manually)
   + nameIdFormat = urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress (add this manually)
-  + scope = UIWC:CC_HOME (add this manually)
+  + scope = UIWC:CC_HOME (add this manually)  
+  ![c4cdest](/resources/pcm11.png)
 
 
 ##### 2.8.3	C4C__Public Destination  
