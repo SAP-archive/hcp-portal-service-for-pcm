@@ -142,14 +142,14 @@ The Partner Channel Management solution includes several components:
    1. Log in to C4C backend with an Admin work center authorization.
    ![c4cadmin](/resources/pcm3.png)  
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.  
-   ![oauthidp](/resources/pcm4.png)
+   ![oauthidp](/resources/pcm4.png)  
    3. Create a new OAuth 2.0 Identity Provider.  
-   ![newoauthprovider](resources/pcm5.jpg)
+   ![newoauthprovider](resources/pcm5.jpg)  
        You will see the following screen:  
          ![oauthprovider](/resources/pcm6.jpg)
 
    4. In a new browser, open the customer HCP account trust setting and fill out the required details:  
-   ![hcptrust](/resources/pcm7.jpg)
+   ![hcptrust](/resources/pcm7.jpg)  
    5. Back in the Administrator section, click on OAUTH2.0 CLIENT REGISTRATION
    6. Create a new OAuth Client Registration as follows:
    	* Copy the 'Client ID' value to a Notepad. This value will later be used in the C4C destination.  
