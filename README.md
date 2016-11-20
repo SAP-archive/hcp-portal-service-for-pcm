@@ -79,7 +79,7 @@ The Partner Channel Management solution includes several components:
    3.	Click the Generate Key Pair button to populate the Signing Key and Signing Certificate if they do not appear.
    4.	Change the 'Principle Propagation' value to 'Enabled'.
    5.	Save the settings and download the metadata by clicking on 'Get Metadata' link.
-  	![metadata](raw/master/hcp-portal-service-for-pcm/resources/pcm1.png)
+  	![metadata](/resources/pcm1.png)
    6.	Go to the 'Trusted Identity Provider' tab and click the Add Trusted Identity Provider link.
    7.	Browse and upload the IDP metadata file.
 
