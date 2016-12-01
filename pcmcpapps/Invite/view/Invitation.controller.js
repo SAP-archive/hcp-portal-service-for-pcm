@@ -1,6 +1,7 @@
 (function(){
     "use strict";
     /*global  jQuery, sap, window*/
+    /*eslint  sap-no-history-manipulation: 1 */
     jQuery.sap.require("c4c.manage-invitations.local.util.Formatter");
     jQuery.sap.require("c4c.manage-invitations.local.util.Services");
     jQuery.sap.require("sap.m.MessageBox");

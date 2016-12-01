@@ -1,7 +1,7 @@
 (function () {
 	"use strict";
 	/*global jQuery, sap, window, parent*/
-	/*eslint-disable no-underscore-dangle*/
+	/*eslint-disable sap-no-history-manipulation*/
 	sap.ui.controller("c4c.registration.local.view.App", {
 
 		serviceUrl: null,
@@ -414,7 +414,7 @@
 			var mainIndustry = this.getView().getModel().getData().PartnerData.mainIndustry;
 			if (mainIndustry) {
 				isIndustrySelected = true;
-				arrString = arrString + "{\"IndustryClassificationSystemCode\":\"0005\", \"DefaultIndicator\":\"true\", \"listID\":\"0005\", \"IndustrialSectorCode\":\"" + mainIndustry + "\"}, ";
+				arrString = arrString + "{\"IndustryClassificationSystemCode\":\"0005\", \"DefaultIndicator\":\"true\", \"listID\":\"0005\", \"IndustrialSectorCode\":\"" + mainIndustry + "\"},";
 			}
 			var industries = this.getView().byId("industryCheckBox").mAggregations.content,
 					totalIndustries = industries.length,

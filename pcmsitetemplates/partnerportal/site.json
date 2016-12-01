@@ -30,7 +30,8 @@
       "config": {
         "icon": "pcmsitetemplates/partnerportal/thumbnail.png",
         "isOnline": "false",
-        "isMultiHomePageEnabled": true
+        "isMultiHomePageEnabled": true,
+        "solution": "pcm"
       },
       "availablePageTemplates": [
         {

@@ -1,6 +1,7 @@
 (function() {
 	"use strict";
 	/*global   sap, window, setTimeout*/
+	/*eslint  sap-timeout-usage: 1 */
 	sap.ui.controller("c4c.details-taskcollection.local.view.vhelpdialog", {
 
 		/**

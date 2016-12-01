@@ -1,6 +1,7 @@
 (function () {
     "use strict";
     /*global jQuery, sap, window, parent*/
+    /*eslint  sap-no-history-manipulation: 1 */
     jQuery.sap.require("appReview.local.util.Formatter");
     sap.ui.controller("appReview.local.view.App", {
 
