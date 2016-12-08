@@ -188,7 +188,7 @@ oAuth C4C destination (used for connecting to the SAP C4C backend during partner
   + URL = (enter the full URL of your C4C tenant, E.g. https://myXXXXXX.crm.ondemand.com)
   + ProxyType=Internet
   + Authentication=OAuth2SAMLBearerAssertion
-  + Audience = (same as the URL, without https://, E.g. myXXXXXX.crm.ondemand.com)
+  + Audience = (value taken from the 'Local Service Provider' field in 'Configure SSO' under General Settings in C4C administration view)
   + Client Key = (this should be taken from the client registration screen in C4C, under the Client ID field)  
   ![clientkey](/resources/pcm10.png)
   + Token Service URL = …/sap/bc/sec/oauth2/token (this relative path should come after the full URL to C4C tenant. Add your sap-client ID after the token, E.g. https://myXXXXXX.crm.ondemand.com/sap/bc/sec/oauth2/token?sap-client=073
