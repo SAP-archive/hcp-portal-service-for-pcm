@@ -249,7 +249,7 @@ Note that the Callback is configured on the CRM per HCP system, which means that
    9.	In the Communication Arrangement, click the entry of the new arrangement, then click Edit.
    10.	Switch to the Technical Data tab.
    11.	Click the Edit Advanced Settings button.
-   12.	Make sure that the port is 443 and in the Path field add: portal/v1/services/invitations/continue _flow
+   12.	Make sure that the port is 443 and in the Path field add: portal/v1/services/invitations/continue_flow/
    13.	Click Save.
 
 ## 3. Create & Configure the PCM Site
