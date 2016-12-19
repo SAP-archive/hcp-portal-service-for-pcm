@@ -4,6 +4,8 @@
 
 The SAP HANA Cloud Platform, portal service for Partner Channel Management configuration guide provides all you need to deploy a PCM solution on your HCP account and connect it to your SAP Cloud for Customer (C4C) tenant and SAP Cloud Identity (SCI) tenant.
 
+PCM solution configuration video is now published on the portals YouTube channel - https://youtu.be/9awGnMUcuAk
+
 ## How to Deploy the Partner Channel Management Solution
 This guide will show you how to download the partner channel management solution from the SAP HCP, portal service GitHub repository and deploy it to your account.
 
