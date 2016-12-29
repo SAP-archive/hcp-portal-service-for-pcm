@@ -271,9 +271,10 @@ Note that the Callback is configured on the CRM per HCP system, which means that
 
 Note: There are two URLs related to your site:  
 1. Public URL to start the registration flow:
-https://flpnwc-[account name].dispatcher.[data center].hana.ondemand.com/sites/[site alias]#Home-show
+https://flpnwc-[account name].dispatcher.[data center].hana.ondemand.com/sites/[site alias]#Home-show  
 2. Authenticated URL. Data from C4C is available for Partner Managers.
 https://flpnwc-[account name].dispatcher.[data center].hana.ondemand.com/sites/[site alias]?hc_login#Shell-home  
+  
 Please do not assign users directly to Partner Manager role in HCP. The assignment to this role is done automatically by the callback script in C4C after the user's application form is approved.
 
 ## 4.	SAP C4C Documentation
