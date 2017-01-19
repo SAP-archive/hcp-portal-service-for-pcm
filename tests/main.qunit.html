@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://sapui5.hana.ondemand.com/resources/sap/ui/thirdparty/qunit.css">
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<script>
+    registerPrefix = "..";
+    if (!Function.prototype.bind) {
+        Function.prototype.bind = function(oThis) {
+            if (typeof this !== 'function') {
+                // closest thing possible to the ECMAScript 5
+                // internal IsCallable function
+                throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+            }
+
+            var aArgs   = Array.prototype.slice.call(arguments, 1),
+                    fToBind = this,
+                    fNOP    = function() {},
+                    fBound  = function() {
+                        return fToBind.apply(this instanceof fNOP
+                                        ? this
+                                        : oThis,
+                                aArgs.concat(Array.prototype.slice.call(arguments)));
+                    };
+
+            fNOP.prototype = this.prototype;
+            fBound.prototype = new fNOP();
+
+            return fBound;
+        };
+    }
+</script>
+
+<script id="sap-ui-bootstrap"
+        src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_goldreflection"
+        data-sap-ui-libs="sap.ui.commons"
+        data-sap-ui-libs="sap.ui.commons"
+></script>
+
+<script type="text/javascript" src="https://sapui5.hana.ondemand.com/resources/sap/ui/thirdparty/qunit.js"></script>
+<script type="text/javascript" src="https://sapui5.hana.ondemand.com/resources/sap/ui/thirdparty/qunit-reporter-junit.js"></script>
+<script type="text/javascript" src="https://sapui5.hana.ondemand.com/resources/sap/ui/thirdparty/sinon.js"></script>
+<script src="pcmapps/config.js"> </script>
+
+<!-- Load Tests -->
+<script src="pcmcpapps/Invite/util/Services.qunit.js"></script>
+<script src="pcmcpapps/Invite/util/Formatter.qunit.js"></script>
+<script src="pcmcpapps/PartnerApplicationRegReview/util/Formatter.qunit.js"></script>
+<script src="pcmcpapps/PartnerApplicationRegReview/view/App.controller.qunit.js"></script>
+<script src="pcmcpapps/PartnerRegistration/view/App.controller.qunit.js"></script>
+<script src="pcmapps/Entity/Creator/view/create.controller.qunit.js"></script>
+<script src="pcmapps/Entity/Creator/view/vhelpdialog.controller.qunit.js"></script>
+<script src="pcmapps/Entity/Details/view/vhelpdialog.controller.qunit.js"></script>
+<script src="pcmapps/Entity/Details/view/details.controller.qunit.js"></script>
+<script src="pcmapps/Entity/Table/view/table.controller.qunit.js"></script>
+<script src="pcmcpapps/RegistrationWidget/view/RegistrationWidget.controller.qunit.js"></script>
+<script src="pcmapps/Entity/Details/backend.calls.qunit.js"></script>
+<script src="pcmapps/Entity/Table/backend.calls.qunit.js"></script>
+<script src="pcmapps/Entity/Creator/backend.calls.qunit.js"></script>
+<script src="pcmapps/Entity/Table/view/dialog.controller.qunit.js"></script>
+
+<script>
+    QUnit.jUnitReport = function(report) {
+        window.junitReport = report.xml;
+    };
+    jQuery.sap.require("sap.ui.qunit.qunit-coverage");
+</script>
+
+</body>
+</html>
