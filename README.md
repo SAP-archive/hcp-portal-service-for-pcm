@@ -115,7 +115,7 @@ The Partner Channel Management solution includes several components:
   If the user cannot log in, make sure that the user was added to the SCI account (go to the SCI admin page and create the user via the User Management page or upload the user with his/her full details in a CSV file format. To see the required details, you can export a user to a CSV file and edit the file).
 
 #### 2.6	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
-   1. Request a signed certificate from [SAP Support Portal](http://help.sap.com/disclaimer?site=https://support.sap.com/support-programs-services/services/trust-center/sso.html) (open in Internet Explorer only)
+   1. Request a signed certificate from [SAP Support Portal](http://help.sap.com/disclaimer?site=https://support.sap.com/support-programs-services/services/trust-center/sso.html) (open in Internet Explorer or Firefox)
    2. Open a KeyStore Explorer application, and then do the following:
        1. Click on Create a new KeyStore.
        2. Choose JKS type.
@@ -129,11 +129,11 @@ The Partner Channel Management solution includes several components:
    3. In the customer HCP account, go to 'Connectivity' and then 'Destinations' and upload the JKS file using the 'Certificates' upload option.
    4. Open the SCI admin console and choose the customer application under 'Applications & Resources', go to the 'Certificate for API Authentication' section and upload the public part of the P12 certificate you created.   
    For getting the public part, do the following:
-      1. Open IE only and go to Internet Options >> Content >> Certificates >> Import.
+      1. Open IE (or FF) and go to Internet Options >> Content >> Certificates >> Import.
       2. Browse to the P12 file (switch the search format from X.509 to .p12).
       3. Type the password you chose when you created the certificate (leave check-boxes as default).
       4. Place the certificate in the Personal store and click on Next, then click on Finish.
-      5. In IE, find the certificate you uploaded under the Personal store and click on the Export button.
+      5. In IE or Firefox, find the certificate you uploaded under the Personal store and click on the Export button.
       6. Click Next until you reach the file format options.
       7. Choose the Base-64 encoded X.509 (.CER) format and click Next.
       8. Choose a file name for the exported file and click Finish.
@@ -275,7 +275,8 @@ https://flpnwc-[account name].dispatcher.[data center].hana.ondemand.com/sites/[
 2. Authenticated URL. Data from C4C is available for Partner Managers.
 https://flpnwc-[account name].dispatcher.[data center].hana.ondemand.com/sites/[site alias]?hc_login#Shell-home  
   
-Please do not assign users directly to Partner Manager role in HCP. The assignment to this role is done automatically by the callback script in C4C after the user's application form is approved.
+**Note!** 
+Please do not assign users directly to Partner Manager role in HCP. The assignment to this role is done automatically by the callback batch job in C4C, which runs every night in the background, after the user's application form is approved.
 
 ## 4.	SAP C4C Documentation
 
