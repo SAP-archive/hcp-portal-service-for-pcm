@@ -25,10 +25,12 @@
           "icon": "sap-icon://company-view",
           "size": "1x1",
           "signature": {
-            "functionImport":{
-              "required": false,
-              "defaultValue": {
-                "value" : "get_partner"
+            "parameters": {
+              "functionImport": {
+                "required": false,
+                "defaultValue": {
+                  "value": "get_partner"
+                }
               }
             }
           }
