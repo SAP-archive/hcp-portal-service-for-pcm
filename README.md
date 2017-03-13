@@ -22,7 +22,7 @@ The Partner Channel Management solution includes several components:
 *	Portal Service enabled from the HCP account cockpit, Services tab
 *	SAP Cloud Identity (SCI) tenant
 *	SAP Cloud for Customer (C4C) tenant
-*	In C4C, Partner Program Management project scope is enabled [https://blogs.sap.com/2015/09/26/cloud-for-customer-specific-configurations-for-partner-channel-management/]
+*	In C4C, Partner Program Management project scope is enabled. [For more information, read this blog:](https://blogs.sap.com/2015/09/26/cloud-for-customer-specific-configurations-for-partner-channel-management/)
 *	In C4C, Deal Registration is also selected if needed.
 *	Maintain the Business Roles in the Business Configuration
 *	Users:
@@ -118,7 +118,7 @@ The Partner Channel Management solution includes several components:
   If the user cannot log in, make sure that the user was added to the SCI account (go to the SCI admin page and create the user via the User Management page or upload the user with his/her full details in a CSV file format. To see the required details, you can export a user to a CSV file and edit the file).
 
 #### 2.6	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
-   1. Request a signed certificate from [SAP Support Portal](http://help.sap.com/disclaimer?site=https://support.sap.com/support-programs-services/services/trust-center/sso.html) (open in Internet Explorer or Firefox)
+   1. Request a signed certificate from [SAP Support Portal](http://help.sap.com/disclaimer?site=https://support.sap.com/support-programs-services/services/trust-center/sso.html) (open in Internet Explorer or Firefox). The output certificate must be a .p12 file.
    2. Open a KeyStore Explorer application, and then do the following:
        1. Click on Create a new KeyStore.
        2. Choose JKS type.
@@ -193,7 +193,7 @@ oAuth C4C destination (used for connecting to the SAP C4C backend during partner
   + URL = (enter the full URL of your C4C tenant, E.g. https://myXXXXXX.crm.ondemand.com)
   + ProxyType=Internet
   + Authentication=OAuth2SAMLBearerAssertion
-  + Audience = (value taken from the 'Local Service Provider' field in 'Configure SSO' under General Settings in C4C administration view)
+  + Audience = (take the value from: General Settings in C4C administration view - 'Configure SSO' - 'Local Service Provider')
   + Client Key = (this should be taken from the client registration screen in C4C, under the Client ID field)  
   ![clientkey](/resources/pcm10.png)
   + Token Service URL = …/sap/bc/sec/oauth2/token (this relative path should come after the full URL to C4C tenant. Add your sap-client ID after the token, E.g. https://myXXXXXX.crm.ondemand.com/sap/bc/sec/oauth2/token?sap-client=073
