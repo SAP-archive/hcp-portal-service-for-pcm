@@ -22,9 +22,9 @@ The Partner Channel Management solution includes several components:
 *	Portal Service enabled from the HCP account cockpit, Services tab
 *	SAP Cloud Identity (SCI) tenant
 *	SAP Cloud for Customer (C4C) tenant
-*	In C4C, Partner Program Management project scope is enabled. [For more information, read this blog:](https://blogs.sap.com/2015/09/26/cloud-for-customer-specific-configurations-for-partner-channel-management/)
+*	In C4C, Partner Program Management project scope is enabled. For more information [read this blog](https://blogs.sap.com/2015/09/26/cloud-for-customer-specific-configurations-for-partner-channel-management/)
 *	In C4C, Deal Registration is also selected if needed.
-*	Maintain the Business Roles in the Business Configuration
+*	In C4C,	maintain the Business Roles in the Business Configuration
 *	Users:
      -  Admin access to an HCP account
 	 -  TENANT_ADMIN user for Portal Service
