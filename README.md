@@ -281,6 +281,13 @@ https://flpnwc-[account name].dispatcher.[data center].hana.ondemand.com/sites/[
 **Note!** 
 Please do not assign users directly to Partner Manager role in HCP. The assignment to this role is done automatically by the callback batch job in C4C, which runs every night in the background, after the user's application form is approved.
 
+### Rebranding
+
+| Question | More Information |
+| -------- | ---------------- |
+| **How do I change the company logo or background of the support site?** | 1.	Go to the Home page. <br>2.	On the left, click ![services](/resources/ss3.png) to open Services and Tools. <br>3.	In the UI Theme Designer, click Configure.<br>4.	In order to change a logo, create a new theme as follows: <ul><li>a.	Click Create a New Theme.</li><li>b.	Follow the steps of the wizard and click Create Theme.</li><li>c.	On the right of the screen, select ![edit](/resources/ss4.png)  (quick editing mode) and upload the company logo.</li><li>d.	From the Theme tab at the top left, select Export to create a zip file containing the new theme you created with the logo. For more information, see Exporting Themes.</li></ul>5.	Now go to the Theme Manager (also in Services and Tools) and click Configure. <br>6.	Browse for and upload the zip file with the updated theme that includes your logo. <br>7.	Click Assign to Site.|
+
+
 ## 4.	SAP C4C Documentation
 
 
