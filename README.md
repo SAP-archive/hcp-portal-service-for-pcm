@@ -54,7 +54,7 @@ The Partner Channel Management solution includes several components:
 	b. Choose Run -> Run as -> Preview Site Template.  
 
 ### 2.2	Import scilogin plugin
-   1.	Go to [https://github.com/SAP/sap-hcp-portal-service-samples.](https://github.com/SAP/sap-hcp-portal-service-samples)
+   1.	Go to [https://github.com/SAP/hcp-portal-service-samples/releases.](https://github.com/SAP/hcp-portal-service-samples/releases)
    2.	Download the ZIP file.
    3.	Extract it to your desktop.
    4.	Import sciloginplugin.zip to your account (using SAP Web IDE or through the HCP cockpit).
