@@ -53,14 +53,8 @@ The Partner Channel Management solution includes several components:
 	a. Open SAP Web IDE and right click on the 'pcmsitetemplates project'.  
 	b. Choose Run -> Run as -> Preview Site Template.  
 
-### 2.2	Import scilogin plugin
-   1.	Go to [https://github.com/SAP/hcp-portal-service-samples/releases.](https://github.com/SAP/hcp-portal-service-samples/releases)
-   2.	Download the ZIP file.
-   3.	Extract it to your desktop.
-   4.	Import sciloginplugin.zip to your account (using SAP Web IDE or through the HCP cockpit).
 
-
-### 2.3 Create PCM roles
+### 2.2 Create PCM roles
    1. Open the SAP HCP account cockpit and navigate to Services >> Portal Service >> Configure Portal Service >> Roles.
    2. Create the following new roles:
        * PartnerManager
@@ -68,7 +62,7 @@ The Partner Channel Management solution includes several components:
        * Applicant
        * Candidate
 
-###  2.4 Create an email template in SCI
+###  2.3 Create an email template in SCI
    The email template for the PCM invitation flow includes a SAP logo as well as pre-defined text. You may update the email template used by the SCI to send invitations to users according to your needs.
    
    1.	Download SAPID Mail Templates.zip from [ https://github.com/SAP/hcp-portal-service-for-pcm/releases](https://github.com/SAP/hcp-portal-service-for-pcm/releases)
@@ -76,9 +70,11 @@ The Partner Channel Management solution includes several components:
    3.   Open a BCP ticket BC-NEO-IAM. 
    4.	Attach the email templates to the BCP.
 
-### 2.5	Set up a trust between the customer account and SCI (for log-on scenario)
+### 2.4	Set up a trust between the customer account and SCI (for log-on scenario)
 
-#####  2.5.1	Customer HCP Account Settings
+Note! If the trust was done as part of the onboarding guide, the below step should not be done.
+
+#####  2.4.1	Customer HCP Account Settings
    1.	Open the customer HCP account cockpit, click on 'Security' and navigate to the Trust screen.
    2.	Edit the 'Local Service Provider' and change the Configuration Type to Custom.
    3.	Click the Generate Key Pair button to populate the Signing Key and Signing Certificate if they do not appear.
@@ -104,7 +100,7 @@ The Partner Channel Management solution includes several components:
    10.	Save and close.
 
 
-##### 2.5.2	SCI IDP Settings:
+##### 2.4.2	SCI IDP Settings:
    1.	Open the admin page of your SCI IDP account. For example:
    https://<your SCI account name>.<accounts>.ondemand.com/admin/
    2.	Click Applications.
@@ -113,11 +109,12 @@ The Partner Channel Management solution includes several components:
    5.	Save and close.
 
 
+  In Cloud Platform, portal, under Roles, assign the user to the TENANT_ADMIN role.
   You should now be able to log on to the portal service’s Admin Space with the user ID
   (email) that was assigned to it when the customer account was provisioned to the portal service.
   If the user cannot log in, make sure that the user was added to the SCI account (go to the SCI admin page and create the user via the User Management page or upload the user with his/her full details in a CSV file format. To see the required details, you can export a user to a CSV file and edit the file).
 
-#### 2.6	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
+#### 2.5	Set up trust between the customer account and SCI API (for SAP ID invitation flow)
    1. Request a signed certificate from [SAP Support Portal](http://help.sap.com/disclaimer?site=https://support.sap.com/support-programs-services/services/trust-center/sso.html) (open in Internet Explorer or Firefox). The output certificate must be a .p12 file.
    2. Open a KeyStore Explorer application, and then do the following:
        1. Click on Create a new KeyStore.
@@ -143,7 +140,9 @@ The Partner Channel Management solution includes several components:
       9. Open the exported file with Notepad, and copy the entire text (including the header and footer).
       10. Paste the text into the proper section of SCI as described above.
 
-#### 2.7	Set up trust between the customer account and SAP C4C backend (for C4C invitation flow)
+#### 2.6	Set up trust between the customer account and SAP C4C backend (for C4C invitation flow)
+Note! If the trust was done as part of the onboarding guide, the below step should not be done.
+
    1. Log in to C4C backend with an Admin work center authorization.
    ![c4cadmin](/resources/pcm3.png)  
    2. Under the Administrator section, go to Common Tasks and click on Configure OAuth 2.0 Identity Provider.  
@@ -164,13 +163,13 @@ The Partner Channel Management solution includes several components:
 	* Select the 'UIWC:CC_HOME' scope ID that appears in the Scope table  
    ![clientreg](/resources/pcm8.jpg)
 
-#### 2.8	Upload destinations to customer HCP account
+#### 2.7	Upload destinations to customer HCP account
 
 The destination file is created in your HCP account by opening the account's cockpit in the destination page and clicking on the "New Destination" button: https://account.[datacenter].hana.ondemand.com/cockpit#/acc/[account's name]/destinations    
 The values in the destination fields are case sensitive, so please make sure to create the destinations based on the instructions below.  
 ![dest](/resources/pcm9.png)  
 
-##### 2.8.1	SAPID Destination  
+##### 2.7.1	SAPID Destination  
 Destination used for the invitation flow with SCI.  
   + Name = sapid
   + Type = HTTP
@@ -185,7 +184,7 @@ Destination used for the invitation flow with SCI.
   +	TrustAll = true (add this manually. Note that 'TrustAll' is the key and 'true' is its value.)
 
 
-##### 2.8.2	C4C Destination  
+##### 2.7.2	C4C Destination  
 oAuth C4C destination (used for connecting to the SAP C4C backend during partner flow) with the parameters in the next section.  
   + Name = C4C
   + Type = HTTP
@@ -207,7 +206,7 @@ Please contact your C4C contact to get the sap-client value)
   ![c4cdest](/resources/pcm11.png)
 
 
-##### 2.8.3	C4C__Public Destination  
+##### 2.7.3	C4C__Public Destination  
 Public C4C destination (used for connecting to the C4C backend during a guest registration scenario) with the parameters in the next section.  
 + Name = C4C__public (double underscore)
 + Type = HTTP
@@ -222,16 +221,17 @@ Additional properties:
 + nameIdFormat = urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress (add this manually)
 + scope = UIWC:CC_HOME (add this manually)
 
-#### 2.9	Configure SAP C4C Backend
+#### 2.8	Configure SAP C4C Backend
 
-##### 2.9.1	Purpose
+##### 2.8.1	Purpose
 This section describes how to create a Callback from the CRM that is used in the PCM scenario, to the Portal Service account.
 
 The configuration is mandatory for enabling the entire self-registration scenario, including the transition between roles: Applicant -> Candidate -> Partner Manager.
 
 Note that the Callback is configured on the CRM per HCP system, which means that only one HCP account can be configured.
 
-##### 2.9.2	Instructions
+
+##### 2.8.2	Instructions
    1.	Enter the C4C PCM CRM, for example: https://my312033.crm.ondemand.com, as an administrator.
    2.	Click the Administration tab and choose General Settings.
    3.	Click on Communication Systems under the 'Integration' section.
@@ -249,7 +249,7 @@ Note that the Callback is configured on the CRM per HCP system, which means that
          1. Communication Method = Direct Connection.
          2. Application Protocol = Http.
          3. Authentication Method = User ID and Password.
-         4. Click the Edit Credentials button and set the details (email address) of the TENANT_ADMIN user you have on HCP for the User ID (the user can be found in HCP - Services - Portal Service - Configure Portal Service - Roles).
+         4. Click the Edit Credentials button and set the details (email address) of the TENANT_ADMIN user you have on HCP for the User ID (the user can be found in HCP - Services - Portal Service - Configure Portal Service - Roles). Please note that if, for some reason, the TENANT_ADMIN user is locked, the callback will fail.
       4. Review: Review and verify the accuracy of the data you filled in, then click on Finish and then Confirm
    9.	In the Communication Arrangement, click the entry of the new arrangement, then click Edit.
    10.	Switch to the Technical Data tab.
@@ -260,17 +260,12 @@ Note that the Callback is configured on the CRM per HCP system, which means that
 ## 3. Create & Configure the PCM Site
 1.	In the HCP cockpit, go to Services – Portal Service, and from there click on Go to Service. This opens the Site Directory of your portal service.
 2.	Go to 'Site Directory' from the left menu and click on “+” to create a new site. Select the Partner Portal site template and click Create.
-3.	In the Site Designer that opens, click "+" (at the bottom of the screen) and then “New App”.
-4.	Select “sciloginplugin” from the list of apps, and click OK.
-5.	In the Apps list on the left, click the cog icon next to the sciloginplugin app and edit the app as follows:
-    + Set App Type to “Shell Plugin”.
-    + In the Assigned Catalogs, add the catalog “Anonymous”.
-6.	(Optional) Set site alias:
+3.	(Optional) Set site alias:
     + Go to site settings.
     + Click Edit and set site alias.
     + Click Save.
-7.	Publish the site by clicking on the Publish button in the site header. This makes the site available for all users.
-8.	The URL of the published site will be used later on for the registration of new applicants and future actions.
+4.	Publish the site by clicking on the Publish button in the site header. This makes the site available for all users.
+5.	The URL of the published site will be used later on for the registration of new applicants and future actions.
 
 Note: There are two URLs related to your site:  
 1. Public URL to start the registration flow:
