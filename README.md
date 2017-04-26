@@ -72,7 +72,7 @@ The Partner Channel Management solution includes several components:
 
 ### 2.4	Set up a trust between the customer account and SCI (for log-on scenario)
 
-Note! If the trust was done as part of the onboarding guide, the below step should not be done.
+Note! If the trust was done as part of the [onboarding guide](https://uacp2.hana.ondemand.com/viewer/462e41a242984577acc28eae130855ad/Cloud/en-US), the below step should be skipped.
 
 #####  2.4.1	Customer HCP Account Settings
    1.	Open the customer HCP account cockpit, click on 'Security' and navigate to the Trust screen.
@@ -141,7 +141,8 @@ Note! If the trust was done as part of the onboarding guide, the below step shou
       10. Paste the text into the proper section of SCI as described above.
 
 #### 2.6	Set up trust between the customer account and SAP C4C backend (for C4C invitation flow)
-Note! If the trust was done as part of the onboarding guide, the below step should not be done.
+
+Note! If the trust was done as part of the [onboarding guide](https://uacp2.hana.ondemand.com/viewer/462e41a242984577acc28eae130855ad/Cloud/en-US), the below step should be skipped.
 
    1. Log in to C4C backend with an Admin work center authorization.
    ![c4cadmin](/resources/pcm3.png)  
