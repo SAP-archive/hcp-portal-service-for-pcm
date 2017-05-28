@@ -151,7 +151,7 @@ Note! If the trust was done as part of the [onboarding guide](https://uacp2.hana
 
 The destination file is created in your HCP account by opening the account's cockpit in the destination page and clicking on the "New Destination" button: https://account.[datacenter].hana.ondemand.com/cockpit#/acc/[account's name]/destinations    
 The values in the destination fields are case sensitive, so please make sure to create the destinations based on the instructions below.  
-![dest](/resources/pcm12.png)  
+![dest](/resources/pcm12.PNG)  
 
 ##### 2.7.1	SAPID Destination  
 Destination used for the invitation flow with SCI.  
