@@ -5,8 +5,8 @@
     "name": "Partner Portal",
     "description": "A sample partner portal site template. This template is provided by SAP.",
     "path": "partnerportal",
-    "thumbnail": "partnerportal/thumbnail.png",
-    "preview": "partnerportal/thumbnail.png",
+    "thumbnail": "partnerportal/thumbnail.jpg",
+    "preview": "partnerportal/thumbnail.jpg",
     "themes": []
   }
 ]

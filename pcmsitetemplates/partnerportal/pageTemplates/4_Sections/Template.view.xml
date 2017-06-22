@@ -1,0 +1,11 @@
+<mvc:View controllerName="cpv2.templates.HeaderFooterV2.Template" height="100%" xmlns:cpControls="sap.hana.uis.flp.control"
+	xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" class="cpv2-page-1280">
+	<Page showFooter="false" showHeader="false" enableScrolling="false">
+		<content>
+			<cpControls:Section alias="headerfooter.header"></cpControls:Section>
+			<cpControls:Section alias="headerfooter.content1"></cpControls:Section>
+			<cpControls:Section alias="headerfooter.content2"></cpControls:Section>
+			<cpControls:Section alias="headerfooter.footer"></cpControls:Section>
+		</content>
+	</Page>
+</mvc:View>
