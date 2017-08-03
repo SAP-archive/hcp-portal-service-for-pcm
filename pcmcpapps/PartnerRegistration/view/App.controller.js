@@ -465,7 +465,6 @@
 						jQuery.ajax({
 							url: cpCallURL,
 							data: cpDataJson,
-							headers: { "X-CSRF-Token": window.csrfToken},
 							success: function(response){
 								selfView.setBusy(false);
 								selfView.byId("wizardTabBar").setVisible(false);

@@ -65,7 +65,6 @@ sap.ui.fiori.util.Services = function (siteId) {
 
         jQuery.ajax({
             url: url,
-            headers: { "X-CSRF-Token": window.csrfToken},
             type: "POST",
             dataType: "json",
             contentType: "application/json",
@@ -118,7 +117,6 @@ sap.ui.fiori.util.Services = function (siteId) {
                 jQuery.ajax({
                     url: url,
                     type: "DELETE",
-                    headers: { "X-CSRF-Token": window.csrfToken},
                     dataType: "json",
                     contentType: "application/json",
                     success: function (res) {
