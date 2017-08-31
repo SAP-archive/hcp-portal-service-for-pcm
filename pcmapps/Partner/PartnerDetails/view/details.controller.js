@@ -707,13 +707,6 @@
 							}
 						);
 
-						var css = "width:280px !important";
-
-						$(upload[0]).attr("style", $(upload[0]).attr("style") + ";" + css + ";");
-						upload.css({
-							height: 40
-						});
-
 						combo.setSelectedKey(2);
 						oUrl.hide();
 						form.show();
