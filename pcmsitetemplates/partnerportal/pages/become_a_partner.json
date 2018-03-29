@@ -121,15 +121,10 @@
 				},
 				"appearance": {
 					"backgroundColor": "#fff",
-					"backgroundImageSource": "asset_repository",
-					"useBackgroundImage": true,
-					"backgroundImageState": "cropped",
-					"backgroundImageAlignment": "center_middle"
-				},
-				"resources": {
-					"assets": [{
-						"value": "/assets/img/Laptop_section.jpg"
-					}]
+					"backgroundImageSource": "",
+					"useBackgroundImage": false,
+					"backgroundImageState": "",
+					"backgroundImageAlignment": ""
 				}
 			},
 			"headerfooter.footer": {

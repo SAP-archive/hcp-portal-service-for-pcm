@@ -16,7 +16,6 @@
           "action": "Table"
         },
         "id": "7c97470f-403c-41b4-bd10-d811c38f419c",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/leads.json",
         "indicatorDataSource": {
           "path": "/sap/fiori/pcmapps/c4c/sap/c4c/odata/v1/pcmportal/LeadCollection/$count",
           "refresh": "300",
@@ -29,7 +28,6 @@
           "action": "Table"
         },
         "id": "eb990c98-5006-4e5f-b30d-50b5dcc06ec6",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/opportunities.json",
         "indicatorDataSource": {
           "path": "/sap/fiori/pcmapps/c4c/sap/c4c/odata/v1/pcmportal/OpportunityCollection/$count",
           "refresh": "300",
@@ -42,7 +40,6 @@
           "action": "Table"
         },
         "id": "caffa7cb-961d-4b3f-9475-63e547c5ac50",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/appointments.json",
         "indicatorDataSource": {
           "path": "/sap/fiori/pcmapps/c4c/sap/c4c/odata/v1/pcmportal/AppointmentCollection/$count",
           "refresh": "300",
@@ -55,7 +52,6 @@
           "action": "Table"
         },
         "id": "afccd2b8-874a-48b4-926e-36e2d1431492",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/tasks.json",
         "indicatorDataSource": {
           "path": "/sap/fiori/pcmapps/c4c/sap/c4c/odata/v1/pcmportal/TaskCollection/$count",
           "refresh": "300",
@@ -68,7 +64,6 @@
           "action": "Table"
         },
         "id": "be996e43-5bb2-40cb-88a0-f44e4a79274e",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/deal_registrations.json",
         "indicatorDataSource": {
           "path": "/sap/fiori/pcmapps/c4c/sap/c4c/odata/v1/pcmportal/DealRegistrationCollection/$count",
           "refresh": "300",

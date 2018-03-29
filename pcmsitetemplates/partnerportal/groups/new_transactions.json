@@ -15,40 +15,35 @@
           "semanticObject": "Lead",
           "action": "Create"
         },
-        "id": "856e586a-b257-4c35-83ec-5c0c884f0071",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/create_new_lead.json"
+        "id": "856e586a-b257-4c35-83ec-5c0c884f0071"
       },
       {
         "target": {
           "semanticObject": "Opportunity",
           "action": "Create"
         },
-        "id": "e9e26cdf-92cb-4160-8fbf-369c4e4ee479",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/create_new_opportunity.json"
+        "id": "e9e26cdf-92cb-4160-8fbf-369c4e4ee479"
       },
       {
         "target": {
           "semanticObject": "Appointment",
           "action": "Create"
         },
-        "id": "ae3e5b0e-7d4e-4220-946d-37477074a7af",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/create_new_appointment.json"
+        "id": "ae3e5b0e-7d4e-4220-946d-37477074a7af"
       },
       {
         "target": {
           "semanticObject": "Task",
           "action": "Create"
         },
-        "id": "cc8aa15a-c6ef-4e19-bf69-621274377ccf",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/create_new_task.json"
+        "id": "cc8aa15a-c6ef-4e19-bf69-621274377ccf"
       },
       {
         "target": {
           "semanticObject": "DealRegistration",
           "action": "Create"
         },
-        "id": "5f0947a0-5c19-4a8c-a5a3-a9579d07ae96",
-        "appId": "hcp://pcmsitetemplates/partnerportal/applications/create_deal_registration.json"
+        "id": "5f0947a0-5c19-4a8c-a5a3-a9579d07ae96"
       }
     ]
   }

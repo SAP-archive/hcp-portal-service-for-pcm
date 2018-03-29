@@ -31,7 +31,10 @@
 				"icon": "pcmsitetemplates/partnerportal/thumbnail.jpg",
 				"isOnline": "false",
 				"isMultiHomePageEnabled": true,
-				"solution": "pcm"
+				"solution": "pcm",
+				"settings": {
+					"data_retention_days": "90"
+				}
 			},
 			"availablePageTemplates": [
 				{
